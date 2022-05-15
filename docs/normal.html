@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>常用控制脚本API | Auto.js 8.2 文档</title>
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/normal.html">
+</head>
+<body class="alt apidoc" id="api-section-normal">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" title="返回首页">
+          Autojs-vue
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-startnow" href="startnow.html">开始</a></li>
+<li><a class="nav-autojs-vue" href="autojs-vue.html">使用vue</a></li>
+<li><a class="nav-normal active" href="normal.html">常用api</a></li>
+<li><a class="nav-documentation" href="documentation.html">关于本文档</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-overview" href="overview.html">Overview - 综述</a></li>
+<li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
+<li><a class="nav-app" href="app.html">App - 应用</a></li>
+<li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
+<li><a class="nav-console" href="console.html">Console - 控制台</a></li>
+<li><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">CoordinatesBasedAutomation - 基于坐标的操作</a></li>
+<li><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
+<li><a class="nav-device" href="device.html">Device - 设备</a></li>
+<li><a class="nav-dialogs" href="dialogs.html">Dialogs - 对话框</a></li>
+<li><a class="nav-engines" href="engines.html">Engines - 脚本引擎</a></li>
+<li><a class="nav-events" href="events.html">Events - 事件与监听</a></li>
+<li><a class="nav-floaty" href="floaty.html">Floaty - 悬浮窗</a></li>
+<li><a class="nav-files" href="files.html">Files - 文件系统</a></li>
+<li><a class="nav-globals" href="globals.html">Globals - 一般全局函数</a></li>
+<li><a class="nav-http" href="http.html">Http - HTTP</a></li>
+<li><a class="nav-images" href="images.html">Images - 图片与图色处理</a></li>
+<li><a class="nav-keys" href="keys.html">Keys - 按键模拟</a></li>
+<li><a class="nav-media" href="media.html">Media - 多媒体</a></li>
+<li><a class="nav-modules" href="modules.html">Modules - 模块</a></li>
+<li><a class="nav-sensors" href="sensors.html">Sensors - 传感器</a></li>
+<li><a class="nav-shell" href="shell.html">Shell - Shell命令</a></li>
+<li><a class="nav-storages" href="storages.html">Storages - 本地存储</a></li>
+<li><a class="nav-threads" href="threads.html">Threads - 多线程</a></li>
+<li><a class="nav-timers" href="timers.html">Timers - 定时器</a></li>
+<li><a class="nav-ui" href="ui.html">UI - 用户界面</a></li>
+<li><a class="nav-widgetsBasedAutomation" href="widgetsBasedAutomation.html">WidgetsBasedAutomation - 基于控件的操作</a></li>
+<li><a class="nav-https-developer-mozilla-org-zh-CN-docs-Mozilla-Projects-Rhino-Scripting_Java" href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java">Work with Java - 调用Java API</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-https-github-com-hyb1996-NoRootScriptDroid" href="https://github.com/hyb1996/NoRootScriptDroid">GitHub项目 &amp; Issue提交</a></li>
+<li><a class="nav-http-autojs-org" href="http://autojs.org">Auto.js交流社区</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="normal" class="interior">
+      <header>
+        <h1>Autojs-vue 8.2 文档</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.html" name="toc">索引</a> |
+            <a href="all.html">查看全部</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>目录</h2>
+        <ul>
+<li><span class="stability_undefined"><a href="#normal_api">常用控制脚本API</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_api_https_yooge_github_io_robot_docs">完整的API文档<a href="https://yooge.github.io/robot-docs/">查看</a></a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_1_app">1. 启动app</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_1">1. 点击</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_click">click全局函数[推荐]</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_clickable">无论元素是否有clickable属性，都会强制点击到对应的坐标上</a></span></li>
+<li><span class="stability_undefined"><a href="#normal">点击进入页面，然后再回来</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#normal_2">2. 输入</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3">3. 查找控件</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_3_0">3.0 控件的[属性]</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_1">3.1 控件的【方法】</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_2">3.2 页面是否匹配某些内容</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_3">3.3 复杂的查找/等待分支</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_3_4">3.3.4  逆向搜索</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_3_5">3.3.5  图片查找</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_3_6">3.3.6 按尺寸查找</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_3_6_1">3.3.6 其他</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#normal_4">4. 窗口操作（设计的不好）</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_5">5. 按键</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_6">6. 其他</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_7">7. 手指操作</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_api_1">截图 (原API，没有新增，老手请请忽略)</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>常用控制脚本API<span><a class="mark" href="#normal_api" id="normal_api">#</a></span></h1>
+<h1>完整的API文档<a href="https://yooge.github.io/robot-docs/">查看</a><span><a class="mark" href="#normal_api_https_yooge_github_io_robot_docs" id="normal_api_https_yooge_github_io_robot_docs">#</a></span></h1>
+<h2>1. 启动app<span><a class="mark" href="#normal_1_app" id="normal_1_app">#</a></span></h2>
+<pre><code class="lang-js">launchApp(&quot;浏览器&quot;);
+</code></pre>
+<h2>1. 点击<span><a class="mark" href="#normal_1" id="normal_1">#</a></span></h2>
+<h3>click全局函数[推荐]<span><a class="mark" href="#normal_click" id="normal_click">#</a></span></h3>
+<h4>无论元素是否有clickable属性，都会强制点击到对应的坐标上<span><a class="mark" href="#normal_clickable" id="normal_clickable">#</a></span></h4>
+<pre><code class="lang-js">click(&quot;按钮1&quot;);
+click(&quot;赞&quot;, 0);  //点击第0个赞
+</code></pre>
+<p>点击文字为“按钮1”的界面元素(按钮，文字等)</p>
+<pre><code class="lang-js">click(&quot;*入购物车&quot;);  //点击包含这个文字的元素
+
+click(desc(&#39;购物车&#39;).findOne());    
+click(desc(&#39;购物车&#39;),  0);    
+</code></pre>
+<p>点击文字包含&quot;入购物车&quot;的界面元素(按钮，文字等)</p>
+<pre><code class="lang-js">click(300,500); //点击坐标(300,500)
+
+
+click(&#39;购物车&#39;, 10,10);  //右下角偏移 10,10
+click(&#39;购物车&#39;, -10,10); //左下角
+click(&#39;购物车&#39;, 10,-10); //右上角
+click(&#39;购物车&#39;, -10,-10); //左上角 
+click(desc(&#39;购物车&#39;));     //新
+click(desc(&#39;购物车&#39;), 2);     //新
+click(desc(&#39;购物车&#39;).findOne());     //
+click(desc(&#39;购物车&#39;).findOne(), -10,-10);     //购物车的左上角 10,10点击一下 ，以购物车的左上角为参考
+click(desc(&#39;购物车&#39;).findOne(), 10,10);     //购物车的右下角 10,10点击一下 ，以购物车的 右下角为参考
+click(desc(&#39;购物车&#39;), 10,10);
+text(&#39;购物车&#39;).findOne().click(); //点击购物车，此方法点击的是元素本身(如果元素只是普通文本，则会失效)
+click(text(&#39;购物车&#39;).findOne()); //(推荐)点击购物车，此方法点击的是屏幕，如果自己不可点击，会把事件传递给父控件
+</code></pre>
+<h4>点击进入页面，然后再回来<span><a class="mark" href="#normal" id="normal">#</a></span></h4>
+<div class="signature"><ul>
+<li>适合多页面跳来跳去的交互场景 *</li>
+</ul>
+</div><pre><code>
+click(desc(&#39;购物车&#39;), function(){
+    ;;//进去页面了，干点啥
+    //处理完毕后，会回到原页面
+    //如图期待的页面没出现 请用 return &#39;click_fail&#39;; 
+});
+
+//点击粉丝列表
+click(&#39;粉丝&#39;, () =&gt; { 
+        //打开了粉丝列表页面
+        var pp = desc(&#39;粉丝列表&#39;).findOne();
+        var fanslist = listChildren(pp);
+        //在粉丝列表页面上进行一系列操作
+        dosomthing(fanslist);
+    });
+</code></pre><h2>2. 输入<span><a class="mark" href="#normal_2" id="normal_2">#</a></span></h2>
+<p>向本界面中的输入框输入文字</p>
+<pre><code class="lang-js">setText(&quot;你好&quot;);
+setText(0, &quot;你好&quot;); //第几个输入框
+</code></pre>
+<h2>3. 查找控件<span><a class="mark" href="#normal_3" id="normal_3">#</a></span></h2>
+<pre><code class="lang-js">//1. 查找界面上是否有文字为“消息”的控件，返回数组
+text(&quot;消息&quot;); 
+text(&quot;消息&quot;).find(); 
+//2. 界面上是否有控件包含“入购物车”这几个字，返回数组
+text(&quot;*入购物车&quot;).find(); 
+desc(&quot;*个赞&quot;)
+
+//3. 查找并返回一个
+text(&quot;消息&quot;).findOne(); 
+//4. 查找并返回一个，超时5秒
+text(&quot;消息&quot;).findOne(5000);
+// 是否存在
+text(&quot;消息&quot;).exists();
+
+//5. 等待界面出现“”这个字的控件，等5秒(默认20秒)
+text(&quot;消息&quot;).waitFor(5000); 
+waitFor(&quot;消息&quot;);
+waitFor(&quot;消息&quot;, 5000);
+
+//6. 等待这个文字消失, 默认超时20秒
+waitGone(&quot;消息&quot;);
+waitGone(&quot;消息&quot;, 5000);
+//7. 
+textEx  //是text的临时补充版
+textEx(&quot;#&quot;) //查找输入框
+textEx(&quot;#139101&quot;) //查找输入框，里面内容为139101
+textEx(&quot;#*请输入&quot;) //查找输入框，里面内容 包含 请输入
+
+//8.
+desc(&quot;赞&quot;).findOne(); //控件的Content-Description属性
+descContains(&quot;评论数&quot;).findOne(); 
+
+//9
+className(&#39;RecyclerView&#39;);//控件的类
+classNameContains(&#39;RecyclerView&#39;);//类
+
+
+//10.
+//遍历过滤器
+var uc = className(&quot;TextView&quot;).filter(function(w){
+    return w.text().length == 10;
+});
+
+//11.
+//对象在屏幕内，比如查找抖音的点赞按钮时，会有两个在屏幕外。就需要这个函数来锁定
+inScreen(desc(&#39;赞&#39;));
+inScreenOne(desc(&#39;赞&#39;));
+//或者 用扩展搜索
+desc(&#39;赞&#39;).visibleToUser(true);  //控件是否可见。
+
+//10 其他扩展搜索条件:
+/*
+cls(&#39;classname&#39;)
+bounds(0,0, 600, 900) 控件在屏幕上的范围。
+indexInParent(2) 控件在父控件的位置。
+editable(true) 控件是否可编辑。
+visibleToUser(true) 控件是否可见。
+drawingOrder(2) 控件在父控件的绘制顺序。
+clickable(true) 控件是否可点击。
+longClickable(true) 控件是否可长按。
+checkable(true) 控件是否可勾选。
+checked(true) 控件是否可已勾选。
+scrollable(true) 控件是否可滑动。
+selected(true) 控件是否已选择。
+enabled(true)
+*/
+</code></pre>
+<h3>3.0 控件的[属性]<span><a class="mark" href="#normal_3_0" id="normal_3_0">#</a></span></h3>
+<p><code>** 控件有很多属性，请打印一下获取的对象看看</code></p>
+<h3>3.1 控件的【方法】<span><a class="mark" href="#normal_3_1" id="normal_3_1">#</a></span></h3>
+<pre><code class="lang-js">var box = desc(&#39;body&#39;).findOne();
+box.click(); //点击控件
+box.longClick();
+box.text();  //获取控件的文本
+box.setText(&#39;xxx&#39;); //设置文本
+box.bounds();  //获取控件的坐标 top, left, right, bottom
+box.paste();; //粘贴 ， setClip(&quot;你好&quot;);
+box.children(); //子元素的数组
+listChildren(box); //新增，同上， 增加了 textAll属性，所有的子元素的文本
+box.child(i); //第3个子元素
+box.parent(); //父控件
+box.findOne(desc(&quot;赞&quot;)); //查找子元素
+box.find(desc(&quot;赞&quot;)).get(1); //查找子元素，获取第2个
+box.find(desc(&quot;赞&quot;)).empty(); //是否为空
+</code></pre>
+<h3>3.2 页面是否匹配某些内容<span><a class="mark" href="#normal_3_2" id="normal_3_2">#</a></span></h3>
+<p>根据页面是否匹配某些内容，来判断页面功能</p>
+<pre><code class="lang-js">//函数
+matchContents(matchkeys);
+
+//查找当前页面是否同时包含 这4个项(主界面)
+matchContents(&quot;消息 &amp; 通讯录 &amp; 工作台 &amp; *待办&quot;);
+//查找当前页面是否有如下情况(搜索手机号页面)
+// A. 手机号 与 输入框  B. 出现文字‘搜索’ 与输入框
+matchContents(&quot;手机号 &amp; # | *搜索 &amp; #&quot;);
+//添加好友页面
+matchContents(&quot;*好友中添加 &amp; 已发邀请 | *好友中添加 &amp; 添加&quot;);
+</code></pre>
+<h3>3.3 复杂的查找/等待分支<span><a class="mark" href="#normal_3_3" id="normal_3_3">#</a></span></h3>
+<p> 在流程中，可能出现任意个不同界面的时候，需要进行分支切换</p>
+<pre><code class="lang-js">//等待出现两个控件中的一个， 返回 0或1，失败返回-1；超时5秒（默认20秒）
+//这个功能 主要用在一个动作后，可能出现两个窗口中的一个。
+var i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;);
+var i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;, 5000);
+
+</code></pre>
+<pre><code class="lang-js">//1. 等待出现多个控件中的一个， 返回 0,1,2,3，失败返回-1； 超时5秒（默认20秒）
+//这个功能 主要用在比如一个点击动作后，可能出现多个窗口中的一个。
+var i = appear([&quot;*加为好友&quot;, &quot;用户不存在&quot;, &quot;*无权限&quot;], 5000);
+
+//2. 或者，返回key, 失败则返回-1
+var key = appear({&quot;ok&quot;:&quot;*加为好友&quot;, &quot;unexist&quot;:&quot;用户不存在&quot;, &quot;denial&quot;: &quot;*无权限&quot;}, 5000);
+</code></pre>
+<h3>3.3.4  逆向搜索<span><a class="mark" href="#normal_3_3_4" id="normal_3_3_4">#</a></span></h3>
+<p>//逆向搜索，从我开始,向其他节点搜索</p>
+<pre><code class="lang-js">var mynode = text(&#39;回复&#39;).findOne();
+var targetSelector = className(&#39;androidx.recyclerview.widget.RecyclerView&#39;)
+var obj = lookup(mynode, targetSelector);
+</code></pre>
+<h3>3.3.5  图片查找<span><a class="mark" href="#normal_3_3_5" id="normal_3_3_5">#</a></span></h3>
+<pre><code class="lang-js">//查找尺寸的图片
+var ckRect= {w1:100}  //宽度大于100的图片
+var ckRect = {w2:200} //宽度小于200的图片
+var ckRect = {w1:100, w2:200} //宽度在100-200之间的图片
+var ckRect = {h1:100, h2:500} //高度在100-500之间的图片
+//或者数组 ckRect = [w1,w2,h1,h2] 
+
+//查找所有符合尺寸的图片
+var images = findPictures(parentObj, ckRect);
+
+//查找尺寸的图片，取第一个
+var img = findPicture(parentObj, ckRect);
+
+//查找大控件
+bigSize(classname);//d大于半个屏幕大小的类
+bigSize(classname, 500);
+</code></pre>
+<h3>3.3.6 按尺寸查找<span><a class="mark" href="#normal_3_3_6" id="normal_3_3_6">#</a></span></h3>
+<pre><code class="lang-js">findsize(list, chRect)  
+//list控件数组， ckRect参考上面找图的参数
+
+//过滤器
+var uc = className(&quot;ImageView&quot;).filter(function(w){
+    var b = w.bounds();
+    return b.width() &gt; 10; //宽度大于10的图片
+});
+
+</code></pre>
+<h3>3.3.6 其他<span><a class="mark" href="#normal_3_3_6_1" id="normal_3_3_6_1">#</a></span></h3>
+<pre><code class="lang-js">//寻祖
+parent(obj, 2) //祖父 
+parent(obj, 3) //祖父的父亲
+
+//查找本控件及所有子控件，并返回文本及控件
+loopElementsText(obj, false);
+loopElementsText(obj, true); //只返回文本
+alltext(obj) //同上,只返回文本(压在一起了)
+
+listChildren(obj)//返回数组，枚举每个子控件(及内部所有文本)
+</code></pre>
+<h2>4. 窗口操作（设计的不好）<span><a class="mark" href="#normal_4" id="normal_4">#</a></span></h2>
+<div class="signature"><ol>
+<li>启动app<pre><code class="lang-js">launchApp(&quot;浏览器&quot;);
+</code></pre>
+</li>
+<li><p>获取当前的包名
+//如 com.tencent.mm</p>
+<pre><code class="lang-js">currentPackage();
+</code></pre>
+</li>
+<li><p>等待窗口出现</p>
+<pre><code class="lang-js">waitForActivity(&quot;*.launch.WwMainActivity&quot;, 4000);
+//建议多使用，等待内容出现的函数 waitFor
+</code></pre>
+</li>
+<li>(从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(# 有点费劲， 推荐使用click的回调功能)<pre><code class="lang-js">//参数：窗口类名/或数组，包名，超时时间，忽略其他窗口的存在；
+//返回: 该类名（有点复杂，可以放弃，请参考4.2）
+back2activity(&quot;*.launch.WwMainActivity&quot;);
+back2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;);
+back2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000);
+back2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000, [&quot;*.xxActivity&quot;,&quot;*.yyyActivity&quot;]);
+//也可以是数组，返回对应的类名
+back2activity([&quot;*.launch.WwMainActivity&quot;, &quot;*.LaunchSplashActivity&quot;]);
+</code></pre>
+4.2 从深层堆栈中回退) 一直点击返回键，让页面一直返回，直至遇到某窗口
+<code>`</code>js
+//自动点击返回键，回调页面包含xx内容的窗口
+//matchList可以为字符串，或数组， 回到包含该内容的页面，参考 matchContents函数
+back2activityEx(matchList, timeout)</li>
+</ol>
+</div><p>back2activityEx(&quot;消息 &amp; 通讯录&quot;, 5000);
+back2activityEx([&quot;消息 &amp; 通讯录&quot;, &quot;已发邀请 | 添加&quot;], 5000);</p>
+<pre><code>
+5. 等待窗口消失
+```js
+activityWaitGone(&quot;*.launch.WwMainActivity&quot;, 5000);
+</code></pre><p>推荐使用waitGone(&#39;文字&#39;)</p>
+<h2>5. 按键<span><a class="mark" href="#normal_5" id="normal_5">#</a></span></h2>
+<pre><code class="lang-js">home(); //桌面
+back(); //返回
+recents(); //任务列表
+notifications(); //拉出通知栏
+</code></pre>
+<h2>6. 其他<span><a class="mark" href="#normal_6" id="normal_6">#</a></span></h2>
+<pre><code class="lang-js">sleep(1000);//暂停1秒
+//
+console.log(&quot;xxxxx&quot;); //会同时打印到电脑,手机
+console.show();  //打开悬浮日志窗口(日志同时会往这里输出)
+//---
+//用新的控制台
+console.useNew(); //使用新的模式!!(使下面的这些功能)，老控制台则用这个访问console_old
+console.useNew(&#39;patchs/log_layout.xml&#39;); //指定layout
+console.log2ide(&quot;xxxx&quot;); //仅仅显示在电脑里
+console.log2app(&quot;xxxx&quot;);  //仅仅显示在手机上
+console.title(&#39;修改标题内容&#39;);
+console.toast(&#39;修改标题内容&#39;);
+toast(&#39;修改标题内容&#39;);
+
+console.msg(&#39;覆盖日志区域内容&#39;);//内容可使用HTML，可作为自定义统计页
+console.log(&#39;日志&#39;);
+console.log(&#39;&lt;b&gt;日志&lt;/b&gt;&#39;); //内容可使用HTML
+console.log(&#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //内容可使用HTML
+console.info(&#39;蓝色提示&#39;);
+console.warn(&#39;黄色警告&#39;);
+console.verbose(&#39;低级日志&#39;);
+console.error(&#39;红色警告&#39;);
+
+console.error.color = &#39;#DD0099&#39;;//设置颜色
+console.error.color = &#39;red&#39;;//设置颜色
+console.info.color = &#39;blue&#39;;
+console.warn.color = &#39;yellow&#39;;
+console.log.color = &#39;white&#39;;
+console.verbose.color = &#39;gray&#39;;
+
+console.resize(400, 400);  //设置日志浮窗 宽度，高度
+console.resize(-1, 400);  //宽度为全屏
+console.setPosition(0, 502);  //设置位置
+
+console.window //浮窗对象 
+
+//可以控制layout中的节点,比如:
+console.window.resize(400, 400)
+console.window.title.setText(&#39;hello&#39;) //设置文字
+console.window.myid.setTextSize(20) //设置字体大小（请在自定义layout中加入这个myid节点）
+
+console.setText(console.window.body, &#39;&lt;b&gt;粗体文字&lt;/b&gt;&#39;); //添加html文字
+console.addText(console.window.myid, &#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //添加html文字
+
+//设置日志本地存储
+console.logfile ; 
+console.setLogfile(&#39;/sdcard/1.txt&#39;);
+console.removeLogfile();//删除log内容
+console.getLog();//获取log内容
+
+</code></pre>
+<h2>7. 手指操作<span><a class="mark" href="#normal_7" id="normal_7">#</a></span></h2>
+<pre><code class="lang-js">//滑动
+swipeUp() //上滑
+swipeUp(800)  //800px
+
+swipeTo(&#39;张三&#39;) //滑到某个内容
+swipeTo(desc(&#39;张三&#39;)) 
+swipeTo({key:&#39;张三&#39;}) //滑到某个内容
+swipeTo({key,timeout,length,to}) //滑到某个内容
+
+//
+scrollTo(&#39;添加&#39;);
+scrollUp(1)
+scrollDown(0)
+scrollForward()
+scrollLeft()
+scrollRight()
+
+longClick(text[, i])
+click(text[, i])
+
+
+swipe(200, 1500, 200, 400, 500); //500毫秒
+swipe(x1, y1, x2, y2, 500); //500毫秒
+//连续滑动
+gesture(1000, [0, 0], [500, 500], [500, 1000])
+//多指连续滑动
+gestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, y3], [x4, y4], ...], ...)
+
+gestures([0, 500, [800, 300], [500, 1000]],
+         [0, 500, [300, 1500], [500, 1000]]);
+</code></pre>
+<h3>截图 (原API，没有新增，老手请请忽略)<span><a class="mark" href="#normal_api_1" id="normal_api_1">#</a></span></h3>
+<pre><code class="lang-js">
+//请求
+requestScreenCapture(true);
+//1,截图
+var img = captureScreen(); 
+
+var color = images.pixel(img, 100, 100);
+//
+toast(colors.toString(color));
+
+
+//2,找到红色
+while(true){
+    var img = captureScreen();
+    var point = findColor(img, &quot;#ff0000&quot;);
+    if(point){
+        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);
+    }
+}
+
+//3.
+//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) 
+var point = findColor(img, &quot;#00ff00&quot;, {
+     region: [400, 500, 300, 200],
+     threshold: 4
+ });
+
+ //4, 根据颜色找坐标
+ var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);
+
+ //5. 找图片
+ var img = images.read(&quot;/sdcard/大图.png&quot;);
+ var template = images.read(&quot;/sdcard/小图.png&quot;);
+ var p = findImage(img, template);
+ if(p){
+     toast(&quot;找到啦:&quot; + p);
+ }else{
+     toast(&quot;没找到&quot;);
+ }
+ img.recycle();
+ template.recycle();
+
+ //在一定范围内找
+ var p = findImage(captureScreen(), template, {
+     region: [0, 50],
+     threshold: 0.8 //相似度,默认值0.9
+ });
+
+ //
+ var j=findImage(img, template, {
+     region: [x, y, width, height],
+     threshold: 0.8 //相似度
+ })
+
+ //找100个给给我
+ var result = images.matchTemplate(img, template, {
+     region: [x, y, width, height],
+     threshold:0.8,
+     max: 100
+ });
+ //result.matches 
+</code></pre>
+<p>.
+.</p>
+
+      </div>
+    </div>
+  </div>
+  <script src="assets/sh_main.js"></script>
+  <script src="assets/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+  <!-- __TRACKING__ -->
+</body>
+</html>

@@ -1,4 +1,6 @@
-* [首页](/)
+* [首页](./)
+* [开始](/startnow)
+* [使用vue](/autojs-vue)
 * [Q&A](/qa)
 * [如何阅读本文档 - Documentation](/documentation)
 * [应用 - App](/app)

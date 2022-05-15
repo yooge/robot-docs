@@ -12,7 +12,7 @@ const util = require('util');
 
 ## util.callbackify(original)
 <!-- YAML
-added: v8.2.0
+added: v8.2
 -->
 
 * `original` {Function} An `async` function

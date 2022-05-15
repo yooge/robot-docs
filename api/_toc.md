@@ -1,8 +1,10 @@
 @// NB(chrisdickinson): if you move this file, be sure to update tools/doc/html.js to
 @// point at the new location.
+
+* [开始](startnow.html)
+* [使用vue](autojs-vue.html)
+* [常用api](normal.html)
 * [关于本文档](documentation.html)
-* [W3CSchool - ECMAScript教程](http://www.w3school.com.cn/js/pro_js_syntax.asp)
-* [阮一峰 - ECMAScript 6教程](http://es6.ruanyifeng.com/#README)
 
 <div class="line"></div>
 

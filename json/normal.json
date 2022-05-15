@@ -1,0 +1,333 @@
+{
+  "source": "../api/normal.md",
+  "desc": [
+    {
+      "type": "space"
+    }
+  ],
+  "methods": [
+    {
+      "textRaw": "常用控制脚本API",
+      "name": "常用控制脚本API",
+      "type": "method",
+      "modules": [
+        {
+          "textRaw": "1. 启动app",
+          "name": "1._启动app",
+          "desc": "<pre><code class=\"lang-js\">launchApp(&quot;浏览器&quot;);\n</code></pre>\n",
+          "type": "module",
+          "displayName": "1. 启动app"
+        },
+        {
+          "textRaw": "1. 点击",
+          "name": "1._点击",
+          "properties": [
+            {
+              "textRaw": "click全局函数[推荐]",
+              "name": "[推荐]",
+              "modules": [
+                {
+                  "textRaw": "无论元素是否有clickable属性，都会强制点击到对应的坐标上",
+                  "name": "无论元素是否有clickable属性，都会强制点击到对应的坐标上",
+                  "desc": "<pre><code class=\"lang-js\">click(&quot;按钮1&quot;);\nclick(&quot;赞&quot;, 0);  //点击第0个赞\n</code></pre>\n<p>点击文字为“按钮1”的界面元素(按钮，文字等)</p>\n<pre><code class=\"lang-js\">click(&quot;*入购物车&quot;);  //点击包含这个文字的元素\n\nclick(desc(&#39;购物车&#39;).findOne());    \nclick(desc(&#39;购物车&#39;),  0);    \n</code></pre>\n<p>点击文字包含&quot;入购物车&quot;的界面元素(按钮，文字等)</p>\n<pre><code class=\"lang-js\">click(300,500); //点击坐标(300,500)\n\n\nclick(&#39;购物车&#39;, 10,10);  //右下角偏移 10,10\nclick(&#39;购物车&#39;, -10,10); //左下角\nclick(&#39;购物车&#39;, 10,-10); //右上角\nclick(&#39;购物车&#39;, -10,-10); //左上角 \nclick(desc(&#39;购物车&#39;));     //新\nclick(desc(&#39;购物车&#39;), 2);     //新\nclick(desc(&#39;购物车&#39;).findOne());     //\nclick(desc(&#39;购物车&#39;).findOne(), -10,-10);     //购物车的左上角 10,10点击一下 ，以购物车的左上角为参考\nclick(desc(&#39;购物车&#39;).findOne(), 10,10);     //购物车的右下角 10,10点击一下 ，以购物车的 右下角为参考\nclick(desc(&#39;购物车&#39;), 10,10);\ntext(&#39;购物车&#39;).findOne().click(); //点击购物车，此方法点击的是元素本身(如果元素只是普通文本，则会失效)\nclick(text(&#39;购物车&#39;).findOne()); //(推荐)点击购物车，此方法点击的是屏幕，如果自己不可点击，会把事件传递给父控件\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "无论元素是否有clickable属性，都会强制点击到对应的坐标上"
+                },
+                {
+                  "textRaw": "点击进入页面，然后再回来",
+                  "name": "点击进入页面，然后再回来",
+                  "desc": "<ul>\n<li>适合多页面跳来跳去的交互场景 *</li>\n</ul>\n<pre><code>\nclick(desc(&#39;购物车&#39;), function(){\n    ;;//进去页面了，干点啥\n    //处理完毕后，会回到原页面\n    //如图期待的页面没出现 请用 return &#39;click_fail&#39;; \n});\n\n//点击粉丝列表\nclick(&#39;粉丝&#39;, () =&gt; { \n        //打开了粉丝列表页面\n        var pp = desc(&#39;粉丝列表&#39;).findOne();\n        var fanslist = listChildren(pp);\n        //在粉丝列表页面上进行一系列操作\n        dosomthing(fanslist);\n    });\n</code></pre>",
+                  "type": "module",
+                  "displayName": "点击进入页面，然后再回来"
+                }
+              ]
+            }
+          ],
+          "type": "module",
+          "displayName": "1. 点击"
+        },
+        {
+          "textRaw": "2. 输入",
+          "name": "2._输入",
+          "desc": "<p>向本界面中的输入框输入文字</p>\n<pre><code class=\"lang-js\">setText(&quot;你好&quot;);\nsetText(0, &quot;你好&quot;); //第几个输入框\n</code></pre>\n",
+          "type": "module",
+          "displayName": "2. 输入"
+        },
+        {
+          "textRaw": "3. 查找控件",
+          "name": "3._查找控件",
+          "desc": "<pre><code class=\"lang-js\">//1. 查找界面上是否有文字为“消息”的控件，返回数组\ntext(&quot;消息&quot;); \ntext(&quot;消息&quot;).find(); \n//2. 界面上是否有控件包含“入购物车”这几个字，返回数组\ntext(&quot;*入购物车&quot;).find(); \ndesc(&quot;*个赞&quot;)\n\n//3. 查找并返回一个\ntext(&quot;消息&quot;).findOne(); \n//4. 查找并返回一个，超时5秒\ntext(&quot;消息&quot;).findOne(5000);\n// 是否存在\ntext(&quot;消息&quot;).exists();\n\n//5. 等待界面出现“”这个字的控件，等5秒(默认20秒)\ntext(&quot;消息&quot;).waitFor(5000); \nwaitFor(&quot;消息&quot;);\nwaitFor(&quot;消息&quot;, 5000);\n\n//6. 等待这个文字消失, 默认超时20秒\nwaitGone(&quot;消息&quot;);\nwaitGone(&quot;消息&quot;, 5000);\n//7. \ntextEx  //是text的临时补充版\ntextEx(&quot;#&quot;) //查找输入框\ntextEx(&quot;#139101&quot;) //查找输入框，里面内容为139101\ntextEx(&quot;#*请输入&quot;) //查找输入框，里面内容 包含 请输入\n\n//8.\ndesc(&quot;赞&quot;).findOne(); //控件的Content-Description属性\ndescContains(&quot;评论数&quot;).findOne(); \n\n//9\nclassName(&#39;RecyclerView&#39;);//控件的类\nclassNameContains(&#39;RecyclerView&#39;);//类\n\n\n//10.\n//遍历过滤器\nvar uc = className(&quot;TextView&quot;).filter(function(w){\n    return w.text().length == 10;\n});\n\n//11.\n//对象在屏幕内，比如查找抖音的点赞按钮时，会有两个在屏幕外。就需要这个函数来锁定\ninScreen(desc(&#39;赞&#39;));\ninScreenOne(desc(&#39;赞&#39;));\n//或者 用扩展搜索\ndesc(&#39;赞&#39;).visibleToUser(true);  //控件是否可见。\n\n//10 其他扩展搜索条件:\n/*\ncls(&#39;classname&#39;)\nbounds(0,0, 600, 900) 控件在屏幕上的范围。\nindexInParent(2) 控件在父控件的位置。\neditable(true) 控件是否可编辑。\nvisibleToUser(true) 控件是否可见。\ndrawingOrder(2) 控件在父控件的绘制顺序。\nclickable(true) 控件是否可点击。\nlongClickable(true) 控件是否可长按。\ncheckable(true) 控件是否可勾选。\nchecked(true) 控件是否可已勾选。\nscrollable(true) 控件是否可滑动。\nselected(true) 控件是否已选择。\nenabled(true)\n*/\n</code></pre>\n",
+          "modules": [
+            {
+              "textRaw": "3.0 控件的[属性]",
+              "name": "3.0_控件的[属性]",
+              "desc": "<p><code>** 控件有很多属性，请打印一下获取的对象看看</code></p>\n",
+              "type": "module",
+              "displayName": "3.0 控件的[属性]"
+            },
+            {
+              "textRaw": "3.1 控件的【方法】",
+              "name": "3.1_控件的【方法】",
+              "desc": "<pre><code class=\"lang-js\">var box = desc(&#39;body&#39;).findOne();\nbox.click(); //点击控件\nbox.longClick();\nbox.text();  //获取控件的文本\nbox.setText(&#39;xxx&#39;); //设置文本\nbox.bounds();  //获取控件的坐标 top, left, right, bottom\nbox.paste();; //粘贴 ， setClip(&quot;你好&quot;);\nbox.children(); //子元素的数组\nlistChildren(box); //新增，同上， 增加了 textAll属性，所有的子元素的文本\nbox.child(i); //第3个子元素\nbox.parent(); //父控件\nbox.findOne(desc(&quot;赞&quot;)); //查找子元素\nbox.find(desc(&quot;赞&quot;)).get(1); //查找子元素，获取第2个\nbox.find(desc(&quot;赞&quot;)).empty(); //是否为空\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.1 控件的【方法】"
+            },
+            {
+              "textRaw": "3.2 页面是否匹配某些内容",
+              "name": "3.2_页面是否匹配某些内容",
+              "desc": "<p>根据页面是否匹配某些内容，来判断页面功能</p>\n<pre><code class=\"lang-js\">//函数\nmatchContents(matchkeys);\n\n//查找当前页面是否同时包含 这4个项(主界面)\nmatchContents(&quot;消息 &amp; 通讯录 &amp; 工作台 &amp; *待办&quot;);\n//查找当前页面是否有如下情况(搜索手机号页面)\n// A. 手机号 与 输入框  B. 出现文字‘搜索’ 与输入框\nmatchContents(&quot;手机号 &amp; # | *搜索 &amp; #&quot;);\n//添加好友页面\nmatchContents(&quot;*好友中添加 &amp; 已发邀请 | *好友中添加 &amp; 添加&quot;);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.2 页面是否匹配某些内容"
+            },
+            {
+              "textRaw": "3.3 复杂的查找/等待分支",
+              "name": "3.3_复杂的查找/等待分支",
+              "desc": "<p> 在流程中，可能出现任意个不同界面的时候，需要进行分支切换</p>\n<pre><code class=\"lang-js\">//等待出现两个控件中的一个， 返回 0或1，失败返回-1；超时5秒（默认20秒）\n//这个功能 主要用在一个动作后，可能出现两个窗口中的一个。\nvar i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;);\nvar i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;, 5000);\n\n</code></pre>\n<pre><code class=\"lang-js\">//1. 等待出现多个控件中的一个， 返回 0,1,2,3，失败返回-1； 超时5秒（默认20秒）\n//这个功能 主要用在比如一个点击动作后，可能出现多个窗口中的一个。\nvar i = appear([&quot;*加为好友&quot;, &quot;用户不存在&quot;, &quot;*无权限&quot;], 5000);\n\n//2. 或者，返回key, 失败则返回-1\nvar key = appear({&quot;ok&quot;:&quot;*加为好友&quot;, &quot;unexist&quot;:&quot;用户不存在&quot;, &quot;denial&quot;: &quot;*无权限&quot;}, 5000);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3 复杂的查找/等待分支"
+            },
+            {
+              "textRaw": "3.3.4  逆向搜索",
+              "name": "3.3.4_逆向搜索",
+              "desc": "<p>//逆向搜索，从我开始,向其他节点搜索</p>\n<pre><code class=\"lang-js\">var mynode = text(&#39;回复&#39;).findOne();\nvar targetSelector = className(&#39;androidx.recyclerview.widget.RecyclerView&#39;)\nvar obj = lookup(mynode, targetSelector);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.4  逆向搜索"
+            },
+            {
+              "textRaw": "3.3.5  图片查找",
+              "name": "3.3.5_图片查找",
+              "desc": "<pre><code class=\"lang-js\">//查找尺寸的图片\nvar ckRect= {w1:100}  //宽度大于100的图片\nvar ckRect = {w2:200} //宽度小于200的图片\nvar ckRect = {w1:100, w2:200} //宽度在100-200之间的图片\nvar ckRect = {h1:100, h2:500} //高度在100-500之间的图片\n//或者数组 ckRect = [w1,w2,h1,h2] \n\n//查找所有符合尺寸的图片\nvar images = findPictures(parentObj, ckRect);\n\n//查找尺寸的图片，取第一个\nvar img = findPicture(parentObj, ckRect);\n\n//查找大控件\nbigSize(classname);//d大于半个屏幕大小的类\nbigSize(classname, 500);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.5  图片查找"
+            },
+            {
+              "textRaw": "3.3.6 按尺寸查找",
+              "name": "3.3.6_按尺寸查找",
+              "desc": "<pre><code class=\"lang-js\">findsize(list, chRect)  \n//list控件数组， ckRect参考上面找图的参数\n\n//过滤器\nvar uc = className(&quot;ImageView&quot;).filter(function(w){\n    var b = w.bounds();\n    return b.width() &gt; 10; //宽度大于10的图片\n});\n\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.6 按尺寸查找"
+            },
+            {
+              "textRaw": "3.3.6 其他",
+              "name": "3.3.6_其他",
+              "desc": "<pre><code class=\"lang-js\">//寻祖\nparent(obj, 2) //祖父 \nparent(obj, 3) //祖父的父亲\n\n//查找本控件及所有子控件，并返回文本及控件\nloopElementsText(obj, false);\nloopElementsText(obj, true); //只返回文本\nalltext(obj) //同上,只返回文本(压在一起了)\n\nlistChildren(obj)//返回数组，枚举每个子控件(及内部所有文本)\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.6 其他"
+            }
+          ],
+          "type": "module",
+          "displayName": "3. 查找控件"
+        },
+        {
+          "textRaw": "4. 窗口操作（设计的不好）",
+          "name": "4._窗口操作（设计的不好）",
+          "desc": "<ol>\n<li>启动app<pre><code class=\"lang-js\">launchApp(&quot;浏览器&quot;);\n</code></pre>\n</li>\n<li><p>获取当前的包名\n//如 com.tencent.mm</p>\n<pre><code class=\"lang-js\">currentPackage();\n</code></pre>\n</li>\n<li><p>等待窗口出现</p>\n<pre><code class=\"lang-js\">waitForActivity(&quot;*.launch.WwMainActivity&quot;, 4000);\n//建议多使用，等待内容出现的函数 waitFor\n</code></pre>\n</li>\n<li>(从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(# 有点费劲， 推荐使用click的回调功能)<pre><code class=\"lang-js\">//参数：窗口类名/或数组，包名，超时时间，忽略其他窗口的存在；\n//返回: 该类名（有点复杂，可以放弃，请参考4.2）\nback2activity(&quot;*.launch.WwMainActivity&quot;);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000, [&quot;*.xxActivity&quot;,&quot;*.yyyActivity&quot;]);\n//也可以是数组，返回对应的类名\nback2activity([&quot;*.launch.WwMainActivity&quot;, &quot;*.LaunchSplashActivity&quot;]);\n</code></pre>\n4.2 从深层堆栈中回退) 一直点击返回键，让页面一直返回，直至遇到某窗口\n<code>`</code>js\n//自动点击返回键，回调页面包含xx内容的窗口\n//matchList可以为字符串，或数组， 回到包含该内容的页面，参考 matchContents函数\nback2activityEx(matchList, timeout)</li>\n</ol>\n<p>back2activityEx(&quot;消息 &amp; 通讯录&quot;, 5000);\nback2activityEx([&quot;消息 &amp; 通讯录&quot;, &quot;已发邀请 | 添加&quot;], 5000);</p>\n<pre><code>\n5. 等待窗口消失\n```js\nactivityWaitGone(&quot;*.launch.WwMainActivity&quot;, 5000);\n</code></pre><p>推荐使用waitGone(&#39;文字&#39;)</p>\n",
+          "type": "module",
+          "displayName": "4. 窗口操作（设计的不好）"
+        },
+        {
+          "textRaw": "5. 按键",
+          "name": "5._按键",
+          "desc": "<pre><code class=\"lang-js\">home(); //桌面\nback(); //返回\nrecents(); //任务列表\nnotifications(); //拉出通知栏\n</code></pre>\n",
+          "type": "module",
+          "displayName": "5. 按键"
+        },
+        {
+          "textRaw": "6. 其他",
+          "name": "6._其他",
+          "desc": "<pre><code class=\"lang-js\">sleep(1000);//暂停1秒\n//\nconsole.log(&quot;xxxxx&quot;); //会同时打印到电脑,手机\nconsole.show();  //打开悬浮日志窗口(日志同时会往这里输出)\n//---\n//用新的控制台\nconsole.useNew(); //使用新的模式!!(使下面的这些功能)，老控制台则用这个访问console_old\nconsole.useNew(&#39;patchs/log_layout.xml&#39;); //指定layout\nconsole.log2ide(&quot;xxxx&quot;); //仅仅显示在电脑里\nconsole.log2app(&quot;xxxx&quot;);  //仅仅显示在手机上\nconsole.title(&#39;修改标题内容&#39;);\nconsole.toast(&#39;修改标题内容&#39;);\ntoast(&#39;修改标题内容&#39;);\n\nconsole.msg(&#39;覆盖日志区域内容&#39;);//内容可使用HTML，可作为自定义统计页\nconsole.log(&#39;日志&#39;);\nconsole.log(&#39;&lt;b&gt;日志&lt;/b&gt;&#39;); //内容可使用HTML\nconsole.log(&#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //内容可使用HTML\nconsole.info(&#39;蓝色提示&#39;);\nconsole.warn(&#39;黄色警告&#39;);\nconsole.verbose(&#39;低级日志&#39;);\nconsole.error(&#39;红色警告&#39;);\n\nconsole.error.color = &#39;#DD0099&#39;;//设置颜色\nconsole.error.color = &#39;red&#39;;//设置颜色\nconsole.info.color = &#39;blue&#39;;\nconsole.warn.color = &#39;yellow&#39;;\nconsole.log.color = &#39;white&#39;;\nconsole.verbose.color = &#39;gray&#39;;\n\nconsole.resize(400, 400);  //设置日志浮窗 宽度，高度\nconsole.resize(-1, 400);  //宽度为全屏\nconsole.setPosition(0, 502);  //设置位置\n\nconsole.window //浮窗对象 \n\n//可以控制layout中的节点,比如:\nconsole.window.resize(400, 400)\nconsole.window.title.setText(&#39;hello&#39;) //设置文字\nconsole.window.myid.setTextSize(20) //设置字体大小（请在自定义layout中加入这个myid节点）\n\nconsole.setText(console.window.body, &#39;&lt;b&gt;粗体文字&lt;/b&gt;&#39;); //添加html文字\nconsole.addText(console.window.myid, &#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //添加html文字\n\n//设置日志本地存储\nconsole.logfile ; \nconsole.setLogfile(&#39;/sdcard/1.txt&#39;);\nconsole.removeLogfile();//删除log内容\nconsole.getLog();//获取log内容\n\n</code></pre>\n",
+          "type": "module",
+          "displayName": "6. 其他"
+        },
+        {
+          "textRaw": "7. 手指操作",
+          "name": "7._手指操作",
+          "desc": "<pre><code class=\"lang-js\">//滑动\nswipeUp() //上滑\nswipeUp(800)  //800px\n\nswipeTo(&#39;张三&#39;) //滑到某个内容\nswipeTo(desc(&#39;张三&#39;)) \nswipeTo({key:&#39;张三&#39;}) //滑到某个内容\nswipeTo({key,timeout,length,to}) //滑到某个内容\n\n//\nscrollTo(&#39;添加&#39;);\nscrollUp(1)\nscrollDown(0)\nscrollForward()\nscrollLeft()\nscrollRight()\n\nlongClick(text[, i])\nclick(text[, i])\n\n\nswipe(200, 1500, 200, 400, 500); //500毫秒\nswipe(x1, y1, x2, y2, 500); //500毫秒\n//连续滑动\ngesture(1000, [0, 0], [500, 500], [500, 1000])\n//多指连续滑动\ngestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, y3], [x4, y4], ...], ...)\n\ngestures([0, 500, [800, 300], [500, 1000]],\n         [0, 500, [300, 1500], [500, 1000]]);\n</code></pre>\n",
+          "modules": [
+            {
+              "textRaw": "截图 (原API，没有新增，老手请请忽略)",
+              "name": "截图_(原api，没有新增，老手请请忽略)",
+              "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
+              "type": "module",
+              "displayName": "截图 (原API，没有新增，老手请请忽略)"
+            }
+          ],
+          "type": "module",
+          "displayName": "7. 手指操作"
+        }
+      ],
+      "signatures": [
+        {
+          "params": [
+            {
+              "name": "https://yooge.github.io/robot-docs/"
+            }
+          ]
+        },
+        {
+          "params": []
+        }
+      ]
+    },
+    {
+      "textRaw": "完整的API文档[查看](https://yooge.github.io/robot-docs/)",
+      "type": "method",
+      "name": "完整的API文档[查看]",
+      "modules": [
+        {
+          "textRaw": "1. 启动app",
+          "name": "1._启动app",
+          "desc": "<pre><code class=\"lang-js\">launchApp(&quot;浏览器&quot;);\n</code></pre>\n",
+          "type": "module",
+          "displayName": "1. 启动app"
+        },
+        {
+          "textRaw": "1. 点击",
+          "name": "1._点击",
+          "properties": [
+            {
+              "textRaw": "click全局函数[推荐]",
+              "name": "[推荐]",
+              "modules": [
+                {
+                  "textRaw": "无论元素是否有clickable属性，都会强制点击到对应的坐标上",
+                  "name": "无论元素是否有clickable属性，都会强制点击到对应的坐标上",
+                  "desc": "<pre><code class=\"lang-js\">click(&quot;按钮1&quot;);\nclick(&quot;赞&quot;, 0);  //点击第0个赞\n</code></pre>\n<p>点击文字为“按钮1”的界面元素(按钮，文字等)</p>\n<pre><code class=\"lang-js\">click(&quot;*入购物车&quot;);  //点击包含这个文字的元素\n\nclick(desc(&#39;购物车&#39;).findOne());    \nclick(desc(&#39;购物车&#39;),  0);    \n</code></pre>\n<p>点击文字包含&quot;入购物车&quot;的界面元素(按钮，文字等)</p>\n<pre><code class=\"lang-js\">click(300,500); //点击坐标(300,500)\n\n\nclick(&#39;购物车&#39;, 10,10);  //右下角偏移 10,10\nclick(&#39;购物车&#39;, -10,10); //左下角\nclick(&#39;购物车&#39;, 10,-10); //右上角\nclick(&#39;购物车&#39;, -10,-10); //左上角 \nclick(desc(&#39;购物车&#39;));     //新\nclick(desc(&#39;购物车&#39;), 2);     //新\nclick(desc(&#39;购物车&#39;).findOne());     //\nclick(desc(&#39;购物车&#39;).findOne(), -10,-10);     //购物车的左上角 10,10点击一下 ，以购物车的左上角为参考\nclick(desc(&#39;购物车&#39;).findOne(), 10,10);     //购物车的右下角 10,10点击一下 ，以购物车的 右下角为参考\nclick(desc(&#39;购物车&#39;), 10,10);\ntext(&#39;购物车&#39;).findOne().click(); //点击购物车，此方法点击的是元素本身(如果元素只是普通文本，则会失效)\nclick(text(&#39;购物车&#39;).findOne()); //(推荐)点击购物车，此方法点击的是屏幕，如果自己不可点击，会把事件传递给父控件\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "无论元素是否有clickable属性，都会强制点击到对应的坐标上"
+                },
+                {
+                  "textRaw": "点击进入页面，然后再回来",
+                  "name": "点击进入页面，然后再回来",
+                  "desc": "<ul>\n<li>适合多页面跳来跳去的交互场景 *</li>\n</ul>\n<pre><code>\nclick(desc(&#39;购物车&#39;), function(){\n    ;;//进去页面了，干点啥\n    //处理完毕后，会回到原页面\n    //如图期待的页面没出现 请用 return &#39;click_fail&#39;; \n});\n\n//点击粉丝列表\nclick(&#39;粉丝&#39;, () =&gt; { \n        //打开了粉丝列表页面\n        var pp = desc(&#39;粉丝列表&#39;).findOne();\n        var fanslist = listChildren(pp);\n        //在粉丝列表页面上进行一系列操作\n        dosomthing(fanslist);\n    });\n</code></pre>",
+                  "type": "module",
+                  "displayName": "点击进入页面，然后再回来"
+                }
+              ]
+            }
+          ],
+          "type": "module",
+          "displayName": "1. 点击"
+        },
+        {
+          "textRaw": "2. 输入",
+          "name": "2._输入",
+          "desc": "<p>向本界面中的输入框输入文字</p>\n<pre><code class=\"lang-js\">setText(&quot;你好&quot;);\nsetText(0, &quot;你好&quot;); //第几个输入框\n</code></pre>\n",
+          "type": "module",
+          "displayName": "2. 输入"
+        },
+        {
+          "textRaw": "3. 查找控件",
+          "name": "3._查找控件",
+          "desc": "<pre><code class=\"lang-js\">//1. 查找界面上是否有文字为“消息”的控件，返回数组\ntext(&quot;消息&quot;); \ntext(&quot;消息&quot;).find(); \n//2. 界面上是否有控件包含“入购物车”这几个字，返回数组\ntext(&quot;*入购物车&quot;).find(); \ndesc(&quot;*个赞&quot;)\n\n//3. 查找并返回一个\ntext(&quot;消息&quot;).findOne(); \n//4. 查找并返回一个，超时5秒\ntext(&quot;消息&quot;).findOne(5000);\n// 是否存在\ntext(&quot;消息&quot;).exists();\n\n//5. 等待界面出现“”这个字的控件，等5秒(默认20秒)\ntext(&quot;消息&quot;).waitFor(5000); \nwaitFor(&quot;消息&quot;);\nwaitFor(&quot;消息&quot;, 5000);\n\n//6. 等待这个文字消失, 默认超时20秒\nwaitGone(&quot;消息&quot;);\nwaitGone(&quot;消息&quot;, 5000);\n//7. \ntextEx  //是text的临时补充版\ntextEx(&quot;#&quot;) //查找输入框\ntextEx(&quot;#139101&quot;) //查找输入框，里面内容为139101\ntextEx(&quot;#*请输入&quot;) //查找输入框，里面内容 包含 请输入\n\n//8.\ndesc(&quot;赞&quot;).findOne(); //控件的Content-Description属性\ndescContains(&quot;评论数&quot;).findOne(); \n\n//9\nclassName(&#39;RecyclerView&#39;);//控件的类\nclassNameContains(&#39;RecyclerView&#39;);//类\n\n\n//10.\n//遍历过滤器\nvar uc = className(&quot;TextView&quot;).filter(function(w){\n    return w.text().length == 10;\n});\n\n//11.\n//对象在屏幕内，比如查找抖音的点赞按钮时，会有两个在屏幕外。就需要这个函数来锁定\ninScreen(desc(&#39;赞&#39;));\ninScreenOne(desc(&#39;赞&#39;));\n//或者 用扩展搜索\ndesc(&#39;赞&#39;).visibleToUser(true);  //控件是否可见。\n\n//10 其他扩展搜索条件:\n/*\ncls(&#39;classname&#39;)\nbounds(0,0, 600, 900) 控件在屏幕上的范围。\nindexInParent(2) 控件在父控件的位置。\neditable(true) 控件是否可编辑。\nvisibleToUser(true) 控件是否可见。\ndrawingOrder(2) 控件在父控件的绘制顺序。\nclickable(true) 控件是否可点击。\nlongClickable(true) 控件是否可长按。\ncheckable(true) 控件是否可勾选。\nchecked(true) 控件是否可已勾选。\nscrollable(true) 控件是否可滑动。\nselected(true) 控件是否已选择。\nenabled(true)\n*/\n</code></pre>\n",
+          "modules": [
+            {
+              "textRaw": "3.0 控件的[属性]",
+              "name": "3.0_控件的[属性]",
+              "desc": "<p><code>** 控件有很多属性，请打印一下获取的对象看看</code></p>\n",
+              "type": "module",
+              "displayName": "3.0 控件的[属性]"
+            },
+            {
+              "textRaw": "3.1 控件的【方法】",
+              "name": "3.1_控件的【方法】",
+              "desc": "<pre><code class=\"lang-js\">var box = desc(&#39;body&#39;).findOne();\nbox.click(); //点击控件\nbox.longClick();\nbox.text();  //获取控件的文本\nbox.setText(&#39;xxx&#39;); //设置文本\nbox.bounds();  //获取控件的坐标 top, left, right, bottom\nbox.paste();; //粘贴 ， setClip(&quot;你好&quot;);\nbox.children(); //子元素的数组\nlistChildren(box); //新增，同上， 增加了 textAll属性，所有的子元素的文本\nbox.child(i); //第3个子元素\nbox.parent(); //父控件\nbox.findOne(desc(&quot;赞&quot;)); //查找子元素\nbox.find(desc(&quot;赞&quot;)).get(1); //查找子元素，获取第2个\nbox.find(desc(&quot;赞&quot;)).empty(); //是否为空\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.1 控件的【方法】"
+            },
+            {
+              "textRaw": "3.2 页面是否匹配某些内容",
+              "name": "3.2_页面是否匹配某些内容",
+              "desc": "<p>根据页面是否匹配某些内容，来判断页面功能</p>\n<pre><code class=\"lang-js\">//函数\nmatchContents(matchkeys);\n\n//查找当前页面是否同时包含 这4个项(主界面)\nmatchContents(&quot;消息 &amp; 通讯录 &amp; 工作台 &amp; *待办&quot;);\n//查找当前页面是否有如下情况(搜索手机号页面)\n// A. 手机号 与 输入框  B. 出现文字‘搜索’ 与输入框\nmatchContents(&quot;手机号 &amp; # | *搜索 &amp; #&quot;);\n//添加好友页面\nmatchContents(&quot;*好友中添加 &amp; 已发邀请 | *好友中添加 &amp; 添加&quot;);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.2 页面是否匹配某些内容"
+            },
+            {
+              "textRaw": "3.3 复杂的查找/等待分支",
+              "name": "3.3_复杂的查找/等待分支",
+              "desc": "<p> 在流程中，可能出现任意个不同界面的时候，需要进行分支切换</p>\n<pre><code class=\"lang-js\">//等待出现两个控件中的一个， 返回 0或1，失败返回-1；超时5秒（默认20秒）\n//这个功能 主要用在一个动作后，可能出现两个窗口中的一个。\nvar i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;);\nvar i = either(&quot;*加为好友&quot;, &quot;用户不存在&quot;, 5000);\n\n</code></pre>\n<pre><code class=\"lang-js\">//1. 等待出现多个控件中的一个， 返回 0,1,2,3，失败返回-1； 超时5秒（默认20秒）\n//这个功能 主要用在比如一个点击动作后，可能出现多个窗口中的一个。\nvar i = appear([&quot;*加为好友&quot;, &quot;用户不存在&quot;, &quot;*无权限&quot;], 5000);\n\n//2. 或者，返回key, 失败则返回-1\nvar key = appear({&quot;ok&quot;:&quot;*加为好友&quot;, &quot;unexist&quot;:&quot;用户不存在&quot;, &quot;denial&quot;: &quot;*无权限&quot;}, 5000);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3 复杂的查找/等待分支"
+            },
+            {
+              "textRaw": "3.3.4  逆向搜索",
+              "name": "3.3.4_逆向搜索",
+              "desc": "<p>//逆向搜索，从我开始,向其他节点搜索</p>\n<pre><code class=\"lang-js\">var mynode = text(&#39;回复&#39;).findOne();\nvar targetSelector = className(&#39;androidx.recyclerview.widget.RecyclerView&#39;)\nvar obj = lookup(mynode, targetSelector);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.4  逆向搜索"
+            },
+            {
+              "textRaw": "3.3.5  图片查找",
+              "name": "3.3.5_图片查找",
+              "desc": "<pre><code class=\"lang-js\">//查找尺寸的图片\nvar ckRect= {w1:100}  //宽度大于100的图片\nvar ckRect = {w2:200} //宽度小于200的图片\nvar ckRect = {w1:100, w2:200} //宽度在100-200之间的图片\nvar ckRect = {h1:100, h2:500} //高度在100-500之间的图片\n//或者数组 ckRect = [w1,w2,h1,h2] \n\n//查找所有符合尺寸的图片\nvar images = findPictures(parentObj, ckRect);\n\n//查找尺寸的图片，取第一个\nvar img = findPicture(parentObj, ckRect);\n\n//查找大控件\nbigSize(classname);//d大于半个屏幕大小的类\nbigSize(classname, 500);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.5  图片查找"
+            },
+            {
+              "textRaw": "3.3.6 按尺寸查找",
+              "name": "3.3.6_按尺寸查找",
+              "desc": "<pre><code class=\"lang-js\">findsize(list, chRect)  \n//list控件数组， ckRect参考上面找图的参数\n\n//过滤器\nvar uc = className(&quot;ImageView&quot;).filter(function(w){\n    var b = w.bounds();\n    return b.width() &gt; 10; //宽度大于10的图片\n});\n\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.6 按尺寸查找"
+            },
+            {
+              "textRaw": "3.3.6 其他",
+              "name": "3.3.6_其他",
+              "desc": "<pre><code class=\"lang-js\">//寻祖\nparent(obj, 2) //祖父 \nparent(obj, 3) //祖父的父亲\n\n//查找本控件及所有子控件，并返回文本及控件\nloopElementsText(obj, false);\nloopElementsText(obj, true); //只返回文本\nalltext(obj) //同上,只返回文本(压在一起了)\n\nlistChildren(obj)//返回数组，枚举每个子控件(及内部所有文本)\n</code></pre>\n",
+              "type": "module",
+              "displayName": "3.3.6 其他"
+            }
+          ],
+          "type": "module",
+          "displayName": "3. 查找控件"
+        },
+        {
+          "textRaw": "4. 窗口操作（设计的不好）",
+          "name": "4._窗口操作（设计的不好）",
+          "desc": "<ol>\n<li>启动app<pre><code class=\"lang-js\">launchApp(&quot;浏览器&quot;);\n</code></pre>\n</li>\n<li><p>获取当前的包名\n//如 com.tencent.mm</p>\n<pre><code class=\"lang-js\">currentPackage();\n</code></pre>\n</li>\n<li><p>等待窗口出现</p>\n<pre><code class=\"lang-js\">waitForActivity(&quot;*.launch.WwMainActivity&quot;, 4000);\n//建议多使用，等待内容出现的函数 waitFor\n</code></pre>\n</li>\n<li>(从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(# 有点费劲， 推荐使用click的回调功能)<pre><code class=\"lang-js\">//参数：窗口类名/或数组，包名，超时时间，忽略其他窗口的存在；\n//返回: 该类名（有点复杂，可以放弃，请参考4.2）\nback2activity(&quot;*.launch.WwMainActivity&quot;);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000);\nback2activity(&quot;*.launch.WwMainActivity&quot;,&quot;com.tencent.wework&quot;, 12000, [&quot;*.xxActivity&quot;,&quot;*.yyyActivity&quot;]);\n//也可以是数组，返回对应的类名\nback2activity([&quot;*.launch.WwMainActivity&quot;, &quot;*.LaunchSplashActivity&quot;]);\n</code></pre>\n4.2 从深层堆栈中回退) 一直点击返回键，让页面一直返回，直至遇到某窗口\n<code>`</code>js\n//自动点击返回键，回调页面包含xx内容的窗口\n//matchList可以为字符串，或数组， 回到包含该内容的页面，参考 matchContents函数\nback2activityEx(matchList, timeout)</li>\n</ol>\n<p>back2activityEx(&quot;消息 &amp; 通讯录&quot;, 5000);\nback2activityEx([&quot;消息 &amp; 通讯录&quot;, &quot;已发邀请 | 添加&quot;], 5000);</p>\n<pre><code>\n5. 等待窗口消失\n```js\nactivityWaitGone(&quot;*.launch.WwMainActivity&quot;, 5000);\n</code></pre><p>推荐使用waitGone(&#39;文字&#39;)</p>\n",
+          "type": "module",
+          "displayName": "4. 窗口操作（设计的不好）"
+        },
+        {
+          "textRaw": "5. 按键",
+          "name": "5._按键",
+          "desc": "<pre><code class=\"lang-js\">home(); //桌面\nback(); //返回\nrecents(); //任务列表\nnotifications(); //拉出通知栏\n</code></pre>\n",
+          "type": "module",
+          "displayName": "5. 按键"
+        },
+        {
+          "textRaw": "6. 其他",
+          "name": "6._其他",
+          "desc": "<pre><code class=\"lang-js\">sleep(1000);//暂停1秒\n//\nconsole.log(&quot;xxxxx&quot;); //会同时打印到电脑,手机\nconsole.show();  //打开悬浮日志窗口(日志同时会往这里输出)\n//---\n//用新的控制台\nconsole.useNew(); //使用新的模式!!(使下面的这些功能)，老控制台则用这个访问console_old\nconsole.useNew(&#39;patchs/log_layout.xml&#39;); //指定layout\nconsole.log2ide(&quot;xxxx&quot;); //仅仅显示在电脑里\nconsole.log2app(&quot;xxxx&quot;);  //仅仅显示在手机上\nconsole.title(&#39;修改标题内容&#39;);\nconsole.toast(&#39;修改标题内容&#39;);\ntoast(&#39;修改标题内容&#39;);\n\nconsole.msg(&#39;覆盖日志区域内容&#39;);//内容可使用HTML，可作为自定义统计页\nconsole.log(&#39;日志&#39;);\nconsole.log(&#39;&lt;b&gt;日志&lt;/b&gt;&#39;); //内容可使用HTML\nconsole.log(&#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //内容可使用HTML\nconsole.info(&#39;蓝色提示&#39;);\nconsole.warn(&#39;黄色警告&#39;);\nconsole.verbose(&#39;低级日志&#39;);\nconsole.error(&#39;红色警告&#39;);\n\nconsole.error.color = &#39;#DD0099&#39;;//设置颜色\nconsole.error.color = &#39;red&#39;;//设置颜色\nconsole.info.color = &#39;blue&#39;;\nconsole.warn.color = &#39;yellow&#39;;\nconsole.log.color = &#39;white&#39;;\nconsole.verbose.color = &#39;gray&#39;;\n\nconsole.resize(400, 400);  //设置日志浮窗 宽度，高度\nconsole.resize(-1, 400);  //宽度为全屏\nconsole.setPosition(0, 502);  //设置位置\n\nconsole.window //浮窗对象 \n\n//可以控制layout中的节点,比如:\nconsole.window.resize(400, 400)\nconsole.window.title.setText(&#39;hello&#39;) //设置文字\nconsole.window.myid.setTextSize(20) //设置字体大小（请在自定义layout中加入这个myid节点）\n\nconsole.setText(console.window.body, &#39;&lt;b&gt;粗体文字&lt;/b&gt;&#39;); //添加html文字\nconsole.addText(console.window.myid, &#39;&lt;font color=red&gt;红色文字&lt;/font&gt;&#39;); //添加html文字\n\n//设置日志本地存储\nconsole.logfile ; \nconsole.setLogfile(&#39;/sdcard/1.txt&#39;);\nconsole.removeLogfile();//删除log内容\nconsole.getLog();//获取log内容\n\n</code></pre>\n",
+          "type": "module",
+          "displayName": "6. 其他"
+        },
+        {
+          "textRaw": "7. 手指操作",
+          "name": "7._手指操作",
+          "desc": "<pre><code class=\"lang-js\">//滑动\nswipeUp() //上滑\nswipeUp(800)  //800px\n\nswipeTo(&#39;张三&#39;) //滑到某个内容\nswipeTo(desc(&#39;张三&#39;)) \nswipeTo({key:&#39;张三&#39;}) //滑到某个内容\nswipeTo({key,timeout,length,to}) //滑到某个内容\n\n//\nscrollTo(&#39;添加&#39;);\nscrollUp(1)\nscrollDown(0)\nscrollForward()\nscrollLeft()\nscrollRight()\n\nlongClick(text[, i])\nclick(text[, i])\n\n\nswipe(200, 1500, 200, 400, 500); //500毫秒\nswipe(x1, y1, x2, y2, 500); //500毫秒\n//连续滑动\ngesture(1000, [0, 0], [500, 500], [500, 1000])\n//多指连续滑动\ngestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, y3], [x4, y4], ...], ...)\n\ngestures([0, 500, [800, 300], [500, 1000]],\n         [0, 500, [300, 1500], [500, 1000]]);\n</code></pre>\n",
+          "modules": [
+            {
+              "textRaw": "截图 (原API，没有新增，老手请请忽略)",
+              "name": "截图_(原api，没有新增，老手请请忽略)",
+              "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
+              "type": "module",
+              "displayName": "截图 (原API，没有新增，老手请请忽略)"
+            }
+          ],
+          "type": "module",
+          "displayName": "7. 手指操作"
+        }
+      ],
+      "signatures": [
+        {
+          "params": [
+            {
+              "name": "https://yooge.github.io/robot-docs/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

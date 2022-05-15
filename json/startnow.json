@@ -1,0 +1,69 @@
+{
+  "source": "../api/startnow.md",
+  "modules": [
+    {
+      "textRaw": "控制代码",
+      "name": "控制代码",
+      "desc": "<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre>",
+      "modules": [
+        {
+          "textRaw": "开发环境",
+          "name": "开发环境",
+          "methods": [
+            {
+              "textRaw": "1.下载代码  https://github.com/yooge/robot",
+              "name": "1.下载代码  https://github.com/yooge/robot",
+              "type": "method",
+              "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
+              "signatures": [
+                {
+                  "params": [
+                    {
+                      "name": "https://www.dcloud.io/hbuilderx.html"
+                    }
+                  ]
+                },
+                {
+                  "params": []
+                }
+              ]
+            },
+            {
+              "textRaw": "2.下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "type": "method",
+              "name": "下载安装开发工具[HbuilderX]",
+              "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
+              "signatures": [
+                {
+                  "params": [
+                    {
+                      "name": "https://www.dcloud.io/hbuilderx.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "type": "module",
+          "displayName": "开发环境"
+        },
+        {
+          "textRaw": "初始化环境",
+          "name": "初始化环境",
+          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start1.png\" alt=\"\">\n<img src=\"http://robots.shen-x.com/static/git/start2.png\" alt=\"\"></p>\n",
+          "type": "module",
+          "displayName": "初始化环境"
+        },
+        {
+          "textRaw": "代码结构",
+          "name": "代码结构",
+          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start3.png\" alt=\"\"></p>\n",
+          "type": "module",
+          "displayName": "代码结构"
+        }
+      ],
+      "type": "module",
+      "displayName": "控制代码"
+    }
+  ]
+}

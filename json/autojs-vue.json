@@ -1,0 +1,536 @@
+{
+  "source": "../api/autojs-vue.md",
+  "modules": [
+    {
+      "textRaw": "用JS任意控制手机上的APP",
+      "name": "用js任意控制手机上的app",
+      "modules": [
+        {
+          "textRaw": "(10分钟就可以上手)",
+          "name": "(10分钟就可以上手)",
+          "desc": "<pre><code>(10分钟就可以上手)\n</code></pre><p>帮助开发者,快速生产友好的控制脚本程序</p>\n",
+          "modules": [
+            {
+              "textRaw": "特性",
+              "name": "特性",
+              "modules": [
+                {
+                  "textRaw": "4. 无目标APP限制",
+                  "name": "4. 无目标APP限制",
+                  "desc": "<p>#### </p>\n",
+                  "type": "module",
+                  "displayName": "5. 集成了流行的UI界面"
+                },
+                {
+                  "textRaw": "5. 集成了流行的UI界面",
+                  "name": "5._集成了流行的ui界面",
+                  "desc": "<p>#### </p>\n",
+                  "type": "module",
+                  "displayName": "5. 集成了流行的UI界面"
+                }
+              ],
+              "type": "module",
+              "displayName": "特性"
+            }
+          ],
+          "type": "module",
+          "displayName": "(10分钟就可以上手)"
+        },
+        {
+          "textRaw": "QQ群： 820320773",
+          "name": "qq群：_820320773",
+          "modules": [
+            {
+              "textRaw": "1. 对app的控制(10分钟就可以上手)",
+              "name": "1._对app的控制(10分钟就可以上手)",
+              "desc": "<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n</code></pre>\n<p><a href=\"http://robots.shen-x.com/static/git/1.jpg\">效果图1</a>，\n<a href=\"http://robots.shen-x.com/static/git/3.jpg\">效果图2</a>，\n<a href=\"http://robots.shen-x.com/static/git/6.jpg\">效果图3</a>，\n<a href=\"http://robots.shen-x.com/static/git/5.jpg\">效果图4</a>，</p>\n<p><img src='http://robots.shen-x.com/static/git/1.jpg' width=\"100%\">\n<img src='http://robots.shen-x.com/static/git/9.png' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/3.jpg' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/8.png' width=\"200\"></p>\n",
+              "type": "module",
+              "displayName": "1. 对app的控制(10分钟就可以上手)"
+            }
+          ],
+          "type": "module",
+          "displayName": "QQ群： 820320773"
+        }
+      ],
+      "type": "module",
+      "displayName": "用JS任意控制手机上的APP"
+    },
+    {
+      "textRaw": "快速开始：",
+      "name": "快速开始：",
+      "modules": [
+        {
+          "textRaw": "开发环境",
+          "name": "开发环境",
+          "modules": [
+            {
+              "textRaw": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "name": "1._下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
+              "desc": "<p>推荐下载使用<code>HbuilderX App开发版</code> 进行开发</p>\n",
+              "type": "module",
+              "displayName": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
+            },
+            {
+              "textRaw": "2. 克隆或下载源码",
+              "name": "2._克隆或下载源码",
+              "methods": [
+                {
+                  "textRaw": "a.示例项目(入门推荐)",
+                  "type": "method",
+                  "name": "示例项目",
+                  "desc": "<p>此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。</p>\n<p>github地址(github)：<a href=\"https://github.com/yooge/robot\">https://github.com/yooge/robot</a></p>\n<p>gitee地址[网速快]：<a href=\"https://gitee.com/vnool/autojs-vue\">https://gitee.com/vnool/autojs-vue</a></p>\n<p>直接下载zip包：</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "入门推荐"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "textRaw": "b.空白项目(最小化项目，不含UI交互，高手使用)",
+                  "type": "method",
+                  "name": "空白项目",
+                  "desc": "<p>  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用\n项目地址：请github搜索 autojs-vue-mini</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "最小化项目，不含UI交互，高手使用"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "type": "module",
+              "displayName": "2. 克隆或下载源码"
+            }
+          ],
+          "type": "module",
+          "displayName": "开发环境"
+        },
+        {
+          "textRaw": "运行示例项目",
+          "name": "运行示例项目",
+          "modules": [
+            {
+              "textRaw": "1. 初始化项目文件",
+              "name": "1._初始化项目文件",
+              "modules": [
+                {
+                  "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "name": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                      "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                      "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                      "type": "module",
+                      "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "2. 配置调试基座(手机上的app)"
+                },
+                {
+                  "textRaw": "2. 配置调试基座(手机上的app)",
+                  "name": "2._配置调试基座(手机上的app)",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                      "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                      "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                      "type": "module",
+                      "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "2. 配置调试基座(手机上的app)"
+                },
+                {
+                  "textRaw": "3. 执行 (调试/运行)",
+                  "name": "3._执行_(调试/运行)",
+                  "modules": [
+                    {
+                      "textRaw": "1. USB线连接手机(需ADB生效)",
+                      "name": "1. USB线连接手机(需ADB生效)",
+                      "desc": "<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    },
+                    {
+                      "textRaw": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字",
+                      "name": "2._hbuiderx菜单_->_运行_->_手机或模拟器_->_选择你的手机名字",
+                      "desc": "<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "3. 执行 (调试/运行)"
+                }
+              ],
+              "type": "module",
+              "displayName": "1. 初始化项目文件"
+            }
+          ],
+          "type": "module",
+          "displayName": "运行示例项目"
+        },
+        {
+          "textRaw": "发布/升级，生成APK",
+          "name": "发布/升级，生成apk",
+          "modules": [
+            {
+              "textRaw": ".",
+              "name": ".",
+              "modules": [
+                {
+                  "textRaw": ".",
+                  "name": ".",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "name": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    },
+                    {
+                      "textRaw": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK",
+                      "name": "`[步骤]`2._hbuiderx菜单_->_运行_->_运行到终端_->_生成apk",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "."
+                }
+              ],
+              "properties": [
+                {
+                  "textRaw": "自定义manifest.json文件",
+                  "name": "json文件",
+                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去官方申请962a0c8a982ae去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n    &quot;SHA1&quot; : &quot;BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88&quot;, /* 固定值 */\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */\n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */        \n}\n</code></pre>\n"
+                }
+              ],
+              "type": "module",
+              "displayName": "."
+            }
+          ],
+          "type": "module",
+          "displayName": "发布/升级，生成APK"
+        }
+      ],
+      "type": "module",
+      "displayName": "点这里 >>> [快速开始](https://github.com/yooge/robot/wiki/now-start)"
+    },
+    {
+      "textRaw": "点这里 >>> [快速开始](https://github.com/yooge/robot/wiki/now-start)",
+      "name": "点这里_>>>_[快速开始](https://github.com/yooge/robot/wiki/now-start)",
+      "modules": [
+        {
+          "textRaw": "开发环境",
+          "name": "开发环境",
+          "modules": [
+            {
+              "textRaw": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "name": "1._下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
+              "desc": "<p>推荐下载使用<code>HbuilderX App开发版</code> 进行开发</p>\n",
+              "type": "module",
+              "displayName": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
+            },
+            {
+              "textRaw": "2. 克隆或下载源码",
+              "name": "2._克隆或下载源码",
+              "methods": [
+                {
+                  "textRaw": "a.示例项目(入门推荐)",
+                  "type": "method",
+                  "name": "示例项目",
+                  "desc": "<p>此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。</p>\n<p>github地址(github)：<a href=\"https://github.com/yooge/robot\">https://github.com/yooge/robot</a></p>\n<p>gitee地址[网速快]：<a href=\"https://gitee.com/vnool/autojs-vue\">https://gitee.com/vnool/autojs-vue</a></p>\n<p>直接下载zip包：</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "入门推荐"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "textRaw": "b.空白项目(最小化项目，不含UI交互，高手使用)",
+                  "type": "method",
+                  "name": "空白项目",
+                  "desc": "<p>  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用\n项目地址：请github搜索 autojs-vue-mini</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "最小化项目，不含UI交互，高手使用"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "type": "module",
+              "displayName": "2. 克隆或下载源码"
+            }
+          ],
+          "type": "module",
+          "displayName": "开发环境"
+        },
+        {
+          "textRaw": "运行示例项目",
+          "name": "运行示例项目",
+          "modules": [
+            {
+              "textRaw": "1. 初始化项目文件",
+              "name": "1._初始化项目文件",
+              "modules": [
+                {
+                  "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "name": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                      "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                      "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                      "type": "module",
+                      "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "2. 配置调试基座(手机上的app)"
+                },
+                {
+                  "textRaw": "2. 配置调试基座(手机上的app)",
+                  "name": "2._配置调试基座(手机上的app)",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                      "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                      "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                      "type": "module",
+                      "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "2. 配置调试基座(手机上的app)"
+                },
+                {
+                  "textRaw": "3. 执行 (调试/运行)",
+                  "name": "3._执行_(调试/运行)",
+                  "modules": [
+                    {
+                      "textRaw": "1. USB线连接手机(需ADB生效)",
+                      "name": "1. USB线连接手机(需ADB生效)",
+                      "desc": "<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    },
+                    {
+                      "textRaw": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字",
+                      "name": "2._hbuiderx菜单_->_运行_->_手机或模拟器_->_选择你的手机名字",
+                      "desc": "<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "3. 执行 (调试/运行)"
+                }
+              ],
+              "type": "module",
+              "displayName": "1. 初始化项目文件"
+            }
+          ],
+          "type": "module",
+          "displayName": "运行示例项目"
+        },
+        {
+          "textRaw": "发布/升级，生成APK",
+          "name": "发布/升级，生成apk",
+          "modules": [
+            {
+              "textRaw": ".",
+              "name": ".",
+              "modules": [
+                {
+                  "textRaw": ".",
+                  "name": ".",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "name": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    },
+                    {
+                      "textRaw": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK",
+                      "name": "`[步骤]`2._hbuiderx菜单_->_运行_->_运行到终端_->_生成apk",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "."
+                }
+              ],
+              "properties": [
+                {
+                  "textRaw": "自定义manifest.json文件",
+                  "name": "json文件",
+                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去官方申请962a0c8a982ae去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n    &quot;SHA1&quot; : &quot;BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88&quot;, /* 固定值 */\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */\n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */        \n}\n</code></pre>\n"
+                }
+              ],
+              "type": "module",
+              "displayName": "."
+            }
+          ],
+          "type": "module",
+          "displayName": "发布/升级，生成APK"
+        }
+      ],
+      "type": "module",
+      "displayName": "点这里 >>> [快速开始](https://github.com/yooge/robot/wiki/now-start)"
+    },
+    {
+      "textRaw": "vue与控制脚本的交互",
+      "name": "vue与控制脚本的交互",
+      "desc": "<p>建议先大致了解Vue项目结构后进行</p>\n<pre><code>* 项目主体UI：pages/   各种UI样式举例(可忽略)\n* 项目主体UI：pages/robots/        2个启动界面举例 \n* 项目AJ脚本：static/robots/    (默认)用于存放控制脚本代码\n</code></pre>",
+      "methods": [
+        {
+          "textRaw": "从UI启动控制脚本脚本(举例)",
+          "type": "method",
+          "name": "从UI启动控制脚本脚本",
+          "modules": [
+            {
+              "textRaw": "不想看例子的人，请直接看这两个路径的源码",
+              "name": "不想看例子的人，请直接看这两个路径的源码",
+              "desc": "<pre><code>pages/robots/\nstatic/robots/\n</code></pre>",
+              "modules": [
+                {
+                  "textRaw": "【第1步】. 新建js脚本脚本： 在项目路径~/static/robots下新建文件demo.js",
+                  "name": "【第1步】._新建js脚本脚本：_在项目路径~/static/robots下新建文件demo.js",
+                  "desc": "<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;); \nclick(&quot;朋友圈&quot;);\ndesc(&quot;评论&quot;).findOne().click();\nclick(&quot;赞&quot;);\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "【第1步】. 新建js脚本脚本： 在项目路径~/static/robots下新建文件demo.js"
+                },
+                {
+                  "textRaw": "【第2步】. 修改页面内容 pages/index/index.vue",
+                  "name": "【第2步】._修改页面内容_pages/index/index.vue",
+                  "desc": "<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;test&quot;&gt;启动&lt;/button&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;stop&quot;&gt;停止&lt;/button&gt;\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    methods: {\n        test() {\n            var param = {\n                file: &#39;demo.js&#39;, //文件路径为./static/robots/demo.js \n            }\n            autojs.stop();\n            autojs.start(param);\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "【第2步】. 修改页面内容 pages/index/index.vue"
+                },
+                {
+                  "textRaw": "【第3步】 从Hbuilder中启动app，",
+                  "name": "【第3步】_从hbuilder中启动app，",
+                  "desc": "<pre><code>菜单：运行/手机或模拟器/选择你的手机\n</code></pre><pre><code>(此时手机上会自动安装调试app)，\nAPP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”\n</code></pre><p>.</p>\n",
+                  "type": "module",
+                  "displayName": "【第3步】 从Hbuilder中启动app，"
+                }
+              ],
+              "type": "module",
+              "displayName": "不想看例子的人，请直接看这两个路径的源码"
+            }
+          ],
+          "signatures": [
+            {
+              "params": [
+                {
+                  "name": "举例"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "textRaw": "参数解释",
+          "name": "参数解释",
+          "modules": [
+            {
+              "textRaw": "在VUE页面，立即执行控制脚本代码",
+              "name": "在vue页面，立即执行控制脚本代码",
+              "desc": "<pre><code class=\"lang-js\">var {autojs} = require(&#39;robot-tools&#39;);\n\n//立即执行控制脚本脚本（无需js文件或执行js脚本，可立即执行本代码）\nautojs.exec(function(){ \n    //在vue的代码文件里，直接执行脚本代码，\n    console.log(&#39;开始振动 &#39;);\n    console.show();\n    device.vibrate(2000);\n    launchApp(&#39;抖音&#39;);\n   //click(&#39;朋友圈&#39;);\n});\n//偶尔用一下，不要太依赖\n//todo:\n//1. 作用域在控制脚本内，此处暂不支持对VUE的访问，下一版补上；(如果需要访问VUE，看下面的start方法)\n//2. 如果需要用require方法引用其他的js文件，请先用autojs.robot.setJsDir(&quot;/sdcard/&quot;)设置工作路径；\n//   或者用autojs.init({file:&#39;demo.js&#39;})设置个假的文件，工作路径参考下文\n</code></pre>\n",
+              "type": "module",
+              "displayName": "在VUE页面，立即执行控制脚本代码"
+            },
+            {
+              "textRaw": "执行控制脚本文件",
+              "name": "执行控制脚本文件",
+              "desc": "<pre><code class=\"lang-js\">var {autojs} = require(&#39;robot-tools&#39;);\nvar param = { \n    file: &#39;demo.js&#39;, //[必选],脚本脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)\n    vue:  this, //可选, 将本vue对象传递给脚本\n    arguments: {}, //可选, json,传递给脚本的参数。[提示]如果不传递，则系统会默认使用&#39;当时&#39;的vue的data数据；\n    onMessage: (data)=&gt;{}, //可选,回调函数，脚本给VUE发送消息， 感觉快淘汰了\n    start: ()=&gt;{}, //可选,脚本启动事件\n    finish: (obj)=&gt;{},//可选,脚本执行完毕事件\n    fail: (msg)=&gt;{},//可选,脚本发生意外事件\n}\n/*\n\nfile:  \n//1. 脚本脚本(static/robots/目录下的demo.js)，\n//2. 或绝对路径/sdcard/xxx.js，\n//3. 或远程URL(也可以用发布的打包加密代码)\n\narguments: \n//可选, json,传递给脚本的参数。\n//可以在控制脚本脚本中用app.args获取\n//如果不传递参数，则系统会默认传递&#39;当时&#39;的vue的$data数据；\n//如果控制脚本想动态获取vue的$data的数据，请往下看\n*/\n\n//启动脚本\nautojs.start(param); \n\n//停止脚本\nautojs.stop();\n\n//仅设置初始化参数，不执行代码\nautojs.init(param); \n//根据上面设置好的参数，执行代码； 也可以在悬浮脚本上点启动按钮\nautojs.start(); \n\nautojs.menu.show(); //显示悬浮脚本图标\nautojs.menu.hide(); //隐藏悬浮脚本图标\nautojs.menu.move(x,y); //移动悬浮脚本图标\nautojs.menu.close(); //隐藏悬浮脚本图标\nautojs.showMenu(param); //执行脚本并显示脚本图标\n\n//在当前已经运行的脚本中，立即执行小段脚本(需要在xxx.js脚本启动后，再调用该方法)\nautojs.eval(function(){ \n    //在vue的代码文件里，直接执行脚本代码，\n   launchApp(&#39;抖音&#39;);\n   sleep(4000);\n   console.log(text(&#39;我&#39;));\n   //click(&#39;朋友圈&#39;);\n});\n\n\n\n//立即执行控制脚本脚本（代码可以是字符串）\nautojs.exec(function(){\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n }\n);\nautojs.exec(\n `\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n `\n);\n\n\nvar isEnabled = autojs.permission();//检查是否启动了无障碍\n\n</code></pre>\n",
+              "methods": [
+                {
+                  "textRaw": "js脚本获取VUE发过来的参数(启动脚本时传递的)",
+                  "type": "method",
+                  "name": "js脚本获取VUE发过来的参数",
+                  "desc": "<pre><code class=\"lang-js\">app.args //json对象, \napp.arguments  //参数字符串\n\n//内置参数\napp.args.scriptStartFrom //null 或 &#39;menu&#39;； 可以通过不同的启动方式，执行不同的代码\napp.args._debug //调试模式，还是正式模式\n</code></pre>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "启动脚本时传递的"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "modules": [
+                {
+                  "textRaw": "js脚本给VUE层发消息",
+                  "name": "js脚本给vue层发消息",
+                  "desc": "<pre><code class=\"lang-js\">app.post2host(&quot;hello vue&quot;); \n//js脚本用这个方法给VUE层发消息,(在上面的onMessage中接收消息)\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "js脚本给VUE层发消息"
+                },
+                {
+                  "textRaw": "js脚本脚本直接访问VUE页面对象",
+                  "name": "js脚本脚本直接访问vue页面对象",
+                  "desc": "<pre><code class=\"lang-js\">app.vue  //控制脚本直接访问vue的对象，上面传递进来的对象this(或别的对象)\napp.vue.abc   //访问data里的abc变量\napp.vue.abc = 999; //给data里面的abc赋值\napp.vue.test() //访问VUE的methods里面的test函数。 此用法可以淘汰上面的onMessage回调\n\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "js脚本脚本直接访问VUE页面对象"
+                }
+              ],
+              "properties": [
+                {
+                  "textRaw": "例index.vue",
+                  "name": "vue",
+                  "desc": "<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    {{abc}}\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    data: {\n        abc: 123\n    }\n    methods: {\n        test() {\n            console.log(&#39;autojs call test&#39;);\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n"
+                }
+              ],
+              "type": "module",
+              "displayName": "执行控制脚本文件"
+            }
+          ],
+          "type": "module",
+          "displayName": "参数解释"
+        },
+        {
+          "textRaw": "QQ群：  820320773",
+          "name": "qq群：_820320773",
+          "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
+          "type": "module",
+          "displayName": "QQ群：  820320773"
+        },
+        {
+          "textRaw": "其他链接",
+          "name": "其他链接",
+          "desc": "<p><a href=\"https://hyb1996.github.io/AutoJs-Docs/#/\">AutoJS</a>：全接口支持</p>\n<p><a href=\"https://cn.vuejs.org/\">VUE</a>：著名的渐进式JavaScript框架(傻瓜-&gt;高手),</p>\n<p><a href=\"http://demo.color-ui.com/\">color-Ui</a>：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)</p>\n<p><a href=\"http://www.html5plus.org/doc/\">HTML5plus</a>：让JS拥有与App一样的能力标准</p>\n<p><a href=\"https://uniapp.dcloud.io/component/README\">组件</a>，<a href=\"https://uniapp.dcloud.io/api/README\">API</a>，\n<a href=\"https://uniapp.dcloud.io/collocation/App\">框架</a>：各种第三方的APP原生能力</p>\n<p><a href=\"https://ext.dcloud.net.cn/\">插件社区</a>，\n<a href=\"https://uniapp.dcloud.io/uniCloud/README\">云开发</a>，\n<a href=\"https://dcloud.io/\">uni开发者社群</a>, 开发者600万+， 12亿手机端月活用户</p>\n",
+          "type": "module",
+          "displayName": "其他链接"
+        }
+      ],
+      "type": "module",
+      "displayName": "vue与控制脚本的交互"
+    }
+  ]
+}

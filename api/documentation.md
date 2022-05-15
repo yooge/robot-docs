@@ -3,9 +3,7 @@
 <!-- type=misc -->
 
 本文档为Auto.js的文档，解释了Auto.js各个模块的API的使用方法、作用和例子。
-
-文档借助Node.js的文档构建工具生成，并在github上开源(https://github.com/hyb1996/AutoJs-Docs )，目前由开发者维护。
-
+ 
 ## API稳定性
 
 由于Auto.js处于活跃的更新和开发状态，API可能随时有变动，我们用Stability来标记模块、函数的稳定性。这些标记包括：

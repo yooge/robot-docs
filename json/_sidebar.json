@@ -11,7 +11,27 @@
     },
     {
       "type": "text",
-      "text": "[首页](/)"
+      "text": "[首页](./)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[开始](/startnow)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[使用vue](/autojs-vue)"
     },
     {
       "type": "list_item_end"
