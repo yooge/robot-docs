@@ -344,35 +344,7 @@
     {
       "type": "html",
       "pre": false,
-      "text": "<div class=\"line\"></div>\n\n"
-    },
-    {
-      "type": "list_start",
-      "ordered": false,
-      "start": ""
-    },
-    {
-      "type": "list_item_start"
-    },
-    {
-      "type": "text",
-      "text": "[GitHub项目 & Issue提交](https://github.com/hyb1996/NoRootScriptDroid)"
-    },
-    {
-      "type": "list_item_end"
-    },
-    {
-      "type": "list_item_start"
-    },
-    {
-      "type": "text",
-      "text": "[Auto.js交流社区](http://autojs.org)"
-    },
-    {
-      "type": "list_item_end"
-    },
-    {
-      "type": "list_end"
+      "text": "<div class=\"line\"></div>\n\n\n"
     }
   ]
 }

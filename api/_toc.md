@@ -38,5 +38,4 @@
 
 <div class="line"></div>
 
-* [GitHub项目 & Issue提交](https://github.com/hyb1996/NoRootScriptDroid)
-* [Auto.js交流社区](http://autojs.org)
+ 
