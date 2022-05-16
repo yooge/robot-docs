@@ -1,0 +1,204 @@
+{
+  "source": "../api/hbuilder.md",
+  "modules": [
+    {
+      "textRaw": "用JS任意控制手机上的APP",
+      "name": "用js任意控制手机上的app",
+      "modules": [
+        {
+          "textRaw": "(10分钟就可以上手)",
+          "name": "(10分钟就可以上手)",
+          "desc": "<pre><code>(10分钟就可以上手)\n</code></pre><p>帮助开发者,快速生产友好的控制脚本程序</p>\n",
+          "type": "module",
+          "displayName": "(10分钟就可以上手)"
+        },
+        {
+          "textRaw": "QQ群： 820320773",
+          "name": "qq群：_820320773",
+          "modules": [
+            {
+              "textRaw": "1. 对app的控制(10分钟就可以上手)",
+              "name": "1._对app的控制(10分钟就可以上手)",
+              "desc": "<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n</code></pre>\n<p><a href=\"http://robots.shen-x.com/static/git/1.jpg\">效果图1</a>，\n<a href=\"http://robots.shen-x.com/static/git/3.jpg\">效果图2</a>，\n<a href=\"http://robots.shen-x.com/static/git/6.jpg\">效果图3</a>，\n<a href=\"http://robots.shen-x.com/static/git/5.jpg\">效果图4</a>，</p>\n<p><img src='http://robots.shen-x.com/static/git/1.jpg' width=\"100%\">\n<img src='http://robots.shen-x.com/static/git/9.png' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/3.jpg' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/8.png' width=\"200\"></p>\n",
+              "type": "module",
+              "displayName": "1. 对app的控制(10分钟就可以上手)"
+            }
+          ],
+          "type": "module",
+          "displayName": "QQ群： 820320773"
+        },
+        {
+          "textRaw": "A. 开发环境",
+          "name": "a._开发环境",
+          "modules": [
+            {
+              "textRaw": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "name": "1._下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
+              "desc": "<p>推荐下载使用<code>HbuilderX App开发版</code> 进行开发</p>\n",
+              "type": "module",
+              "displayName": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
+            },
+            {
+              "textRaw": "2. 克隆或下载源码",
+              "name": "2._克隆或下载源码",
+              "methods": [
+                {
+                  "textRaw": "a.示例项目(入门推荐)",
+                  "type": "method",
+                  "name": "示例项目",
+                  "desc": "<p>此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。</p>\n<p>github地址(github)：<a href=\"https://github.com/yooge/robot\">https://github.com/yooge/robot</a></p>\n<p>gitee地址[网速快]：<a href=\"https://gitee.com/vnool/autojs-vue\">https://gitee.com/vnool/autojs-vue</a></p>\n<p>直接下载zip包：</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "入门推荐"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "textRaw": "b.空白项目(最小化项目，不含UI交互，高手使用)",
+                  "type": "method",
+                  "name": "空白项目",
+                  "desc": "<p>  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用\n项目地址：请github搜索 autojs-vue-mini</p>\n",
+                  "signatures": [
+                    {
+                      "params": [
+                        {
+                          "name": "最小化项目，不含UI交互，高手使用"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "type": "module",
+              "displayName": "2. 克隆或下载源码"
+            }
+          ],
+          "type": "module",
+          "displayName": "A. 开发环境"
+        },
+        {
+          "textRaw": "B. 运行示例项目",
+          "name": "b._运行示例项目",
+          "modules": [
+            {
+              "textRaw": "1. 初始化项目文件",
+              "name": "1._初始化项目文件",
+              "modules": [
+                {
+                  "textRaw": "`[步骤1]`1. HbuiderX菜单 -> 运行 -> 运行到终端 -> 1.初始化/依赖包",
+                  "name": "`[步骤1]`1. HbuiderX菜单 -> 运行 -> 运行到终端 -> 1.初始化/依赖包",
+                  "type": "module",
+                  "displayName": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座"
+                },
+                {
+                  "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "name": "`[步骤2]`2._hbuiderx菜单_->_运行_->_运行到终端_->_2.更新/安装基座",
+                  "type": "module",
+                  "displayName": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座"
+                }
+              ],
+              "type": "module",
+              "displayName": "1. 初始化项目文件"
+            },
+            {
+              "textRaw": "2. 配置调试基座(手机上的app)",
+              "name": "2._配置调试基座(手机上的app)",
+              "modules": [
+                {
+                  "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                  "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                  "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                  "type": "module",
+                  "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                }
+              ],
+              "type": "module",
+              "displayName": "2. 配置调试基座(手机上的app)"
+            },
+            {
+              "textRaw": "3. 执行 (调试/运行)",
+              "name": "3._执行_(调试/运行)",
+              "modules": [
+                {
+                  "textRaw": "`[步骤4]` 3.1. 运行到手机",
+                  "name": "`[步骤4]`_3.1._运行到手机",
+                  "modules": [
+                    {
+                      "textRaw": "1. USB线连接手机(需ADB生效)",
+                      "name": "1. USB线连接手机(需ADB生效)",
+                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n</ul>\n<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    },
+                    {
+                      "textRaw": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字",
+                      "name": "2._hbuiderx菜单_->_运行_->_手机或模拟器_->_选择你的手机名字",
+                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n</ul>\n<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "type": "module",
+                      "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "`[步骤4]` 3.1. 运行到手机"
+                }
+              ],
+              "type": "module",
+              "displayName": "3. 执行 (调试/运行)"
+            }
+          ],
+          "type": "module",
+          "displayName": "B. 运行示例项目"
+        },
+        {
+          "textRaw": "C. 发布/升级，生成APK",
+          "name": "c._发布/升级，生成apk",
+          "modules": [
+            {
+              "textRaw": "打包APK",
+              "name": "打包apk",
+              "modules": [
+                {
+                  "textRaw": "提示：每次打包前，需要生成app资源",
+                  "name": "提示：每次打包前，需要生成app资源",
+                  "modules": [
+                    {
+                      "textRaw": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "name": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    },
+                    {
+                      "textRaw": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK",
+                      "name": "`[步骤]`2._hbuiderx菜单_->_运行_->_运行到终端_->_生成apk",
+                      "type": "module",
+                      "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成APK"
+                    }
+                  ],
+                  "type": "module",
+                  "displayName": "提示：每次打包前，需要生成app资源"
+                }
+              ],
+              "properties": [
+                {
+                  "textRaw": "自定义manifest.json文件",
+                  "name": "json文件",
+                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去官方申请!去官方申请!去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n    &quot;SHA1&quot; : &quot;BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88&quot;, /* 固定值 */\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */\n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */\n  &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版：debug */\n\n}\n</code></pre>\n<p> appkey去Hbuider官方网址申请： <a href=\"https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey\">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a> </p>\n"
+                }
+              ],
+              "type": "module",
+              "displayName": "打包APK"
+            }
+          ],
+          "type": "module",
+          "displayName": "C. 发布/升级，生成APK"
+        }
+      ],
+      "type": "module",
+      "displayName": "用JS任意控制手机上的APP"
+    }
+  ]
+}

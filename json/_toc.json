@@ -24,7 +24,17 @@
     },
     {
       "type": "text",
-      "text": "[使用vue](autojs-vue.html)"
+      "text": "[使用vue,运行,打包](hbuilder.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[与vue交互](autojs-vue.html)"
     },
     {
       "type": "list_item_end"
@@ -44,7 +54,27 @@
     },
     {
       "type": "text",
-      "text": "[关于本文档](documentation.html)"
+      "text": "[支持库](links.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[热更新](patchs.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[vue快速入门](vue.html)"
     },
     {
       "type": "space"
@@ -64,6 +94,16 @@
       "type": "list_start",
       "ordered": false,
       "start": ""
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[以下是脚本API](documentation.html)"
+    },
+    {
+      "type": "list_item_end"
     },
     {
       "type": "list_item_start"
@@ -90,6 +130,26 @@
     },
     {
       "type": "text",
+      "text": "[Click - 基于坐标的操作](coordinatesBasedAutomation.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "loose_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[Click - 基于控件的操作](widgetsBasedAutomation.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "loose_item_start"
+    },
+    {
+      "type": "text",
       "text": "[App - 应用](app.html)"
     },
     {
@@ -106,7 +166,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
@@ -116,17 +176,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
-    },
-    {
-      "type": "text",
-      "text": "[CoordinatesBasedAutomation - 基于坐标的操作](coordinatesBasedAutomation.html)"
-    },
-    {
-      "type": "list_item_end"
-    },
-    {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
@@ -311,16 +361,6 @@
     {
       "type": "text",
       "text": "[UI - 用户界面](ui.html)"
-    },
-    {
-      "type": "list_item_end"
-    },
-    {
-      "type": "list_item_start"
-    },
-    {
-      "type": "text",
-      "text": "[WidgetsBasedAutomation - 基于控件的操作](widgetsBasedAutomation.html)"
     },
     {
       "type": "list_item_end"

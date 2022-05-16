@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>用JS任意控制手机上的APP | 用JS任意控制手机上的APP</title>
+  <title>功能与特性 | 用JS任意控制手机上的APP</title>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/sh.css">
-  <link rel="canonical" href="https://nodejs.org/api/startnow.html">
+  <link rel="canonical" href="https://nodejs.org/api/links.html">
 </head>
-<body class="alt apidoc" id="api-section-startnow">
+<body class="alt apidoc" id="api-section-links">
   <div id="content" class="clearfix">
     <div id="column2" class="interior">
       <div id="intro" class="interior">
@@ -17,11 +17,11 @@
         </a>
       </div>
       <ul>
-<li><a class="nav-startnow active" href="startnow.html">开始</a></li>
+<li><a class="nav-startnow" href="startnow.html">开始</a></li>
 <li><a class="nav-hbuilder" href="hbuilder.html">使用vue,运行,打包</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
-<li><a class="nav-links" href="links.html">支持库</a></li>
+<li><a class="nav-links active" href="links.html">支持库</a></li>
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-vue" href="vue.html">vue快速入门</a></li>
 </ul>
@@ -67,7 +67,7 @@
 
     </div>
 
-    <div id="column1" data-id="startnow" class="interior">
+    <div id="column1" data-id="links" class="interior">
       <header>
         <h1>用JS任意控制手机上的APP</h1>
         <div id="gtoc">
@@ -82,16 +82,20 @@
       <div id="toc">
         <h2>目录</h2>
         <ul>
-<li><span class="stability_undefined"><a href="#startnow_js_app">用JS任意控制手机上的APP</a></span><ul>
-<li><span class="stability_undefined"><a href="#startnow_1">1. 控制代码</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_2">2.开发环境</a></span><ul>
-<li><span class="stability_undefined"><a href="#startnow_2_1_https_github_com_yooge_robot">2.1 下载代码  https://github.com/yooge/robot</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_2_2_hbuilderx_https_www_dcloud_io_hbuilderx_html">2.2 下载安装开发工具<a href="https://www.dcloud.io/hbuilderx.html">HbuilderX</a></a></span></li>
+<li><span class="stability_undefined"><a href="#links">功能与特性</a></span><ul>
+<li><span class="stability_undefined"><a href="#links_1">1.特性</a></span><ul>
+<li><span class="stability_undefined"><a href="#links_1">.</a></span><ul>
+<li><span class="stability_undefined"><a href="#links_1_uni_vue_aj">1. 全面支持 uni, VUE 与 aj 的生态 (信息量很大):</a></span></li>
+<li><span class="stability_undefined"><a href="#links_2">2. 代码加密,</a></span></li>
+<li><span class="stability_undefined"><a href="#links_3">3. 项目自动部署，自动升级，或远程脚本</a></span></li>
+<li><span class="stability_undefined"><a href="#links_4_app">4. 无目标APP限制</a></span></li>
+<li><span class="stability_undefined"><a href="#links_5_ui">5. 集成了流行的UI界面</a></span></li>
 </ul>
 </li>
-<li><span class="stability_undefined"><a href="#startnow_3">3.初始化环境</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_4">4.运行程序</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_5">5.代码结构</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#links_2_1">2.丰富的生态与社区支持</a></span></li>
+<li><span class="stability_undefined"><a href="#links_qq_820320773">QQ群：  820320773</a></span></li>
 </ul>
 </li>
 </ul>
@@ -99,27 +103,28 @@
       </div>
 
       <div id="apicontent">
-        <h1>用JS任意控制手机上的APP<span><a class="mark" href="#startnow_js_app" id="startnow_js_app">#</a></span></h1>
-<h2>1. 控制代码<span><a class="mark" href="#startnow_1" id="startnow_1">#</a></span></h2>
-<div class="signature"><ul>
-<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>
-</ul>
-</div><pre><code>launchApp(&quot;微信&quot;); 
-click(&quot;发现&quot;);
-click(&quot;朋友圈&quot;);
-sleep(3000);
-click(desc(&quot;评论&quot;));
-
-</code></pre><h2>2.开发环境<span><a class="mark" href="#startnow_2" id="startnow_2">#</a></span></h2>
-<h3>2.1 下载代码  <a href="https://github.com/yooge/robot">https://github.com/yooge/robot</a><span><a class="mark" href="#startnow_2_1_https_github_com_yooge_robot" id="startnow_2_1_https_github_com_yooge_robot">#</a></span></h3>
-<h3>2.2 下载安装开发工具<a href="https://www.dcloud.io/hbuilderx.html">HbuilderX</a><span><a class="mark" href="#startnow_2_2_hbuilderx_https_www_dcloud_io_hbuilderx_html" id="startnow_2_2_hbuilderx_https_www_dcloud_io_hbuilderx_html">#</a></span></h3>
-<p><img src="http://robots.shen-x.com/static/git/start0.png" alt=""></p>
-<h2>3.初始化环境<span><a class="mark" href="#startnow_3" id="startnow_3">#</a></span></h2>
-<p><img src="http://robots.shen-x.com/static/git/start1.png" alt=""></p>
-<h2>4.运行程序<span><a class="mark" href="#startnow_4" id="startnow_4">#</a></span></h2>
-<p><img src="http://robots.shen-x.com/static/git/start2.png" alt=""></p>
-<h2>5.代码结构<span><a class="mark" href="#startnow_5" id="startnow_5">#</a></span></h2>
-<p><img src="http://robots.shen-x.com/static/git/start3.png" alt=""></p>
+        <h1>功能与特性<span><a class="mark" href="#links" id="links">#</a></span></h1>
+<h2>1.特性<span><a class="mark" href="#links_1" id="links_1">#</a></span></h2>
+<h3>.<span><a class="mark" href="#links_1" id="links_1">#</a></span></h3>
+<h4>1. 全面支持 uni, VUE 与 aj 的生态 (信息量很大):<span><a class="mark" href="#links_1_uni_vue_aj" id="links_1_uni_vue_aj">#</a></span></h4>
+<h4>2. 代码加密,<span><a class="mark" href="#links_2" id="links_2">#</a></span></h4>
+<h4>3. 项目自动部署，自动升级，或远程脚本<span><a class="mark" href="#links_3" id="links_3">#</a></span></h4>
+<h4>4. 无目标APP限制<span><a class="mark" href="#links_4_app" id="links_4_app">#</a></span></h4>
+<h4>5. 集成了流行的UI界面<span><a class="mark" href="#links_5_ui" id="links_5_ui">#</a></span></h4>
+<h2>2.丰富的生态与社区支持<span><a class="mark" href="#links_2_1" id="links_2_1">#</a></span></h2>
+<p><a href="https://hyb1996.github.io/AutoJs-Docs/#/">AutoJS</a>：全接口支持</p>
+<p><a href="https://cn.vuejs.org/">VUE</a>：著名的渐进式JavaScript框架(傻瓜-&gt;高手),</p>
+<p><a href="http://demo.color-ui.com/">color-Ui</a>：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)</p>
+<p><a href="http://www.html5plus.org/doc/">HTML5plus</a>：让JS拥有与App一样的能力标准</p>
+<p><a href="https://uniapp.dcloud.io/component/README">交互组件</a>：丰富的移动端用户交互</p>
+<p><a href="https://uniapp.dcloud.io/api/README">APP-API</a>，丰富的移动端原生功能</p>
+<p><a href="https://uniapp.dcloud.io/collocation/App">VUE项目支持</a>：VUE项目支持</p>
+<p><a href="https://ext.dcloud.net.cn/">插件社区</a>：插件交易市场</p>
+<p><a href="https://uniapp.dcloud.io/uniCloud/README">云开发</a>，无需服务器即可开发互联网项目</p>
+<p><a href="https://dcloud.io/">uni开发者社群</a>, 开发者600万+， 12亿手机端月活用户</p>
+<h2>QQ群：  820320773<span><a class="mark" href="#links_qq_820320773" id="links_qq_820320773">#</a></span></h2>
+<pre><code class="lang-js">  如果喜欢这个项目，可以请赠我一包华子 
+</code></pre>
 
       </div>
     </div>

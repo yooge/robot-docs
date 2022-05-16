@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>用JS任意控制手机上的APP | 用JS任意控制手机上的APP</title>
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/hbuilder.html">
+</head>
+<body class="alt apidoc" id="api-section-hbuilder">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" title="返回首页">
+          Autojs-vue
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-startnow" href="startnow.html">开始</a></li>
+<li><a class="nav-hbuilder active" href="hbuilder.html">使用vue,运行,打包</a></li>
+<li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
+<li><a class="nav-normal" href="normal.html">常用api</a></li>
+<li><a class="nav-links" href="links.html">支持库</a></li>
+<li><a class="nav-patchs" href="patchs.html">热更新</a></li>
+<li><a class="nav-vue" href="vue.html">vue快速入门</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-documentation" href="documentation.html">以下是脚本API</a></li>
+<li><a class="nav-overview" href="overview.html">Overview - 综述</a></li>
+<li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
+<li><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">Click - 基于坐标的操作</a></li>
+<li><p><a class="nav-widgetsBasedAutomation" href="widgetsBasedAutomation.html">Click - 基于控件的操作</a></p>
+</li>
+<li><p><a class="nav-app" href="app.html">App - 应用</a></p>
+</li>
+<li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
+<li><p><a class="nav-console" href="console.html">Console - 控制台</a></p>
+</li>
+<li><p><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></p>
+</li>
+<li><a class="nav-device" href="device.html">Device - 设备</a></li>
+<li><a class="nav-dialogs" href="dialogs.html">Dialogs - 对话框</a></li>
+<li><a class="nav-engines" href="engines.html">Engines - 脚本引擎</a></li>
+<li><a class="nav-events" href="events.html">Events - 事件与监听</a></li>
+<li><a class="nav-floaty" href="floaty.html">Floaty - 悬浮窗</a></li>
+<li><a class="nav-files" href="files.html">Files - 文件系统</a></li>
+<li><a class="nav-globals" href="globals.html">Globals - 一般全局函数</a></li>
+<li><a class="nav-http" href="http.html">Http - HTTP</a></li>
+<li><a class="nav-images" href="images.html">Images - 图片与图色处理</a></li>
+<li><a class="nav-keys" href="keys.html">Keys - 按键模拟</a></li>
+<li><a class="nav-media" href="media.html">Media - 多媒体</a></li>
+<li><a class="nav-modules" href="modules.html">Modules - 模块</a></li>
+<li><a class="nav-sensors" href="sensors.html">Sensors - 传感器</a></li>
+<li><a class="nav-shell" href="shell.html">Shell - Shell命令</a></li>
+<li><a class="nav-storages" href="storages.html">Storages - 本地存储</a></li>
+<li><a class="nav-threads" href="threads.html">Threads - 多线程</a></li>
+<li><a class="nav-timers" href="timers.html">Timers - 定时器</a></li>
+<li><a class="nav-ui" href="ui.html">UI - 用户界面</a></li>
+<li><a class="nav-https-developer-mozilla-org-zh-CN-docs-Mozilla-Projects-Rhino-Scripting_Java" href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java">Work with Java - 调用Java API</a></li>
+</ul>
+<div class="line"></div>
+
+
+
+    </div>
+
+    <div id="column1" data-id="hbuilder" class="interior">
+      <header>
+        <h1>用JS任意控制手机上的APP</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.html" name="toc">索引</a> |
+            <a href="all.html">查看全部</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>目录</h2>
+        <ul>
+<li><span class="stability_undefined"><a href="#hbuilder_js_app">用JS任意控制手机上的APP</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_10">(10分钟就可以上手)</a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_qq_820320773">QQ群： 820320773</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1_app_10">1. 对app的控制(10分钟就可以上手)</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_a">A. 开发环境</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1_hbuilderx_https_www_dcloud_io_hbuilderx_html">1. 下载安装开发工具<a href="https://www.dcloud.io/hbuilderx.html">HbuilderX</a></a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_2">2. 克隆或下载源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_a_1">a.示例项目(入门推荐)</a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_b_ui">b.空白项目(最小化项目，不含UI交互，高手使用)</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_b">B. 运行示例项目</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1">1. 初始化项目文件</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1_1_hbuiderx_1"><code>[步骤1]</code>1. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 1.初始化/依赖包</a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_2_2_hbuiderx_2"><code>[步骤2]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 2.更新/安装基座</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_2_app">2. 配置调试基座(手机上的app)</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_3_hbuiderx"><code>[步骤3]</code> HbuiderX菜单 -&gt; 运行 -&gt; 手机或模拟器 -&gt; 运行基座选择 -&gt; 自定义基座</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_3">3. 执行 (调试/运行)</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_4_3_1"><code>[步骤4]</code> 3.1. 运行到手机</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1_usb_adb">1. USB线连接手机(需ADB生效)</a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_2_hbuiderx">2. HbuiderX菜单 -&gt; 运行 -&gt; 手机或模拟器 -&gt; 选择你的手机名字</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_c_apk">C. 发布/升级，生成APK</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_apk">打包APK</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_app">提示：每次打包前，需要生成app资源</a></span><ul>
+<li><span class="stability_undefined"><a href="#hbuilder_1_hbuiderx_app"><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源</a></span></li>
+<li><span class="stability_undefined"><a href="#hbuilder_2_hbuiderx_apk"><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hbuilder_manifest_json">自定义manifest.json文件</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>用JS任意控制手机上的APP<span><a class="mark" href="#hbuilder_js_app" id="hbuilder_js_app">#</a></span></h1>
+<h2>(10分钟就可以上手)<span><a class="mark" href="#hbuilder_10" id="hbuilder_10">#</a></span></h2>
+<pre><code>(10分钟就可以上手)
+</code></pre><p>帮助开发者,快速生产友好的控制脚本程序</p>
+<h2>QQ群： 820320773<span><a class="mark" href="#hbuilder_qq_820320773" id="hbuilder_qq_820320773">#</a></span></h2>
+<h3>1. 对app的控制(10分钟就可以上手)<span><a class="mark" href="#hbuilder_1_app_10" id="hbuilder_1_app_10">#</a></span></h3>
+<pre><code class="lang-js">launchApp(&quot;微信&quot;); 
+click(&quot;发现&quot;);
+click(&quot;朋友圈&quot;);
+sleep(3000);
+click(desc(&quot;评论&quot;));
+</code></pre>
+<p><a href="http://robots.shen-x.com/static/git/1.jpg">效果图1</a>，
+<a href="http://robots.shen-x.com/static/git/3.jpg">效果图2</a>，
+<a href="http://robots.shen-x.com/static/git/6.jpg">效果图3</a>，
+<a href="http://robots.shen-x.com/static/git/5.jpg">效果图4</a>，</p>
+<p><img src='http://robots.shen-x.com/static/git/1.jpg' width="100%">
+<img src='http://robots.shen-x.com/static/git/9.png' width="200">
+<img src='http://robots.shen-x.com/static/git/3.jpg' width="200">
+<img src='http://robots.shen-x.com/static/git/8.png' width="200"></p>
+<h2>A. 开发环境<span><a class="mark" href="#hbuilder_a" id="hbuilder_a">#</a></span></h2>
+<h3>1. 下载安装开发工具<a href="https://www.dcloud.io/hbuilderx.html">HbuilderX</a><span><a class="mark" href="#hbuilder_1_hbuilderx_https_www_dcloud_io_hbuilderx_html" id="hbuilder_1_hbuilderx_https_www_dcloud_io_hbuilderx_html">#</a></span></h3>
+<p>推荐下载使用<code>HbuilderX App开发版</code> 进行开发</p>
+<h3>2. 克隆或下载源码<span><a class="mark" href="#hbuilder_2" id="hbuilder_2">#</a></span></h3>
+<h4>a.示例项目(入门推荐)<span><a class="mark" href="#hbuilder_a_1" id="hbuilder_a_1">#</a></span></h4>
+<p>此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。</p>
+<p>github地址(github)：<a href="https://github.com/yooge/robot">https://github.com/yooge/robot</a></p>
+<p>gitee地址[网速快]：<a href="https://gitee.com/vnool/autojs-vue">https://gitee.com/vnool/autojs-vue</a></p>
+<p>直接下载zip包：</p>
+<h4>b.空白项目(最小化项目，不含UI交互，高手使用)<span><a class="mark" href="#hbuilder_b_ui" id="hbuilder_b_ui">#</a></span></h4>
+<p>  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用
+项目地址：请github搜索 autojs-vue-mini</p>
+<h2>B. 运行示例项目<span><a class="mark" href="#hbuilder_b" id="hbuilder_b">#</a></span></h2>
+<h3>1. 初始化项目文件<span><a class="mark" href="#hbuilder_1" id="hbuilder_1">#</a></span></h3>
+<h4><code>[步骤1]</code>1. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 1.初始化/依赖包<span><a class="mark" href="#hbuilder_1_1_hbuiderx_1" id="hbuilder_1_1_hbuiderx_1">#</a></span></h4>
+<h4><code>[步骤2]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 2.更新/安装基座<span><a class="mark" href="#hbuilder_2_2_hbuiderx_2" id="hbuilder_2_2_hbuiderx_2">#</a></span></h4>
+<h3>2. 配置调试基座(手机上的app)<span><a class="mark" href="#hbuilder_2_app" id="hbuilder_2_app">#</a></span></h3>
+<h4><code>[步骤3]</code> HbuiderX菜单 -&gt; 运行 -&gt; 手机或模拟器 -&gt; 运行基座选择 -&gt; 自定义基座<span><a class="mark" href="#hbuilder_3_hbuiderx" id="hbuilder_3_hbuiderx">#</a></span></h4>
+<div class="signature"><ul>
+<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>
+</ul>
+</div><h3>3. 执行 (调试/运行)<span><a class="mark" href="#hbuilder_3" id="hbuilder_3">#</a></span></h3>
+<h4><code>[步骤4]</code> 3.1. 运行到手机<span><a class="mark" href="#hbuilder_4_3_1" id="hbuilder_4_3_1">#</a></span></h4>
+<h5>1. USB线连接手机(需ADB生效)<span><a class="mark" href="#hbuilder_1_usb_adb" id="hbuilder_1_usb_adb">#</a></span></h5>
+<h5>2. HbuiderX菜单 -&gt; 运行 -&gt; 手机或模拟器 -&gt; 选择你的手机名字<span><a class="mark" href="#hbuilder_2_hbuiderx" id="hbuilder_2_hbuiderx">#</a></span></h5>
+<div class="signature"><ul>
+<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>
+</li>
+<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>
+</li>
+</ul>
+</div><p>运行到模拟器，wifi连接 (另外聊)</p>
+<h2>C. 发布/升级，生成APK<span><a class="mark" href="#hbuilder_c_apk" id="hbuilder_c_apk">#</a></span></h2>
+<h3>打包APK<span><a class="mark" href="#hbuilder_apk" id="hbuilder_apk">#</a></span></h3>
+<h4>提示：每次打包前，需要生成app资源<span><a class="mark" href="#hbuilder_app" id="hbuilder_app">#</a></span></h4>
+<h5><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源<span><a class="mark" href="#hbuilder_1_hbuiderx_app" id="hbuilder_1_hbuiderx_app">#</a></span></h5>
+<h5><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK<span><a class="mark" href="#hbuilder_2_hbuiderx_apk" id="hbuilder_2_hbuiderx_apk">#</a></span></h5>
+<h4>自定义manifest.json文件<span><a class="mark" href="#hbuilder_manifest_json" id="hbuilder_manifest_json">#</a></span></h4>
+<pre><code class="lang-js">{        
+    &quot;name&quot; : &quot;app名称&quot;,
+    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */
+    &quot;appkey&quot; : &quot;去官方申请!去官方申请!去官方申请&quot;,
+    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
+    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, 
+    &quot;SHA1&quot; : &quot;BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88&quot;, /* 固定值 */
+    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/
+    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */
+
+    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */
+    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */
+  &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版：debug */
+
+}
+</code></pre>
+<p> appkey去Hbuider官方网址申请： <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a> </p>
+
+      </div>
+    </div>
+  </div>
+  <script src="assets/sh_main.js"></script>
+  <script src="assets/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+  <!-- __TRACKING__ -->
+</body>
+</html>

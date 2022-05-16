@@ -2,18 +2,25 @@
 @// point at the new location.
 
 * [开始](startnow.html)
-* [使用vue](autojs-vue.html)
+* [使用vue,运行,打包](hbuilder.html)
+* [与vue交互](autojs-vue.html)
 * [常用api](normal.html)
-* [关于本文档](documentation.html)
+* [支持库](links.html)
+* [热更新](patchs.html)
+* [vue快速入门](vue.html)
 
 <div class="line"></div>
 
+* [以下是脚本API](documentation.html)
 * [Overview - 综述](overview.html)
 * [Q&A - 常见问题](qa.html)
+* [Click - 基于坐标的操作](coordinatesBasedAutomation.html)
+* [Click - 基于控件的操作](widgetsBasedAutomation.html)
+
 * [App - 应用](app.html)
 * [Canvas - 画布](canvas.html)
 * [Console - 控制台](console.html)
-* [CoordinatesBasedAutomation - 基于坐标的操作](coordinatesBasedAutomation.html)
+
 * [Crypto - 加解密与消息摘要](crypto.html)
 * [Device - 设备](device.html)
 * [Dialogs - 对话框](dialogs.html)
@@ -33,7 +40,6 @@
 * [Threads - 多线程](threads.html)
 * [Timers - 定时器](timers.html)
 * [UI - 用户界面](ui.html)
-* [WidgetsBasedAutomation - 基于控件的操作](widgetsBasedAutomation.html)
 * [Work with Java - 调用Java API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java)
 
 <div class="line"></div>

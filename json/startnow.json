@@ -2,68 +2,56 @@
   "source": "../api/startnow.md",
   "modules": [
     {
-      "textRaw": "控制代码",
-      "name": "控制代码",
-      "desc": "<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre>",
+      "textRaw": "用JS任意控制手机上的APP",
+      "name": "用js任意控制手机上的app",
       "modules": [
         {
-          "textRaw": "开发环境",
+          "textRaw": "1. 控制代码",
+          "name": "1._控制代码",
+          "desc": "<ul>\n<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>\n</ul>\n<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre>",
+          "type": "module",
+          "displayName": "1. 控制代码"
+        }
+      ],
+      "properties": [
+        {
+          "textRaw": "2.开发环境",
           "name": "开发环境",
-          "methods": [
+          "modules": [
             {
-              "textRaw": "1.下载代码  https://github.com/yooge/robot",
-              "name": "1.下载代码  https://github.com/yooge/robot",
-              "type": "method",
+              "textRaw": "2.1 下载代码  https://github.com/yooge/robot",
+              "name": "2.1 下载代码  https://github.com/yooge/robot",
               "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
-              "signatures": [
-                {
-                  "params": [
-                    {
-                      "name": "https://www.dcloud.io/hbuilderx.html"
-                    }
-                  ]
-                },
-                {
-                  "params": []
-                }
-              ]
+              "type": "module",
+              "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },
             {
-              "textRaw": "2.下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
-              "type": "method",
-              "name": "下载安装开发工具[HbuilderX]",
+              "textRaw": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "name": "2.2_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
               "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
-              "signatures": [
-                {
-                  "params": [
-                    {
-                      "name": "https://www.dcloud.io/hbuilderx.html"
-                    }
-                  ]
-                }
-              ]
+              "type": "module",
+              "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             }
-          ],
-          "type": "module",
-          "displayName": "开发环境"
+          ]
         },
         {
-          "textRaw": "初始化环境",
+          "textRaw": "3.初始化环境",
           "name": "初始化环境",
-          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start1.png\" alt=\"\">\n<img src=\"http://robots.shen-x.com/static/git/start2.png\" alt=\"\"></p>\n",
-          "type": "module",
-          "displayName": "初始化环境"
+          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start1.png\" alt=\"\"></p>\n"
         },
         {
-          "textRaw": "代码结构",
+          "textRaw": "4.运行程序",
+          "name": "运行程序",
+          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start2.png\" alt=\"\"></p>\n"
+        },
+        {
+          "textRaw": "5.代码结构",
           "name": "代码结构",
-          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start3.png\" alt=\"\"></p>\n",
-          "type": "module",
-          "displayName": "代码结构"
+          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start3.png\" alt=\"\"></p>\n"
         }
       ],
       "type": "module",
-      "displayName": "控制代码"
+      "displayName": "用JS任意控制手机上的APP"
     }
   ]
 }

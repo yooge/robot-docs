@@ -1,0 +1,56 @@
+{
+  "source": "../api/patchs.md",
+  "modules": [
+    {
+      "textRaw": "热更新",
+      "name": "热更新",
+      "modules": [
+        {
+          "textRaw": "0. 准备补丁",
+          "name": "0._准备补丁",
+          "modules": [
+            {
+              "textRaw": "HbuiderX生成加密的补丁文件",
+              "name": "hbuiderx生成加密的补丁文件",
+              "desc": "<p>修改manifest.json文件的版本号</p>\n",
+              "modules": [
+                {
+                  "textRaw": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                  "name": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
+                  "type": "module",
+                  "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成热补丁"
+                },
+                {
+                  "textRaw": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成热补丁",
+                  "name": "`[步骤]`2._hbuiderx菜单_->_运行_->_运行到终端_->_生成热补丁",
+                  "type": "module",
+                  "displayName": "`[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成热补丁"
+                }
+              ],
+              "type": "module",
+              "displayName": "HbuiderX生成加密的补丁文件"
+            }
+          ],
+          "type": "module",
+          "displayName": "0. 准备补丁"
+        },
+        {
+          "textRaw": "1. 检查版本号",
+          "name": "1._检查版本号",
+          "desc": "<pre><code>const {version} = require(&#39;robot-tools&#39;);\n\nfunction checkVersion(){\n    // #ifndef APP-PLUS\n    return;\n    // #endif\n    plus.runtime.getProperty(plus.runtime.appid, (wgtinfo) =&gt; {\n        var version_code = wgtinfo.version;\n        console.log(wgtinfo); \n        console.log(plus.runtime);\n        console.log(version.manifest());\n\n        version.checkVersion(version.manifest().id, (res) =&gt; {\n            console.log(&#39;res.version:&#39; + res.version);\n            if (version_code != res.version) {\n                console.log(&#39;需要升级&#39;);\n            } else {\n                console.log(&#39;不升级&#39;);\n            }\n        });\n    });\n} \n</code></pre>",
+          "type": "module",
+          "displayName": "1. 检查版本号"
+        },
+        {
+          "textRaw": "2. 执行升级",
+          "name": "2._执行升级",
+          "desc": "<pre><code class=\"lang-html\">&lt;template name=&quot;my&quot;&gt; \n    &lt;view class=&quot;cu-load load-modal&quot; v-if=&quot;loadingModal&quot;&gt; \n        &lt;image src=&quot;/static/logo.png&quot; mode=&quot;aspectFit&quot;&gt;&lt;/image&gt;\n        &lt;view class=&quot;gray-text&quot;&gt;{{LoadingText}}&lt;/view&gt;\n    &lt;/view&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;upgrade&quot;&gt;升级&lt;/button&gt;\n&lt;/template&gt;\n</code></pre>\n<pre><code class=\"lang-js\">const {version} = require(&#39;robot-tools&#39;);\n\nexport default {\n    data:{loadingModal: false}, \n    methods:{\n       upgrade: function() {\n        this.loadingModal = true;\n        this.LoadingText = &#39;升级中..&#39;;\n        version.install((status) =&gt; {\n            this.loadingModal = false;\n        });\n    }\n};\n\n</code></pre>\n",
+          "type": "module",
+          "displayName": "2. 执行升级"
+        }
+      ],
+      "type": "module",
+      "displayName": "热更新"
+    }
+  ]
+}
