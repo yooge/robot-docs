@@ -18,7 +18,7 @@
       </div>
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
-<li><a class="nav-hbuilder active" href="hbuilder.html">使用vue,运行,打包</a></li>
+<li><a class="nav-hbuilder active" href="hbuilder.html">demo,运行,打包</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
 <li><a class="nav-links" href="links.html">支持库</a></li>
@@ -206,11 +206,20 @@ click(desc(&quot;评论&quot;));
 
     &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */
     &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */
-  &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版：debug */
+  &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */
 
 }
 </code></pre>
-<p> appkey去Hbuider官方网址申请： <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a> </p>
+<ul>
+<li>appid: 在manifest操作界面上生成</li>
+<li>appkey: 去Hbuider官方网址申请： <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>
+<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>
+<li>SHA1:  申请appkey的时候需要用到，目前是固定值</li>
+<li>logo:  APP的图片</li>
+<li>splash: 程序启动的时候的等待页面图片</li>
+<li>versionCode: 当前版本号</li>
+<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>
+</ul>
 
       </div>
     </div>

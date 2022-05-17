@@ -18,7 +18,7 @@
       </div>
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
-<li><a class="nav-hbuilder" href="hbuilder.html">使用vue,运行,打包</a></li>
+<li><a class="nav-hbuilder" href="hbuilder.html">demo,运行,打包</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
 <li><a class="nav-links" href="links.html">支持库</a></li>
@@ -91,8 +91,12 @@
 </li>
 </ul>
 </li>
-<li><span class="stability_undefined"><a href="#patchs_1">1. 检查版本号</a></span></li>
-<li><span class="stability_undefined"><a href="#patchs_2">2. 执行升级</a></span></li>
+<li><span class="stability_undefined"><a href="#patchs_1">1. 直接升级(快捷）</a></span></li>
+<li><span class="stability_undefined"><a href="#patchs_2">2. 检查 &amp; 更新</a></span><ul>
+<li><span class="stability_undefined"><a href="#patchs_2_1">2.1 检查版本号</a></span></li>
+<li><span class="stability_undefined"><a href="#patchs_2_2">2.2 执行升级</a></span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -106,7 +110,13 @@
 <p>修改manifest.json文件的版本号</p>
 <h4><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源<span><a class="mark" href="#patchs_1_hbuiderx_app" id="patchs_1_hbuiderx_app">#</a></span></h4>
 <h4><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成热补丁<span><a class="mark" href="#patchs_2_hbuiderx" id="patchs_2_hbuiderx">#</a></span></h4>
-<h2>1. 检查版本号<span><a class="mark" href="#patchs_1" id="patchs_1">#</a></span></h2>
+<h2>1. 直接升级(快捷）<span><a class="mark" href="#patchs_1" id="patchs_1">#</a></span></h2>
+<pre><code class="lang-js">// 直接升级
+require(&#39;robot-tools&#39;).version.checkThenInstall();
+
+</code></pre>
+<h2>2. 检查 &amp; 更新<span><a class="mark" href="#patchs_2" id="patchs_2">#</a></span></h2>
+<h3>2.1 检查版本号<span><a class="mark" href="#patchs_2_1" id="patchs_2_1">#</a></span></h3>
 <pre><code>const {version} = require(&#39;robot-tools&#39;);
 
 function checkVersion(){
@@ -115,12 +125,13 @@ function checkVersion(){
     // #endif
     plus.runtime.getProperty(plus.runtime.appid, (wgtinfo) =&gt; {
         var version_code = wgtinfo.version;
+        console.log(&#39;当前程序的版本号:&#39; + version_code); 
         console.log(wgtinfo); 
         console.log(plus.runtime);
         console.log(version.manifest());
 
         version.checkVersion(version.manifest().id, (res) =&gt; {
-            console.log(&#39;res.version:&#39; + res.version);
+            console.log(&#39;最新补丁的版本号:&#39; + res.version);
             if (version_code != res.version) {
                 console.log(&#39;需要升级&#39;);
             } else {
@@ -129,13 +140,13 @@ function checkVersion(){
         });
     });
 } 
-</code></pre><h2>2. 执行升级<span><a class="mark" href="#patchs_2" id="patchs_2">#</a></span></h2>
-<pre><code class="lang-html">&lt;template name=&quot;my&quot;&gt; 
+</code></pre><h3>2.2 执行升级<span><a class="mark" href="#patchs_2_2" id="patchs_2_2">#</a></span></h3>
+<pre><code class="lang-html">&lt;template&gt; 
     &lt;view class=&quot;cu-load load-modal&quot; v-if=&quot;loadingModal&quot;&gt; 
         &lt;image src=&quot;/static/logo.png&quot; mode=&quot;aspectFit&quot;&gt;&lt;/image&gt;
         &lt;view class=&quot;gray-text&quot;&gt;{{LoadingText}}&lt;/view&gt;
     &lt;/view&gt;
-    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;upgrade&quot;&gt;升级&lt;/button&gt;
+    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;upgrade&quot;&gt;点我升级&lt;/button&gt;
 &lt;/template&gt;
 </code></pre>
 <pre><code class="lang-js">const {version} = require(&#39;robot-tools&#39;);

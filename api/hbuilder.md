@@ -102,9 +102,18 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 
 	"versionName" : "1.0.37", /* 版本号，用于热补丁更新 */
 	"versionCode" : 10037,   /* 版本号，用于热补丁更新 */
-  "deploy" : "release",     /* 生成正式版APK：release, 调试版：debug */
+  "deploy" : "release",     /* 生成正式版APK：release, 调试版基座：debug */
 
 }
 ```
 
- appkey去Hbuider官方网址申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey 
+* appid: 在manifest操作界面上生成
+* appkey: 去Hbuider官方网址申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey
+* package: app的包名， 如果要一个手机上安装多个程序，需要修改这个
+* SHA1:  申请appkey的时候需要用到，目前是固定值
+* logo:  APP的图片
+* splash: 程序启动的时候的等待页面图片
+* versionCode: 当前版本号
+* deploy:  app的发行类型，正式版release，还是调试基座：debug
+
+
