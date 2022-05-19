@@ -116,7 +116,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
@@ -126,7 +126,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
@@ -136,11 +136,41 @@
       "type": "list_item_end"
     },
     {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[开始 - 基于控件的操作](widgetsBasedAutomation.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[Click - 基于控件的操作](widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[UiSelector - 查找控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiselector)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
       "type": "loose_item_start"
     },
     {
       "type": "text",
-      "text": "[Click - 基于控件的操作](widgetsBasedAutomation.html)"
+      "text": "[UiObject - 控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiobject)"
     },
     {
       "type": "list_item_end"
@@ -166,7 +196,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "loose_item_start"
+      "type": "list_item_start"
     },
     {
       "type": "text",
@@ -176,7 +206,7 @@
       "type": "list_item_end"
     },
     {
-      "type": "loose_item_start"
+      "type": "list_item_start"
     },
     {
       "type": "text",

@@ -14,13 +14,16 @@
 * [以下是脚本API](documentation.html)
 * [Overview - 综述](overview.html)
 * [Q&A - 常见问题](qa.html)
+
 * [Click - 基于坐标的操作](coordinatesBasedAutomation.html)
-* [Click - 基于控件的操作](widgetsBasedAutomation.html)
+* [开始 - 基于控件的操作](widgetsBasedAutomation.html)
+* [Click - 基于控件的操作](widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator)
+* [UiSelector - 查找控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiselector)
+* [UiObject - 控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiobject)
 
 * [App - 应用](app.html)
 * [Canvas - 画布](canvas.html)
 * [Console - 控制台](console.html)
-
 * [Crypto - 加解密与消息摘要](crypto.html)
 * [Device - 设备](device.html)
 * [Dialogs - 对话框](dialogs.html)
