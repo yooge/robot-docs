@@ -4,16 +4,34 @@
 修改manifest.json文件的版本号
 
 #### `[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源
-#### `[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 生成热补丁
+#### `[步骤]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 3.生成热补丁
 
 
-## 1. 直接升级(快捷）
+## 1. 自动升级(快捷）
+* 在你的VUE项目中，加入如下代码；
+* 那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。
 
 ```js
 // 直接升级
 require('robot-tools').version.checkThenInstall();
 
 ```
+
+参数：
+
+```js
+const {version} = require('robot-tools');
+version.checkThenInstall();  //检查并自动升级
+version.checkThenInstall('加载中...');  //修改加载提示文字
+version.checkThenInstall(false);   //无加载提示
+
+//非debug环境(调试基座)才升级
+if(version.isDebug == false){
+	version.checkThenInstall(); 
+};
+
+```
+
 
 ## 2. 检查 & 更新
 
@@ -73,3 +91,4 @@ export default {
 };
 
 ```
+
