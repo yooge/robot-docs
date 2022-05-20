@@ -21,14 +21,14 @@
             {
               "textRaw": "2.1 下载代码  https://github.com/yooge/robot",
               "name": "2.1 下载代码  https://github.com/yooge/robot",
-              "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },
             {
               "textRaw": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
               "name": "2.2_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
-              "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             }
@@ -37,17 +37,17 @@
         {
           "textRaw": "3.初始化环境",
           "name": "初始化环境",
-          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start1.png\" alt=\"\"></p>\n"
+          "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n"
         },
         {
           "textRaw": "4.运行程序",
           "name": "运行程序",
-          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start2.png\" alt=\"\"></p>\n"
+          "desc": "<p><img src=\"images/start2.png\" alt=\"\"></p>\n"
         },
         {
           "textRaw": "5.代码结构",
           "name": "代码结构",
-          "desc": "<p><img src=\"http://robots.shen-x.com/static/git/start3.png\" alt=\"\"></p>\n"
+          "desc": "<p><img src=\"images/start3.png\" alt=\"\"></p>\n"
         }
       ],
       "type": "module",

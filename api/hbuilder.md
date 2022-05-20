@@ -27,10 +27,10 @@ click(desc("评论"));
 [效果图3](http://robots.shen-x.com/static/git/6.jpg)，
 [效果图4](http://robots.shen-x.com/static/git/5.jpg)，
 
-<img src='http://robots.shen-x.com/static/git/1.jpg' width="100%">
-<img src='http://robots.shen-x.com/static/git/9.png' width="200">
-<img src='http://robots.shen-x.com/static/git/3.jpg' width="200">
-<img src='http://robots.shen-x.com/static/git/8.png' width="200">
+<img src='images/1.jpg' width="100%">
+<img src='images/9.png' width="200">
+<img src='images/3.jpg' width="200">
+<img src='images/8.png' width="200">
  
  
 
