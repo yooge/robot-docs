@@ -100,17 +100,27 @@
     },
     {
       "type": "text",
-      "text": "[以下是脚本API](documentation.html)"
+      "text": "[API文档:](#)"
     },
     {
       "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
       "text": "[Overview - 综述](overview.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "loose_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[Tip - 阅读说明](documentation.html)"
     },
     {
       "type": "list_item_end"

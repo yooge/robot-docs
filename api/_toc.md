@@ -11,8 +11,11 @@
 
 <div class="line"></div>
 
-* [以下是脚本API](documentation.html)
+* [API文档:](#)
 * [Overview - 综述](overview.html)
+
+* [Tip - 阅读说明](documentation.html)
+
 * [Q&A - 常见问题](qa.html)
 
 * [Click - 基于坐标的操作](coordinatesBasedAutomation.html)

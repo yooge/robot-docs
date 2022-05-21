@@ -19,17 +19,25 @@
             {
               "textRaw": "1. 对app的控制(10分钟就可以上手)",
               "name": "1._对app的控制(10分钟就可以上手)",
-              "desc": "<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n</code></pre>\n<p><a href=\"http://robots.shen-x.com/static/git/1.jpg\">效果图1</a>，\n<a href=\"http://robots.shen-x.com/static/git/3.jpg\">效果图2</a>，\n<a href=\"http://robots.shen-x.com/static/git/6.jpg\">效果图3</a>，\n<a href=\"http://robots.shen-x.com/static/git/5.jpg\">效果图4</a>，</p>\n<p><img src='http://robots.shen-x.com/static/git/1.jpg' width=\"100%\">\n<img src='http://robots.shen-x.com/static/git/9.png' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/3.jpg' width=\"200\">\n<img src='http://robots.shen-x.com/static/git/8.png' width=\"200\"></p>\n",
+              "desc": "<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n</code></pre>\n<p><a href=\"http://robots.shen-x.com/static/git/1.jpg\">效果图1</a>，\n<a href=\"http://robots.shen-x.com/static/git/3.jpg\">效果图2</a>，\n<a href=\"http://robots.shen-x.com/static/git/6.jpg\">效果图3</a>，\n<a href=\"http://robots.shen-x.com/static/git/5.jpg\">效果图4</a>，</p>\n<p><img src='images/1.jpg' width=\"100%\">\n<img src='images/9.png' width=\"200\">\n<img src='images/3.jpg' width=\"200\">\n<img src='images/8.png' width=\"200\"></p>\n",
               "type": "module",
               "displayName": "1. 对app的控制(10分钟就可以上手)"
             }
           ],
           "type": "module",
           "displayName": "QQ群： 820320773"
-        },
+        }
+      ],
+      "type": "module",
+      "displayName": "用JS任意控制手机上的APP"
+    },
+    {
+      "textRaw": "A. 开发环境",
+      "name": "a._开发环境",
+      "modules": [
         {
-          "textRaw": "A. 开发环境",
-          "name": "a._开发环境",
+          "textRaw": "代码与工具",
+          "name": "代码与工具",
           "modules": [
             {
               "textRaw": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
@@ -61,7 +69,7 @@
                   "textRaw": "b.空白项目(最小化项目，不含UI交互，高手使用)",
                   "type": "method",
                   "name": "空白项目",
-                  "desc": "<p>  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用\n项目地址：请github搜索 autojs-vue-mini</p>\n",
+                  "desc": "<p>项目地址：请github搜索 autojs-vue-mini</p>\n<p>此连接为一个空白的AJ_VUE示例工程，原生ui组件，熟练开发后使用</p>\n<p>.</p>\n",
                   "signatures": [
                     {
                       "params": [
@@ -78,50 +86,45 @@
             }
           ],
           "type": "module",
-          "displayName": "A. 开发环境"
-        },
+          "displayName": "代码与工具"
+        }
+      ],
+      "type": "module",
+      "displayName": "A. 开发环境"
+    },
+    {
+      "textRaw": "B. 运行与调试",
+      "name": "b._运行与调试",
+      "modules": [
         {
-          "textRaw": "B. 运行示例项目",
-          "name": "b._运行示例项目",
+          "textRaw": "运行示例项目",
+          "name": "运行示例项目",
           "modules": [
             {
-              "textRaw": "1. 初始化项目文件",
-              "name": "1._初始化项目文件",
+              "textRaw": "1. 初始化项目环境配置",
+              "name": "1._初始化项目环境配置",
               "modules": [
-                {
-                  "textRaw": "`[步骤1]`1. HbuiderX菜单 -> 运行 -> 运行到终端 -> 1.初始化/依赖包",
-                  "name": "`[步骤1]`1. HbuiderX菜单 -> 运行 -> 运行到终端 -> 1.初始化/依赖包",
-                  "type": "module",
-                  "displayName": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座"
-                },
                 {
                   "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
-                  "name": "`[步骤2]`2._hbuiderx菜单_->_运行_->_运行到终端_->_2.更新/安装基座",
+                  "name": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座",
+                  "desc": "<p>步骤1. 初始化是为了安装<code>robot-tools</code>组件</p>\n<p>步骤2. 安装基座，文件下载后会存放到目录unpackage/debug/android_debug.apk</p>\n<p>步骤3. 启用调试基座(手机上的app)</p>\n<ul>\n<li>基座是用于动态调试的APP程序。</li>\n<li>如果步骤2步骤3忘记操作，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n<p>.</p>\n",
                   "type": "module",
-                  "displayName": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座"
-                }
-              ],
-              "type": "module",
-              "displayName": "1. 初始化项目文件"
-            },
-            {
-              "textRaw": "2. 配置调试基座(手机上的app)",
-              "name": "2._配置调试基座(手机上的app)",
-              "modules": [
+                  "displayName": "`[步骤3]`3. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                },
                 {
-                  "textRaw": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
-                  "name": "`[步骤3]`_hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
-                  "desc": "<ul>\n<li>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n",
+                  "textRaw": "`[步骤3]`3. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座",
+                  "name": "`[步骤3]`3._hbuiderx菜单_->_运行_->_手机或模拟器_->_运行基座选择_->_自定义基座",
+                  "desc": "<p>步骤1. 初始化是为了安装<code>robot-tools</code>组件</p>\n<p>步骤2. 安装基座，文件下载后会存放到目录unpackage/debug/android_debug.apk</p>\n<p>步骤3. 启用调试基座(手机上的app)</p>\n<ul>\n<li>基座是用于动态调试的APP程序。</li>\n<li>如果步骤2步骤3忘记操作，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n<p>.</p>\n",
                   "type": "module",
-                  "displayName": "`[步骤3]` HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
+                  "displayName": "`[步骤3]`3. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
                 }
               ],
               "type": "module",
-              "displayName": "2. 配置调试基座(手机上的app)"
+              "displayName": "1. 初始化项目环境配置"
             },
             {
-              "textRaw": "3. 执行 (调试/运行)",
-              "name": "3._执行_(调试/运行)",
+              "textRaw": "2. 执行 (调试/运行)",
+              "name": "2._执行_(调试/运行)",
               "modules": [
                 {
                   "textRaw": "`[步骤4]` 3.1. 运行到手机",
@@ -130,14 +133,14 @@
                     {
                       "textRaw": "1. USB线连接手机(需ADB生效)",
                       "name": "1. USB线连接手机(需ADB生效)",
-                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n</ul>\n<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n<li><p>运行到模拟器，wifi连接 (另外聊)</p>\n</li>\n</ul>\n<p>.</p>\n",
                       "type": "module",
                       "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
                     },
                     {
                       "textRaw": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字",
                       "name": "2._hbuiderx菜单_->_运行_->_手机或模拟器_->_选择你的手机名字",
-                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n</ul>\n<p>运行到模拟器，wifi连接 (另外聊)</p>\n",
+                      "desc": "<ul>\n<li><p>脚本代码，电脑上编辑，手机上可以立即运行 *</p>\n</li>\n<li><p>VUE代码，电脑上编辑，手机上可以立即同步。查看效果，需要重启页面 *</p>\n</li>\n<li><p>运行到模拟器，wifi连接 (另外聊)</p>\n</li>\n</ul>\n<p>.</p>\n",
                       "type": "module",
                       "displayName": "2. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 选择你的手机名字"
                     }
@@ -147,23 +150,31 @@
                 }
               ],
               "type": "module",
-              "displayName": "3. 执行 (调试/运行)"
+              "displayName": "2. 执行 (调试/运行)"
             }
           ],
           "type": "module",
-          "displayName": "B. 运行示例项目"
-        },
+          "displayName": "运行示例项目"
+        }
+      ],
+      "type": "module",
+      "displayName": "B. 运行与调试"
+    },
+    {
+      "textRaw": "C. 发布/升级，生成APK",
+      "name": "c._发布/升级，生成apk",
+      "modules": [
         {
-          "textRaw": "C. 发布/升级，生成APK",
-          "name": "c._发布/升级，生成apk",
+          "textRaw": "打包",
+          "name": "打包",
           "modules": [
             {
               "textRaw": "打包APK",
               "name": "打包apk",
               "modules": [
                 {
-                  "textRaw": "提示：每次打包前，需要生成app资源",
-                  "name": "提示：每次打包前，需要生成app资源",
+                  "textRaw": "`提示：每次打包或生成补丁前，需要生成app资源`",
+                  "name": "`提示：每次打包或生成补丁前，需要生成app资源`",
                   "modules": [
                     {
                       "textRaw": "`[步骤]`1. HbuiderX菜单 -> 发行 -> 本地打包 -> 生成app资源",
@@ -179,7 +190,7 @@
                     }
                   ],
                   "type": "module",
-                  "displayName": "提示：每次打包前，需要生成app资源"
+                  "displayName": "`提示：每次打包或生成补丁前，需要生成app资源`"
                 }
               ],
               "properties": [
@@ -194,11 +205,11 @@
             }
           ],
           "type": "module",
-          "displayName": "C. 发布/升级，生成APK"
+          "displayName": "打包"
         }
       ],
       "type": "module",
-      "displayName": "用JS任意控制手机上的APP"
+      "displayName": "C. 发布/升级，生成APK"
     }
   ]
 }

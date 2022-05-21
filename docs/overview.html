@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>综述 | 用JS任意控制手机上的APP</title>
+  <title>综述 | RobotJs | 用JS任意控制手机上的APP</title>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/sh.css">
@@ -13,7 +13,7 @@
     <div id="column2" class="interior">
       <div id="intro" class="interior">
         <a href="/" title="返回首页">
-          Autojs-vue
+          RobotJs
         </a>
       </div>
       <ul>
@@ -28,8 +28,11 @@
 <div class="line"></div>
 
 <ul>
-<li><a class="nav-documentation" href="documentation.html">以下是脚本API</a></li>
-<li><a class="nav-overview active" href="overview.html">Overview - 综述</a></li>
+<li><a class="nav--" href="#">API文档:</a></li>
+<li><p><a class="nav-overview active" href="overview.html">Overview - 综述</a></p>
+</li>
+<li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
+</li>
 <li><p><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></p>
 </li>
 <li><p><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">Click - 基于坐标的操作</a></p>
@@ -92,7 +95,7 @@
 
       <div id="apicontent">
         <h1>综述<span><a class="mark" href="#overview" id="overview">#</a></span></h1>
-<p>Auto.js使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">JavaScript</a>作为脚本语言，目前使用<a href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino">Rhino 1.7.7.2</a>作为脚本引擎，支持ES5与部分ES6特性。</p>
+<p>RobotJs的脚本继承自Auto.js，使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">JavaScript</a>作为脚本语言，目前使用<a href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino">Rhino 1.7.7.2</a>作为脚本引擎，支持ES5与部分ES6特性。</p>
 <p>本文档的章节大致上是以模块来分的，总体上可以分成&quot;自动操作&quot;类模块(控件操作、触摸模拟、按键模拟等)和其他类模块(设备、应用、界面等)。</p>
 <p>&quot;自动操作&quot;的部分又可以大致分为基于控件和基于坐标的操作。基于坐标的操作是传统按键精灵、触摸精灵等脚本软件采用的方式，通过屏幕坐标来点击、长按指定位置模拟操作，从而到达目的。例如<code>click(100, 200)</code>, <code>press(100, 200, 500)</code>等。这种方式在游戏类脚本中比较有可行性，结合找图找色、坐标放缩功能也能达到较好的兼容性。但是，这种方式对一般软件脚本却难以达到想要的效果，而且这种方式需要安卓7.0版本以上或者root权限才能执行。所以对于一般软件脚本(例如批量添加联系人、自动提取短信验证码等等)，我们采用基于控件的模拟操作方式，结合通知事情、按键事情等达成更好的工作流。这些部分的文档参见<a href="widgets-based-automation.html">基于控件的操作</a>和<a href="coordinates-based-automation.html">基于坐标的操作</a>。</p>
 <p>其他部分主要包括：</p>

@@ -1,6 +1,6 @@
 # 综述
 
-Auto.js使用[JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)作为脚本语言，目前使用[Rhino 1.7.7.2](https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino)作为脚本引擎，支持ES5与部分ES6特性。
+RobotJs的脚本继承自Auto.js，使用[JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)作为脚本语言，目前使用[Rhino 1.7.7.2](https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino)作为脚本引擎，支持ES5与部分ES6特性。
 
 
 本文档的章节大致上是以模块来分的，总体上可以分成"自动操作"类模块(控件操作、触摸模拟、按键模拟等)和其他类模块(设备、应用、界面等)。
