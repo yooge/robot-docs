@@ -33,7 +33,7 @@ if(version.isDebug == false){
 ```
 
 
-## 2. 检查 & 更新
+## 2. 先 检查 然后 更新
 
 ### 2.1 检查版本号
 ```
@@ -43,7 +43,13 @@ function checkVersion(){
 	// #ifndef APP-PLUS
 	return;
 	// #endif
-	plus.runtime.getProperty(plus.runtime.appid, (wgtinfo) => {
+	var appid = plus.runtime.appid;  //A.安装包的appid
+	appid = version.manifest().id;   //B.脚本的appid
+
+	//如果你是在基座里调试， B是你代码的id， A是基座demo的id
+	//如果你是发行包里运行， A==B
+
+	plus.runtime.getProperty(appid, (wgtinfo) => {
 		var version_code = wgtinfo.version;
 		console.log('当前程序的版本号:' + version_code); 
 		console.log(wgtinfo); 
