@@ -43,10 +43,12 @@ function checkVersion(){
 	// #ifndef APP-PLUS
 	return;
 	// #endif
-	var appid = plus.runtime.appid;  //A.安装包的appid
-	appid = version.manifest().id;   //B.脚本的appid
+	var  appid = '';                 //manifest.json内的id
+	appid = plus.runtime.appid;      //A.项目的appid
+	appid = version.manifest().id;   //B.安装APK内的appid
+	appid = '!!!_YOUR_APPID_!!!';    //如果你项目的id固定，就写死它吧
 
-	//如果你是在基座里调试， B是你代码的id， A是基座demo的id
+	//如果你是在基座里调试， A是你代码的id， B是基座自带demo的id
 	//如果你是发行包里运行， A==B
 
 	plus.runtime.getProperty(appid, (wgtinfo) => {
@@ -54,9 +56,9 @@ function checkVersion(){
 		console.log('当前程序的版本号:' + version_code); 
 		console.log(wgtinfo); 
 		console.log(plus.runtime);
-		console.log(version.manifest());
+		//console.log(version.manifest());
 
-		version.checkVersion(version.manifest().id, (res) => {
+		version.checkVersion(appid, (res) => {
 			console.log('最新补丁的版本号:' + res.version);
 			if (version_code != res.version) {
 				console.log('需要升级');
