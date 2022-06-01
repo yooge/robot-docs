@@ -12,7 +12,7 @@
 * 那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。
 
 ```js
-// 直接升级
+// 检查,直接升级
 require('robot-tools').version.checkThenInstall();
 
 ```
@@ -49,6 +49,11 @@ function checkVersion(){
 		console.log('最新补丁的版本号:' + res.version);
 		if (version.name != res.version) {
 			console.log('需要升级');
+			/*
+			version.install((status) => {
+				console.log('升级完成!!!');
+			});
+			*/
 		} else {
 			console.log('不升级');
 		}

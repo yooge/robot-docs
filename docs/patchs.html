@@ -121,7 +121,7 @@
 <li>在你的VUE项目中，加入如下代码；</li>
 <li>那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。</li>
 </ul>
-</div><pre><code class="lang-js">// 直接升级
+</div><pre><code class="lang-js">// 检查,直接升级
 require(&#39;robot-tools&#39;).version.checkThenInstall();
 
 </code></pre>
@@ -151,6 +151,11 @@ function checkVersion(){
         console.log(&#39;最新补丁的版本号:&#39; + res.version);
         if (version.name != res.version) {
             console.log(&#39;需要升级&#39;);
+            /*
+            version.install((status) =&gt; {
+                console.log(&#39;升级完成!!!&#39;);
+            });
+            */
         } else {
             console.log(&#39;不升级&#39;);
         }
