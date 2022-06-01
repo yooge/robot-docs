@@ -21,9 +21,9 @@ require('robot-tools').version.checkThenInstall();
 
 ```js
 const {version} = require('robot-tools');
-version.checkThenInstall();  //检查并自动升级
+version.checkThenInstall();  //检查并自动升级，有提示文字
 version.checkThenInstall('加载中...');  //修改加载提示文字
-version.checkThenInstall(false);   //无加载提示
+version.checkThenInstall(false);   //无加载提示， 等于version.install();
 
 //非debug环境(调试基座)才升级
 if(version.isDebug == false){
