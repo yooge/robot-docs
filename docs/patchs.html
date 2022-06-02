@@ -122,7 +122,11 @@
 <li>那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。</li>
 </ul>
 </div><pre><code class="lang-js">// 检查,直接升级
-require(&#39;robot-tools&#39;).version.checkThenInstall();
+const {version} = require(&#39;robot-tools&#39;); 
+
+version.onReady = () =&gt; { 
+    version.checkThenInstall();
+};
 
 </code></pre>
 <p>参数：</p>

@@ -1221,12 +1221,11 @@ autojs.init(param);
 //根据上面设置好的参数，执行代码； 也可以在悬浮脚本上点启动按钮
 autojs.start(); 
 
-autojs.menu.show(); //显示悬浮脚本图标
-autojs.menu.hide(); //隐藏悬浮脚本图标
+autojs.menu.show(); //显示悬浮脚本图标 
 autojs.menu.move(x,y); //移动悬浮脚本图标
 autojs.menu.close(); //隐藏悬浮脚本图标
 autojs.showMenu(param); //执行脚本并显示脚本图标
-
+autojs.closeMenu(); //隐藏图标
 
 
 var isEnabled = autojs.permission();//检查是否启动了无障碍

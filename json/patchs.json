@@ -37,7 +37,7 @@
         {
           "textRaw": "1. 自动升级(快捷）",
           "name": "1._自动升级(快捷）",
-          "desc": "<ul>\n<li>在你的VUE项目中，加入如下代码；</li>\n<li>那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。</li>\n</ul>\n<pre><code class=\"lang-js\">// 检查,直接升级\nrequire(&#39;robot-tools&#39;).version.checkThenInstall();\n\n</code></pre>\n<p>参数：</p>\n<pre><code class=\"lang-js\">const {version} = require(&#39;robot-tools&#39;);\nversion.checkThenInstall();  //检查并自动升级，有提示文字\nversion.checkThenInstall(&#39;加载中...&#39;);  //修改加载提示文字\nversion.checkThenInstall(false);   //无加载提示， 等于version.install();\n\n//非debug环境(调试基座)才升级\nif(version.isDebug == false){\n    version.checkThenInstall(); \n};\n\n</code></pre>\n",
+          "desc": "<ul>\n<li>在你的VUE项目中，加入如下代码；</li>\n<li>那么当你的程序执行到这个代码的时候，你的APP应用，就会检查并自动升级。</li>\n</ul>\n<pre><code class=\"lang-js\">// 检查,直接升级\nconst {version} = require(&#39;robot-tools&#39;); \n\nversion.onReady = () =&gt; { \n    version.checkThenInstall();\n};\n\n</code></pre>\n<p>参数：</p>\n<pre><code class=\"lang-js\">const {version} = require(&#39;robot-tools&#39;);\nversion.checkThenInstall();  //检查并自动升级，有提示文字\nversion.checkThenInstall(&#39;加载中...&#39;);  //修改加载提示文字\nversion.checkThenInstall(false);   //无加载提示， 等于version.install();\n\n//非debug环境(调试基座)才升级\nif(version.isDebug == false){\n    version.checkThenInstall(); \n};\n\n</code></pre>\n",
           "type": "module",
           "displayName": "1. 自动升级(快捷）"
         },

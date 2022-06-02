@@ -13,7 +13,11 @@
 
 ```js
 // 检查,直接升级
-require('robot-tools').version.checkThenInstall();
+const {version} = require('robot-tools'); 
+
+version.onReady = () => { 
+	version.checkThenInstall();
+};
 
 ```
 
