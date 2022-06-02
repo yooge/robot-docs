@@ -1,6 +1,7 @@
 @include startnow
 @include autojs-vue
 @include normal
+@include hello
 @include overview
 @include qa
 @include app

@@ -19,6 +19,7 @@
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
 <li><a class="nav-hbuilder" href="hbuilder.html">demo,运行,打包</a></li>
+<li><a class="nav-hello" href="hello.html">Hello</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal active" href="normal.html">常用api</a></li>
 <li><a class="nav-links" href="links.html">支持库</a></li>
@@ -28,7 +29,7 @@
 <div class="line"></div>
 
 <ul>
-<li><a class="nav--" href="#">API文档:</a></li>
+<li><a class="nav--" href="#">【API文档】:</a></li>
 <li><p><a class="nav-overview" href="overview.html">Overview - 综述</a></p>
 </li>
 <li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
@@ -102,7 +103,7 @@
 <li><span class="stability_undefined"><a href="#normal_2">2. 输入</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_3">3. 查找控件</a></span><ul>
 <li><span class="stability_undefined"><a href="#normal_3_0">3.0 控件的[属性]</a></span></li>
-<li><span class="stability_undefined"><a href="#normal_3_1">3.1 控件的【方法】</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_3_1">3.1 控件的[方法]</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_3_2">3.2 页面是否匹配某些内容</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_3_3">3.3 复杂的查找/等待分支</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_3_3_4">3.3.4  逆向搜索</a></span></li>
@@ -114,10 +115,8 @@
 <li><span class="stability_undefined"><a href="#normal_4">4. 窗口操作（设计的不好）</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_5">5. 按键</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_6">6. 其他</a></span></li>
-<li><span class="stability_undefined"><a href="#normal_7">7. 手指操作</a></span><ul>
-<li><span class="stability_undefined"><a href="#normal_api_1">截图 (原API，没有新增，老手请请忽略)</a></span></li>
-</ul>
-</li>
+<li><span class="stability_undefined"><a href="#normal_7">7. 手指操作</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_8_api">8. 截图, 找图 (原API，没有新增，老手请请忽略)</a></span></li>
 </ul>
 </li>
 </ul>
@@ -253,7 +252,7 @@ enabled(true)
 </code></pre>
 <h3>3.0 控件的[属性]<span><a class="mark" href="#normal_3_0" id="normal_3_0">#</a></span></h3>
 <p><code>** 控件有很多属性，请打印一下获取的对象看看</code></p>
-<h3>3.1 控件的【方法】<span><a class="mark" href="#normal_3_1" id="normal_3_1">#</a></span></h3>
+<h3>3.1 控件的[方法]<span><a class="mark" href="#normal_3_1" id="normal_3_1">#</a></span></h3>
 <pre><code class="lang-js">var box = desc(&#39;body&#39;).findOne();
 box.click(); //点击控件
 box.longClick();
@@ -471,7 +470,7 @@ gestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, 
 gestures([0, 500, [800, 300], [500, 1000]],
          [0, 500, [300, 1500], [500, 1000]]);
 </code></pre>
-<h3>截图 (原API，没有新增，老手请请忽略)<span><a class="mark" href="#normal_api_1" id="normal_api_1">#</a></span></h3>
+<h2>8. 截图, 找图 (原API，没有新增，老手请请忽略)<span><a class="mark" href="#normal_8_api" id="normal_8_api">#</a></span></h2>
 <pre><code class="lang-js">
 //请求
 requestScreenCapture(true);

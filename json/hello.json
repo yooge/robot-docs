@@ -1,0 +1,69 @@
+{
+  "source": "../api/hello.md",
+  "modules": [
+    {
+      "textRaw": "vue与控制脚本的交互",
+      "name": "vue与控制脚本的交互",
+      "desc": "<p>建议先大致了解Vue项目结构后进行</p>\n<pre><code>* 项目主体UI：pages/   各种UI样式举例(可忽略)\n* 项目主体UI：pages/robots/        2个启动界面举例 \n* 项目AJ脚本：static/robots/    (默认)用于存放控制脚本代码\n</code></pre>",
+      "methods": [
+        {
+          "textRaw": "从UI启动控制脚本(举例)",
+          "type": "method",
+          "name": "从UI启动控制脚本",
+          "modules": [
+            {
+              "textRaw": "项目文件",
+              "name": "项目文件",
+              "desc": "<p>不想看例子的人，请直接看这两个路径的源码</p>\n<pre><code>pages/robots/\nstatic/robots/\n</code></pre>",
+              "modules": [
+                {
+                  "textRaw": "【第1步】. 新建robotjs脚本：",
+                  "name": "【第1步】._新建robotjs脚本：",
+                  "desc": "<p><code>在项目路径~/static/robots下新建文件demo.js</code></p>\n<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;); \nclick(&quot;朋友圈&quot;);\ndesc(&quot;评论&quot;).findOne().click();\nclick(&quot;赞&quot;);\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "【第1步】. 新建robotjs脚本："
+                },
+                {
+                  "textRaw": "【第2步】. 修改UI界面内容",
+                  "name": "【第2步】._修改ui界面内容",
+                  "desc": "<p>页面: pages/index/index.vue</p>\n<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;start&quot;&gt;启动&lt;/button&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;stop&quot;&gt;停止&lt;/button&gt;\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    methods: {\n        start() {\n            autojs.start({\n                file: &#39;demo.js&#39;, //文件路径为./static/robots/demo.js \n            });\n        },\n        stop(){\n          autojs.stop();\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n",
+                  "type": "module",
+                  "displayName": "【第2步】. 修改UI界面内容"
+                },
+                {
+                  "textRaw": "【第3步】 从Hbuilder中启动app，",
+                  "name": "【第3步】_从hbuilder中启动app，",
+                  "desc": "<pre><code>菜单：运行/手机或模拟器/选择你的手机\n</code></pre><pre><code>(此时手机上会自动安装调试app)，\nAPP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”\n</code></pre>",
+                  "type": "module",
+                  "displayName": "【第3步】 从Hbuilder中启动app，"
+                }
+              ],
+              "type": "module",
+              "displayName": "项目文件"
+            }
+          ],
+          "signatures": [
+            {
+              "params": [
+                {
+                  "name": "举例"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "textRaw": "QQ群：  820320773",
+          "name": "qq群：_820320773",
+          "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
+          "type": "module",
+          "displayName": "QQ群：  820320773"
+        }
+      ],
+      "type": "module",
+      "displayName": "vue与控制脚本的交互"
+    }
+  ]
+}

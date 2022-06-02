@@ -4,87 +4,22 @@
     {
       "textRaw": "vue与控制脚本的交互",
       "name": "vue与控制脚本的交互",
-      "desc": "<p>建议先大致了解Vue项目结构后进行</p>\n<pre><code>* 项目主体UI：pages/   各种UI样式举例(可忽略)\n* 项目主体UI：pages/robots/        2个启动界面举例 \n* 项目AJ脚本：static/robots/    (默认)用于存放控制脚本代码\n</code></pre>",
-      "methods": [
-        {
-          "textRaw": "从UI启动控制脚本脚本(举例)",
-          "type": "method",
-          "name": "从UI启动控制脚本脚本",
-          "modules": [
-            {
-              "textRaw": "项目文件",
-              "name": "项目文件",
-              "desc": "<p>不想看例子的人，请直接看这两个路径的源码</p>\n<pre><code>pages/robots/\nstatic/robots/\n</code></pre>",
-              "modules": [
-                {
-                  "textRaw": "【第1步】. 新建js脚本脚本：",
-                  "name": "【第1步】._新建js脚本脚本：",
-                  "desc": "<p><code>在项目路径~/static/robots下新建文件demo.js</code></p>\n<pre><code class=\"lang-js\">launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;); \nclick(&quot;朋友圈&quot;);\ndesc(&quot;评论&quot;).findOne().click();\nclick(&quot;赞&quot;);\n</code></pre>\n",
-                  "type": "module",
-                  "displayName": "【第1步】. 新建js脚本脚本："
-                },
-                {
-                  "textRaw": "【第2步】. 修改页面内容",
-                  "name": "【第2步】._修改页面内容",
-                  "desc": "<p>页面: pages/index/index.vue</p>\n<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;test&quot;&gt;启动&lt;/button&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;stop&quot;&gt;停止&lt;/button&gt;\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    methods: {\n        test() {\n            var param = {\n                file: &#39;demo.js&#39;, //文件路径为./static/robots/demo.js \n            }\n            autojs.stop();\n            autojs.start(param);\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n",
-                  "type": "module",
-                  "displayName": "【第2步】. 修改页面内容"
-                },
-                {
-                  "textRaw": "【第3步】 从Hbuilder中启动app，",
-                  "name": "【第3步】_从hbuilder中启动app，",
-                  "desc": "<pre><code>菜单：运行/手机或模拟器/选择你的手机\n</code></pre><pre><code>(此时手机上会自动安装调试app)，\nAPP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”\n</code></pre><p>.</p>\n",
-                  "type": "module",
-                  "displayName": "【第3步】 从Hbuilder中启动app，"
-                }
-              ],
-              "type": "module",
-              "displayName": "项目文件"
-            }
-          ],
-          "signatures": [
-            {
-              "params": [
-                {
-                  "name": "举例"
-                }
-              ]
-            }
-          ]
-        }
-      ],
       "modules": [
         {
           "textRaw": "参数解释",
           "name": "参数解释",
-          "methods": [
-            {
-              "textRaw": "在VUE页面，立即执行控制脚本代码(不建议)",
-              "type": "method",
-              "name": "在VUE页面，立即执行控制脚本代码",
-              "desc": "<pre><code>var {autojs} = require(&#39;robot-tools&#39;);\n\n//立即执行控制脚本脚本（无需js文件或执行js脚本，可立即执行本代码）\nautojs.exec(function(){ \n    //在vue的代码文件里，直接执行脚本代码，\n    console.log(&#39;开始振动 &#39;);\n    console.show();\n    device.vibrate(2000);\n    launchApp(&#39;抖音&#39;);\n   //click(&#39;朋友圈&#39;);\n});\n//偶尔用一下，不要太依赖\n//todo:\n//1. 作用域在控制脚本内，此处暂不支持对VUE的访问，下一版补上；(如果需要访问VUE，看下面的start方法)\n//2. 如果需要用require方法引用其他的js文件，请先用autojs.robot.setJsDir(&quot;/sdcard/&quot;)设置工作路径；\n//   或者用autojs.init({file:&#39;demo.js&#39;})设置个假的文件，工作路径参考下文\n</code></pre>",
-              "signatures": [
-                {
-                  "params": [
-                    {
-                      "name": "不建议"
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
+          "desc": "<p>在VUE页面，立即执行控制脚本代码(不建议)</p>\n<pre><code>//vue代码\nvar {autojs} = require(&#39;robot-tools&#39;);\n\n//【不建议】立即执行控制脚本（无需js文件或执行robotjs脚本，可立即执行本代码）\nautojs.exec(function(){ //【不建议】\n    //脚本代码:\n    console.log(&#39;开始振动 &#39;);\n    console.show();\n    device.vibrate(2000);\n    launchApp(&#39;抖音&#39;); \n});\n//偶尔用一下，不要太依赖\n//todo:\n//1. 作用域在控制脚本内，此处暂不支持对VUE的访问，下一版补上；(如果需要访问VUE，看下面的start方法)\n//2. 如果需要用require方法引用其他的js文件，请先用autojs.robot.setJsDir(&quot;/sdcard/&quot;)设置工作路径；\n//   或者用autojs.init({file:&#39;demo.js&#39;})设置个假的文件，工作路径参考下文\n</code></pre>",
           "modules": [
             {
               "textRaw": "执行控制脚本文件",
               "name": "执行控制脚本文件",
-              "desc": "<pre><code class=\"lang-js\">var {autojs} = require(&#39;robot-tools&#39;);\nvar param = { \n    file: &#39;demo.js&#39;, //[必选],脚本脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)\n    vue:  this, //可选, 将本vue对象传递给脚本\n    arguments: {}, //可选, json,传递给脚本的参数。[提示]如果不传递，则系统会默认使用&#39;当时&#39;的vue的data数据；\n    onMessage: (data)=&gt;{}, //可选,回调函数，脚本给VUE发送消息， 感觉快淘汰了\n    start: ()=&gt;{}, //可选,脚本启动事件\n    finish: (obj)=&gt;{},//可选,脚本执行完毕事件\n    fail: (msg)=&gt;{},//可选,脚本发生意外事件\n}\n/*\n\nfile:  \n//1. 脚本脚本(static/robots/目录下的demo.js)，\n//2. 或绝对路径/sdcard/xxx.js，\n//3. 或远程URL(也可以用发布的打包加密代码)\n\narguments: \n//可选, json,传递给脚本的参数。\n//可以在控制脚本脚本中用app.args获取\n//如果不传递参数，则系统会默认传递&#39;当时&#39;的vue的$data数据；\n//如果控制脚本想动态获取vue的$data的数据，请往下看\n*/\n\n//启动脚本\nautojs.start(param); \n\n//停止脚本\nautojs.stop();\n\n//仅设置初始化参数，不执行代码\nautojs.init(param); \n//根据上面设置好的参数，执行代码； 也可以在悬浮脚本上点启动按钮\nautojs.start(); \n\nautojs.menu.show(); //显示悬浮脚本图标 \nautojs.menu.move(x,y); //移动悬浮脚本图标\nautojs.menu.close(); //隐藏悬浮脚本图标\nautojs.showMenu(param); //执行脚本并显示脚本图标\nautojs.closeMenu(); //隐藏图标\n\n\nvar isEnabled = autojs.permission();//检查是否启动了无障碍\n\n</code></pre>\n",
+              "desc": "<pre><code class=\"lang-js\">//vue代码\nvar {autojs} = require(&#39;robot-tools&#39;);\nvar param = { \n    file: &#39;demo.js&#39;, //[必选],脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)\n    vue:  this, //可选, 将本vue对象传递给脚本\n    arguments: {}, //可选, json,传递给脚本的参数。[提示]如果不传递，则系统会默认使用&#39;当时&#39;的vue的data数据；\n    onMessage: (data)=&gt;{}, //可选,回调函数，脚本给VUE发送消息， 感觉快淘汰了\n    start: ()=&gt;{}, //可选,脚本启动事件\n    finish: (obj)=&gt;{},//可选,脚本执行完毕事件\n    fail: (msg)=&gt;{},//可选,脚本发生意外事件\n}\n/*\n\nfile:  \n//1. 脚本(static/robots/目录下的demo.js)，\n//2. 或绝对路径/sdcard/xxx.js，\n//3. 或远程URL(也可以用发布的打包加密代码)\n\narguments: \n//可选, json,传递给脚本的参数。\n//可以在控制脚本中用app.args获取\n//如果不传递参数，则系统会默认传递&#39;当时&#39;的vue的$data数据；\n//如果控制脚本想动态获取vue的$data的数据，请往下看\n*/\n\n//启动脚本\nautojs.start(param); \n\n//停止脚本\nautojs.stop();\n\n//仅设置初始化参数，不执行代码\nautojs.init(param); \n//根据上面设置好的参数，执行代码； 也可以在悬浮脚本上点启动按钮\nautojs.start(); \n\nautojs.menu.show(); //显示悬浮脚本图标 \nautojs.menu.move(x,y); //移动悬浮脚本图标\nautojs.menu.close(); //隐藏悬浮脚本图标\nautojs.showMenu(param); //执行脚本并显示脚本图标\nautojs.closeMenu(); //隐藏图标\n\n\nvar isEnabled = autojs.permission();//检查是否启动了无障碍\n\n</code></pre>\n",
               "methods": [
                 {
                   "textRaw": "立即执行(当前实例中)",
                   "type": "method",
                   "name": "立即执行",
-                  "desc": "<pre><code class=\"lang-js\">//在当前已经运行的脚本中，立即执行小段脚本(需要在xxx.js脚本启动后，再调用该方法)\nautojs.eval(function(){ \n    //在vue的代码文件里，直接执行脚本代码，\n   launchApp(&#39;抖音&#39;);\n   sleep(4000);\n   console.log(text(&#39;我&#39;));\n   //click(&#39;朋友圈&#39;);\n});\n</code></pre>\n",
+                  "desc": "<pre><code class=\"lang-js\">//在当前已经运行的脚本中，立即执行小段脚本(需要在robotjs脚本启动后，再调用该方法)\nautojs.eval(function(){ \n    //在vue的代码文件里，直接执行脚本代码，\n   launchApp(&#39;抖音&#39;);\n   sleep(4000);\n   console.log(text(&#39;我&#39;)); \n});\n</code></pre>\n",
                   "signatures": [
                     {
                       "params": [
@@ -99,7 +34,7 @@
                   "textRaw": "立即执行(新脚本)",
                   "type": "method",
                   "name": "立即执行",
-                  "desc": "<pre><code class=\"lang-js\">//立即执行控制脚本脚本（代码可以是字符串）\nautojs.exec(function(){\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n }\n);\nautojs.exec(\n `\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n `\n);\n\n</code></pre>\n",
+                  "desc": "<pre><code class=\"lang-js\">//立即执行控制脚本（代码可以是字符串）\nautojs.exec(function(){\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n }\n);\n</code></pre>\n<pre><code class=\"lang-js\">autojs.exec(\n `\n   console.log(device.getIMEI());\n   launchApp(&#39;抖音&#39;); \n `\n);\n</code></pre>\n",
                   "signatures": [
                     {
                       "params": [
@@ -111,10 +46,10 @@
                   ]
                 },
                 {
-                  "textRaw": "js脚本获取VUE发过来的参数(启动脚本时传递的)",
+                  "textRaw": "robotjs脚本获取VUE发过来的参数(启动脚本时传递的)",
                   "type": "method",
-                  "name": "js脚本获取VUE发过来的参数",
-                  "desc": "<pre><code class=\"lang-js\">app.args //json对象, \napp.arguments  //参数字符串\n\n//内置参数\napp.args.scriptStartFrom //null 或 &#39;menu&#39;； 可以通过不同的启动方式，执行不同的代码\napp.args._debug //调试模式，还是正式模式\n</code></pre>\n",
+                  "name": "robotjs脚本获取VUE发过来的参数",
+                  "desc": "<pre><code>//[autojs代码]\napp.args //json对象, \napp.arguments  //参数字符串\n\n//内置参数\napp.args.scriptStartFrom //null 或 &#39;menu&#39;； 可以通过不同的启动方式，执行不同的代码\napp.args._debug //调试模式，还是正式模式\n</code></pre>",
                   "signatures": [
                     {
                       "params": [
@@ -128,25 +63,25 @@
               ],
               "modules": [
                 {
-                  "textRaw": "js脚本给VUE层发消息",
-                  "name": "js脚本给vue层发消息",
-                  "desc": "<pre><code class=\"lang-js\">app.post2host(&quot;hello vue&quot;); \n//js脚本用这个方法给VUE层发消息,(在上面的onMessage中接收消息)\n</code></pre>\n",
+                  "textRaw": "robotjs脚本给VUE层发消息",
+                  "name": "robotjs脚本给vue层发消息",
+                  "desc": "<pre><code>//[autojs代码]\napp.post2host(&quot;hello vue&quot;); \n//robotjs脚本用这个方法给VUE层发消息,(在上面的onMessage中接收消息)\n</code></pre>",
                   "type": "module",
-                  "displayName": "js脚本给VUE层发消息"
+                  "displayName": "robotjs脚本给VUE层发消息"
                 },
                 {
-                  "textRaw": "js脚本脚本直接访问VUE页面对象",
-                  "name": "js脚本脚本直接访问vue页面对象",
-                  "desc": "<pre><code class=\"lang-js\">app.vue  //控制脚本直接访问vue的对象，上面传递进来的对象this(或别的对象)\napp.vue.abc   //访问data里的abc变量\napp.vue.abc = 999; //给data里面的abc赋值\napp.vue.test() //访问VUE的methods里面的test函数。 此用法可以淘汰上面的onMessage回调\n\n</code></pre>\n",
+                  "textRaw": "robotjs脚本直接访问VUE页面对象",
+                  "name": "robotjs脚本直接访问vue页面对象",
+                  "desc": "<pre><code>//[autojs代码]\napp.vue  //控制脚本直接访问vue的对象，上面传递进来的对象this(或别的对象)\napp.vue.abc   //访问data里的abc变量\napp.vue.abc = 999; //给data里面的abc赋值\napp.vue.test() //访问VUE的methods里面的test函数。 此用法可以淘汰上面的onMessage回调\n\n</code></pre>",
                   "type": "module",
-                  "displayName": "js脚本脚本直接访问VUE页面对象"
+                  "displayName": "robotjs脚本直接访问VUE页面对象"
                 }
               ],
               "properties": [
                 {
                   "textRaw": "例index.vue",
                   "name": "vue",
-                  "desc": "<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    {{abc}}\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    data: {\n        abc: 123\n    }\n    methods: {\n        test() {\n            console.log(&#39;autojs call test&#39;);\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n"
+                  "desc": "<pre><code class=\"lang-html\">&lt;template&gt;\n&lt;view&gt; \n    {{abc}}\n&lt;/view&gt;\n&lt;/template&gt;\n&lt;script&gt; \nvar {autojs} = require(&#39;robot-tools&#39;);\nexport default {\n    data: {\n        abc: 123\n    }\n    methods: {\n        test() {\n            console.log(&#39;autojs called test.&#39;);\n        }\n    }\n}\n&lt;/script&gt;\n</code></pre>\n"
                 }
               ],
               "type": "module",

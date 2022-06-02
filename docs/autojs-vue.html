@@ -19,6 +19,7 @@
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
 <li><a class="nav-hbuilder" href="hbuilder.html">demo,运行,打包</a></li>
+<li><a class="nav-hello" href="hello.html">Hello</a></li>
 <li><a class="nav-autojs-vue active" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
 <li><a class="nav-links" href="links.html">支持库</a></li>
@@ -28,7 +29,7 @@
 <div class="line"></div>
 
 <ul>
-<li><a class="nav--" href="#">API文档:</a></li>
+<li><a class="nav--" href="#">【API文档】:</a></li>
 <li><p><a class="nav-overview" href="overview.html">Overview - 综述</a></p>
 </li>
 <li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
@@ -89,23 +90,13 @@
         <h2>目录</h2>
         <ul>
 <li><span class="stability_undefined"><a href="#autojs_vue_vue">vue与控制脚本的交互</a></span><ul>
-<li><span class="stability_undefined"><a href="#autojs_vue_ui">从UI启动控制脚本脚本(举例)</a></span><ul>
-<li><span class="stability_undefined"><a href="#autojs_vue">项目文件</a></span><ul>
-<li><span class="stability_undefined"><a href="#autojs_vue_1_js">【第1步】. 新建js脚本脚本：</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_2">【第2步】. 修改页面内容</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_3_hbuilder_app">【第3步】 从Hbuilder中启动app，</a></span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><span class="stability_undefined"><a href="#autojs_vue_1">参数解释</a></span><ul>
-<li><span class="stability_undefined"><a href="#autojs_vue_vue_1">在VUE页面，立即执行控制脚本代码(不建议)</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_2">执行控制脚本文件</a></span><ul>
-<li><span class="stability_undefined"><a href="#autojs_vue_3">立即执行(当前实例中)</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_4">立即执行(新脚本)</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_js_vue">js脚本获取VUE发过来的参数(启动脚本时传递的)</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_js_vue_1">js脚本给VUE层发消息</a></span></li>
-<li><span class="stability_undefined"><a href="#autojs_vue_js_vue_2">js脚本脚本直接访问VUE页面对象</a></span></li>
+<li><span class="stability_undefined"><a href="#autojs_vue">参数解释</a></span><ul>
+<li><span class="stability_undefined"><a href="#autojs_vue_1">执行控制脚本文件</a></span><ul>
+<li><span class="stability_undefined"><a href="#autojs_vue_2">立即执行(当前实例中)</a></span></li>
+<li><span class="stability_undefined"><a href="#autojs_vue_3">立即执行(新脚本)</a></span></li>
+<li><span class="stability_undefined"><a href="#autojs_vue_robotjs_vue">robotjs脚本获取VUE发过来的参数(启动脚本时传递的)</a></span></li>
+<li><span class="stability_undefined"><a href="#autojs_vue_robotjs_vue_1">robotjs脚本给VUE层发消息</a></span></li>
+<li><span class="stability_undefined"><a href="#autojs_vue_robotjs_vue_2">robotjs脚本直接访问VUE页面对象</a></span></li>
 <li><span class="stability_undefined"><a href="#autojs_vue_index_vue">例index.vue</a></span></li>
 </ul>
 </li>
@@ -119,73 +110,29 @@
 
       <div id="apicontent">
         <h1>vue与控制脚本的交互<span><a class="mark" href="#autojs_vue_vue" id="autojs_vue_vue">#</a></span></h1>
-<p>建议先大致了解Vue项目结构后进行</p>
-<pre><code>* 项目主体UI：pages/   各种UI样式举例(可忽略)
-* 项目主体UI：pages/robots/        2个启动界面举例 
-* 项目AJ脚本：static/robots/    (默认)用于存放控制脚本代码
-</code></pre><h2>从UI启动控制脚本脚本(举例)<span><a class="mark" href="#autojs_vue_ui" id="autojs_vue_ui">#</a></span></h2>
-<h3>项目文件<span><a class="mark" href="#autojs_vue" id="autojs_vue">#</a></span></h3>
-<p>不想看例子的人，请直接看这两个路径的源码</p>
-<pre><code>pages/robots/
-static/robots/
-</code></pre><h4>【第1步】. 新建js脚本脚本：<span><a class="mark" href="#autojs_vue_1_js" id="autojs_vue_1_js">#</a></span></h4>
-<p><code>在项目路径~/static/robots下新建文件demo.js</code></p>
-<pre><code class="lang-js">launchApp(&quot;微信&quot;); 
-click(&quot;发现&quot;); 
-click(&quot;朋友圈&quot;);
-desc(&quot;评论&quot;).findOne().click();
-click(&quot;赞&quot;);
-</code></pre>
-<h4>【第2步】. 修改页面内容<span><a class="mark" href="#autojs_vue_2" id="autojs_vue_2">#</a></span></h4>
-<p>页面: pages/index/index.vue</p>
-<pre><code class="lang-html">&lt;template&gt;
-&lt;view&gt; 
-    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;test&quot;&gt;启动&lt;/button&gt;
-    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;stop&quot;&gt;停止&lt;/button&gt;
-&lt;/view&gt;
-&lt;/template&gt;
-&lt;script&gt; 
+<h2>参数解释<span><a class="mark" href="#autojs_vue" id="autojs_vue">#</a></span></h2>
+<p>在VUE页面，立即执行控制脚本代码(不建议)</p>
+<pre><code>//vue代码
 var {autojs} = require(&#39;robot-tools&#39;);
-export default {
-    methods: {
-        test() {
-            var param = {
-                file: &#39;demo.js&#39;, //文件路径为./static/robots/demo.js 
-            }
-            autojs.stop();
-            autojs.start(param);
-        }
-    }
-}
-&lt;/script&gt;
-</code></pre>
-<h4>【第3步】 从Hbuilder中启动app，<span><a class="mark" href="#autojs_vue_3_hbuilder_app" id="autojs_vue_3_hbuilder_app">#</a></span></h4>
-<pre><code>菜单：运行/手机或模拟器/选择你的手机
-</code></pre><pre><code>(此时手机上会自动安装调试app)，
-APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
-</code></pre><p>.</p>
-<h2>参数解释<span><a class="mark" href="#autojs_vue_1" id="autojs_vue_1">#</a></span></h2>
-<h3>在VUE页面，立即执行控制脚本代码(不建议)<span><a class="mark" href="#autojs_vue_vue_1" id="autojs_vue_vue_1">#</a></span></h3>
-<pre><code>var {autojs} = require(&#39;robot-tools&#39;);
 
-//立即执行控制脚本脚本（无需js文件或执行js脚本，可立即执行本代码）
-autojs.exec(function(){ 
-    //在vue的代码文件里，直接执行脚本代码，
+//【不建议】立即执行控制脚本（无需js文件或执行robotjs脚本，可立即执行本代码）
+autojs.exec(function(){ //【不建议】
+    //脚本代码:
     console.log(&#39;开始振动 &#39;);
     console.show();
     device.vibrate(2000);
-    launchApp(&#39;抖音&#39;);
-   //click(&#39;朋友圈&#39;);
+    launchApp(&#39;抖音&#39;); 
 });
 //偶尔用一下，不要太依赖
 //todo:
 //1. 作用域在控制脚本内，此处暂不支持对VUE的访问，下一版补上；(如果需要访问VUE，看下面的start方法)
 //2. 如果需要用require方法引用其他的js文件，请先用autojs.robot.setJsDir(&quot;/sdcard/&quot;)设置工作路径；
 //   或者用autojs.init({file:&#39;demo.js&#39;})设置个假的文件，工作路径参考下文
-</code></pre><h3>执行控制脚本文件<span><a class="mark" href="#autojs_vue_2" id="autojs_vue_2">#</a></span></h3>
-<pre><code class="lang-js">var {autojs} = require(&#39;robot-tools&#39;);
+</code></pre><h3>执行控制脚本文件<span><a class="mark" href="#autojs_vue_1" id="autojs_vue_1">#</a></span></h3>
+<pre><code class="lang-js">//vue代码
+var {autojs} = require(&#39;robot-tools&#39;);
 var param = { 
-    file: &#39;demo.js&#39;, //[必选],脚本脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
+    file: &#39;demo.js&#39;, //[必选],脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
     vue:  this, //可选, 将本vue对象传递给脚本
     arguments: {}, //可选, json,传递给脚本的参数。[提示]如果不传递，则系统会默认使用&#39;当时&#39;的vue的data数据；
     onMessage: (data)=&gt;{}, //可选,回调函数，脚本给VUE发送消息， 感觉快淘汰了
@@ -196,13 +143,13 @@ var param = {
 /*
 
 file:  
-//1. 脚本脚本(static/robots/目录下的demo.js)，
+//1. 脚本(static/robots/目录下的demo.js)，
 //2. 或绝对路径/sdcard/xxx.js，
 //3. 或远程URL(也可以用发布的打包加密代码)
 
 arguments: 
 //可选, json,传递给脚本的参数。
-//可以在控制脚本脚本中用app.args获取
+//可以在控制脚本中用app.args获取
 //如果不传递参数，则系统会默认传递&#39;当时&#39;的vue的$data数据；
 //如果控制脚本想动态获取vue的$data的数据，请往下看
 */
@@ -228,51 +175,50 @@ autojs.closeMenu(); //隐藏图标
 var isEnabled = autojs.permission();//检查是否启动了无障碍
 
 </code></pre>
-<h4>立即执行(当前实例中)<span><a class="mark" href="#autojs_vue_3" id="autojs_vue_3">#</a></span></h4>
-<pre><code class="lang-js">//在当前已经运行的脚本中，立即执行小段脚本(需要在xxx.js脚本启动后，再调用该方法)
+<h4>立即执行(当前实例中)<span><a class="mark" href="#autojs_vue_2" id="autojs_vue_2">#</a></span></h4>
+<pre><code class="lang-js">//在当前已经运行的脚本中，立即执行小段脚本(需要在robotjs脚本启动后，再调用该方法)
 autojs.eval(function(){ 
     //在vue的代码文件里，直接执行脚本代码，
    launchApp(&#39;抖音&#39;);
    sleep(4000);
-   console.log(text(&#39;我&#39;));
-   //click(&#39;朋友圈&#39;);
+   console.log(text(&#39;我&#39;)); 
 });
 </code></pre>
-<h4>立即执行(新脚本)<span><a class="mark" href="#autojs_vue_4" id="autojs_vue_4">#</a></span></h4>
-<pre><code class="lang-js">//立即执行控制脚本脚本（代码可以是字符串）
+<h4>立即执行(新脚本)<span><a class="mark" href="#autojs_vue_3" id="autojs_vue_3">#</a></span></h4>
+<pre><code class="lang-js">//立即执行控制脚本（代码可以是字符串）
 autojs.exec(function(){
    console.log(device.getIMEI());
    launchApp(&#39;抖音&#39;); 
  }
 );
-autojs.exec(
+</code></pre>
+<pre><code class="lang-js">autojs.exec(
  `
    console.log(device.getIMEI());
    launchApp(&#39;抖音&#39;); 
  `
 );
-
 </code></pre>
-<h4>js脚本获取VUE发过来的参数(启动脚本时传递的)<span><a class="mark" href="#autojs_vue_js_vue" id="autojs_vue_js_vue">#</a></span></h4>
-<pre><code class="lang-js">app.args //json对象, 
+<h4>robotjs脚本获取VUE发过来的参数(启动脚本时传递的)<span><a class="mark" href="#autojs_vue_robotjs_vue" id="autojs_vue_robotjs_vue">#</a></span></h4>
+<pre><code>//[autojs代码]
+app.args //json对象, 
 app.arguments  //参数字符串
 
 //内置参数
 app.args.scriptStartFrom //null 或 &#39;menu&#39;； 可以通过不同的启动方式，执行不同的代码
 app.args._debug //调试模式，还是正式模式
-</code></pre>
-<h4>js脚本给VUE层发消息<span><a class="mark" href="#autojs_vue_js_vue_1" id="autojs_vue_js_vue_1">#</a></span></h4>
-<pre><code class="lang-js">app.post2host(&quot;hello vue&quot;); 
-//js脚本用这个方法给VUE层发消息,(在上面的onMessage中接收消息)
-</code></pre>
-<h4>js脚本脚本直接访问VUE页面对象<span><a class="mark" href="#autojs_vue_js_vue_2" id="autojs_vue_js_vue_2">#</a></span></h4>
-<pre><code class="lang-js">app.vue  //控制脚本直接访问vue的对象，上面传递进来的对象this(或别的对象)
+</code></pre><h4>robotjs脚本给VUE层发消息<span><a class="mark" href="#autojs_vue_robotjs_vue_1" id="autojs_vue_robotjs_vue_1">#</a></span></h4>
+<pre><code>//[autojs代码]
+app.post2host(&quot;hello vue&quot;); 
+//robotjs脚本用这个方法给VUE层发消息,(在上面的onMessage中接收消息)
+</code></pre><h4>robotjs脚本直接访问VUE页面对象<span><a class="mark" href="#autojs_vue_robotjs_vue_2" id="autojs_vue_robotjs_vue_2">#</a></span></h4>
+<pre><code>//[autojs代码]
+app.vue  //控制脚本直接访问vue的对象，上面传递进来的对象this(或别的对象)
 app.vue.abc   //访问data里的abc变量
 app.vue.abc = 999; //给data里面的abc赋值
 app.vue.test() //访问VUE的methods里面的test函数。 此用法可以淘汰上面的onMessage回调
 
-</code></pre>
-<h4>例index.vue<span><a class="mark" href="#autojs_vue_index_vue" id="autojs_vue_index_vue">#</a></span></h4>
+</code></pre><h4>例index.vue<span><a class="mark" href="#autojs_vue_index_vue" id="autojs_vue_index_vue">#</a></span></h4>
 <pre><code class="lang-html">&lt;template&gt;
 &lt;view&gt; 
     {{abc}}
@@ -286,7 +232,7 @@ export default {
     }
     methods: {
         test() {
-            console.log(&#39;autojs call test&#39;);
+            console.log(&#39;autojs called test.&#39;);
         }
     }
 }

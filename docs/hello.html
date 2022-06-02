@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Crypto | RobotJs | 用JS任意控制手机上的APP</title>
+  <title>vue与控制脚本的交互 | RobotJs | 用JS任意控制手机上的APP</title>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/sh.css">
-  <link rel="canonical" href="https://nodejs.org/api/crypto.html">
+  <link rel="canonical" href="https://nodejs.org/api/hello.html">
 </head>
-<body class="alt apidoc" id="api-section-crypto">
+<body class="alt apidoc" id="api-section-hello">
   <div id="content" class="clearfix">
     <div id="column2" class="interior">
       <div id="intro" class="interior">
@@ -19,7 +19,7 @@
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
 <li><a class="nav-hbuilder" href="hbuilder.html">demo,运行,打包</a></li>
-<li><a class="nav-hello" href="hello.html">Hello</a></li>
+<li><a class="nav-hello active" href="hello.html">Hello</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
 <li><a class="nav-links" href="links.html">支持库</a></li>
@@ -47,7 +47,7 @@
 </li>
 <li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
 <li><a class="nav-console" href="console.html">Console - 控制台</a></li>
-<li><a class="nav-crypto active" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
+<li><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
 <li><a class="nav-device" href="device.html">Device - 设备</a></li>
 <li><a class="nav-dialogs" href="dialogs.html">Dialogs - 对话框</a></li>
 <li><a class="nav-engines" href="engines.html">Engines - 脚本引擎</a></li>
@@ -74,7 +74,7 @@
 
     </div>
 
-    <div id="column1" data-id="crypto" class="interior">
+    <div id="column1" data-id="hello" class="interior">
       <header>
         <h1>用JS任意控制手机上的APP</h1>
         <div id="gtoc">
@@ -89,10 +89,17 @@
       <div id="toc">
         <h2>目录</h2>
         <ul>
-<li><span class="stability_undefined"><a href="#crypto_crypto">Crypto</a></span><ul>
-<li><span class="stability_undefined"><a href="#crypto_crypto_digest_message_algorithm_options">$crypto.digest(message, algorithm[, options])</a></span></li>
-<li><span class="stability_undefined"><a href="#crypto_crypto_encrypt_data_key_algorithm_options">$crypto.encrypt(data, key, algorithm, options)</a></span></li>
-<li><span class="stability_undefined"><a href="#crypto">输入和输出的类型和格式</a></span></li>
+<li><span class="stability_undefined"><a href="#hello_vue">vue与控制脚本的交互</a></span><ul>
+<li><span class="stability_undefined"><a href="#hello_ui">从UI启动控制脚本(举例)</a></span><ul>
+<li><span class="stability_undefined"><a href="#hello">项目文件</a></span><ul>
+<li><span class="stability_undefined"><a href="#hello_1_robotjs">【第1步】. 新建robotjs脚本：</a></span></li>
+<li><span class="stability_undefined"><a href="#hello_2_ui">【第2步】. 修改UI界面内容</a></span></li>
+<li><span class="stability_undefined"><a href="#hello_3_hbuilder_app">【第3步】 从Hbuilder中启动app，</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#hello_qq_820320773">QQ群：  820320773</a></span></li>
 </ul>
 </li>
 </ul>
@@ -100,60 +107,55 @@
       </div>
 
       <div id="apicontent">
-        <h1>Crypto<span><a class="mark" href="#crypto_crypto" id="crypto_crypto">#</a></span></h1>
-<p><strong> [<a href="https://pro.autojs.org/">Pro 8.0.0新增</a>] </strong></p>
-<p>$crypto模块提供了对称加密(例如AES)、非对称加密(例如RSA)、消息摘要(例如MD5, SHA)等支持。</p>
-<h2>$crypto.digest(message, algorithm[, options])<span><a class="mark" href="#crypto_crypto_digest_message_algorithm_options" id="crypto_crypto_digest_message_algorithm_options">#</a></span></h2>
-<div class="signature"><ul>
-<li><code>message</code> <span class="type">&lt;any&gt;</span></li>
-<li><code>algorithm</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 消息摘要算法，包括：<ul>
-<li>MD5</li>
-<li>SHA-1</li>
-<li>SHA-256</li>
-<li>SHA-384</li>
-<li>SHA-512</li>
-</ul>
-</li>
-<li><code>options</code> <span class="type">&lt;any&gt;</span></li>
-</ul>
-</div><p>对信息message使用消息摘要算法<code>algorithm</code>进行摘要并返回结果，默认的输出格式为hex。</p>
-<p>参数message的类型默认为字符串，返回值默认为hex；可以通过options来指定参数message的类型和返回值的类型、格式，比如文件、base64、字节数组、hex等。参见《输入和输出的类型和格式》。</p>
-<pre><code class="lang-javascript">// 计算字符串abc的md5
-toastLog($crypto.digest(&quot;abc&quot;, &quot;MD5&quot;));
-// 计算字符串abc的sha-256
-toastLog($crypto.digest(&quot;abc&quot;, &quot;SHA-256&quot;));
-// 计算文件/sdcard/1.txt的md5
-toastLog($crypto.digest(&quot;/sdcard/1.txt&quot;, &quot;MD5&quot;, {
-    input: &quot;file&quot;
-}));
+        <h1>vue与控制脚本的交互<span><a class="mark" href="#hello_vue" id="hello_vue">#</a></span></h1>
+<p>建议先大致了解Vue项目结构后进行</p>
+<pre><code>* 项目主体UI：pages/   各种UI样式举例(可忽略)
+* 项目主体UI：pages/robots/        2个启动界面举例 
+* 项目AJ脚本：static/robots/    (默认)用于存放控制脚本代码
+</code></pre><h2>从UI启动控制脚本(举例)<span><a class="mark" href="#hello_ui" id="hello_ui">#</a></span></h2>
+<h3>项目文件<span><a class="mark" href="#hello" id="hello">#</a></span></h3>
+<p>不想看例子的人，请直接看这两个路径的源码</p>
+<pre><code>pages/robots/
+static/robots/
+</code></pre><h4>【第1步】. 新建robotjs脚本：<span><a class="mark" href="#hello_1_robotjs" id="hello_1_robotjs">#</a></span></h4>
+<p><code>在项目路径~/static/robots下新建文件demo.js</code></p>
+<pre><code class="lang-js">launchApp(&quot;微信&quot;); 
+click(&quot;发现&quot;); 
+click(&quot;朋友圈&quot;);
+desc(&quot;评论&quot;).findOne().click();
+click(&quot;赞&quot;);
 </code></pre>
-<h2>$crypto.encrypt(data, key, algorithm, options)<span><a class="mark" href="#crypto_crypto_encrypt_data_key_algorithm_options" id="crypto_crypto_encrypt_data_key_algorithm_options">#</a></span></h2>
-<div class="signature"><ul>
-<li><code>data</code> <span class="type">&lt;any&gt;</span> 明文消息</li>
-<li><code>key</code> <span class="type">&lt;Key&gt;</span> 密钥</li>
-<li><p><code>algorithm</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 加密算法，包括：</p>
-<ul>
-<li>AES</li>
-<li>AES/ECB/NoPadding</li>
-<li>AES/ECB/PKCS5Padding</li>
-<li>AES/CBC/NoPadding</li>
-<li>AES/CBC/PKCS5Padding</li>
-<li>AES/CFB/NoPadding</li>
-<li>AES/CFB/PKCS5Padding</li>
-<li>AES/CTR/NoPadding</li>
-<li>AES/CTR/PKCS5Padding</li>
-<li>AES/OFB/PKCS5Padding</li>
-<li>AES/OFB/PKCS5Padding</li>
-<li>RSA/ECB/PKCS1Padding</li>
-<li>RSA/ECB/NoPadding</li>
-<li>...
-具体可参阅 <a href="https://developer.android.com/reference/javax/crypto/Cipher">javax.crypto.Cipher</a></li>
-</ul>
-</li>
-<li><p><code>options</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a> 加密选项</p>
-</li>
-</ul>
-</div><h2>输入和输出的类型和格式<span><a class="mark" href="#crypto" id="crypto">#</a></span></h2>
+<h4>【第2步】. 修改UI界面内容<span><a class="mark" href="#hello_2_ui" id="hello_2_ui">#</a></span></h4>
+<p>页面: pages/index/index.vue</p>
+<pre><code class="lang-html">&lt;template&gt;
+&lt;view&gt; 
+    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;start&quot;&gt;启动&lt;/button&gt;
+    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;stop&quot;&gt;停止&lt;/button&gt;
+&lt;/view&gt;
+&lt;/template&gt;
+&lt;script&gt; 
+var {autojs} = require(&#39;robot-tools&#39;);
+export default {
+    methods: {
+        start() {
+            autojs.start({
+                file: &#39;demo.js&#39;, //文件路径为./static/robots/demo.js 
+            });
+        },
+        stop(){
+          autojs.stop();
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre>
+<h4>【第3步】 从Hbuilder中启动app，<span><a class="mark" href="#hello_3_hbuilder_app" id="hello_3_hbuilder_app">#</a></span></h4>
+<pre><code>菜单：运行/手机或模拟器/选择你的手机
+</code></pre><pre><code>(此时手机上会自动安装调试app)，
+APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
+</code></pre><h2>QQ群：  820320773<span><a class="mark" href="#hello_qq_820320773" id="hello_qq_820320773">#</a></span></h2>
+<pre><code class="lang-js">  如果喜欢这个项目，可以请赠我一包华子 
+</code></pre>
 
       </div>
     </div>
