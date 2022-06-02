@@ -37,34 +37,55 @@ if(version.isDebug == false){
 ```
 
 
-## 2. 先 检查 然后 更新
+## 2. 先 检查, 然后 更新
 
-### 2.1 检查版本号
+### 界面代码
+```html
+<template> 
+	<view class="cu-load load-modal" v-if="loadingModal"> 
+		<image src="/static/logo.png" mode="aspectFit"></image>
+		<view class="gray-text">{{LoadingText}}</view>
+	</view>
+	<text>当前版本: {{currentVersion}}</text>
+	<text>远程版本: {{remoteVersion}}</text>
+	<button class="cu-btn bg-green shadow" @tap="upgrade">点我升级</button>
+</template>
 ```
+检查代码
+
+```js
 const {version, project} = require('robot-tools');
 
-function checkVersion(){
-	// #ifndef APP-PLUS
-	return;
-	// #endif	
+export default {
+	data:   {loadingModal: false, currentVersion:'0.0.0',remoteVersion:''},
+	created: function() {
+	    var that = this;
+		this.currentVersion = version.name;
 
-	version.checkVersion((res) => {
-		console.log('当前程序的版本号:' + version.name);
-		console.log('最新补丁的版本号:' + res.version);
-		if (version.name != res.version) {
-			console.log('需要升级');
-			/*
+		console.log("开始检查--->");
+		version.checkVersion((res) => { 
+			that.remoteVersion = res.version;
+			if (version.name != res.version) {
+				console.log('需要升级');
+			} else {
+				console.log('不升级');
+			}
+		});
+	},
+	methods:{
+	   upgrade: function() {
+	        console.log("开始升级--->");
+			this.loadingModal = true;
+			this.LoadingText = '升级中..';
 			version.install((status) => {
-				console.log('升级完成!!!');
+				this.loadingModal = false;
 			});
-			*/
-		} else {
-			console.log('不升级');
-		}
-	});
- 
-} 
+		} 
+    }
+};
+
 ```
+
 
 * A. project.manifest.appid: 
 * B. plus.runtime.appid 
@@ -73,32 +94,6 @@ function checkVersion(){
 
 //如果你是发行包里运行， A==B
 
-### 2.2 执行升级
+ 
 
-```html
-<template> 
-	<view class="cu-load load-modal" v-if="loadingModal"> 
-		<image src="/static/logo.png" mode="aspectFit"></image>
-		<view class="gray-text">{{LoadingText}}</view>
-	</view>
-	<button class="cu-btn bg-green shadow" @tap="upgrade">点我升级</button>
-</template>
-```
-
-```js
-const {version} = require('robot-tools');
-
-export default {
-	data:{loadingModal: false}, 
-	methods:{
-	   upgrade: function() {
-		this.loadingModal = true;
-		this.LoadingText = '升级中..';
-		version.install((status) => {
-			this.loadingModal = false;
-		});
-    }
-};
-
-```
 
