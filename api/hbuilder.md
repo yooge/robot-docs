@@ -99,7 +99,7 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 
 .
     
-# C. 发布/升级，生成APK
+# C. 发布/升级，生成APP
 
 ## 打包
 ### 打包APK

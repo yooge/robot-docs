@@ -24,7 +24,7 @@
     },
     {
       "type": "text",
-      "text": "[demo,运行,打包](hbuilder.html)"
+      "text": "[Demo, 调试运行, 生成APP](hbuilder.html)"
     },
     {
       "type": "list_item_end"
@@ -34,7 +34,7 @@
     },
     {
       "type": "text",
-      "text": "[Hello](hello.html)"
+      "text": "[Hello World](hello.html)"
     },
     {
       "type": "list_item_end"

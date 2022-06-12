@@ -161,8 +161,8 @@
       "displayName": "B. 运行与调试"
     },
     {
-      "textRaw": "C. 发布/升级，生成APK",
-      "name": "c._发布/升级，生成apk",
+      "textRaw": "C. 发布/升级，生成APP",
+      "name": "c._发布/升级，生成app",
       "modules": [
         {
           "textRaw": "打包",
@@ -209,7 +209,7 @@
         }
       ],
       "type": "module",
-      "displayName": "C. 发布/升级，生成APK"
+      "displayName": "C. 发布/升级，生成APP"
     }
   ]
 }
