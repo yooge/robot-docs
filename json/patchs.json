@@ -42,19 +42,19 @@
           "displayName": "1. 自动升级(快捷）"
         },
         {
-          "textRaw": "2. 先 检查, 然后 更新",
-          "name": "2._先_检查,_然后_更新",
+          "textRaw": "2. 先 检查, 然后升级",
+          "name": "2._先_检查,_然后升级",
           "modules": [
             {
               "textRaw": "界面代码",
               "name": "界面代码",
-              "desc": "<pre><code class=\"lang-html\">&lt;template&gt; \n    &lt;view class=&quot;cu-load load-modal&quot; v-if=&quot;loadingModal&quot;&gt; \n        &lt;image src=&quot;/static/logo.png&quot; mode=&quot;aspectFit&quot;&gt;&lt;/image&gt;\n        &lt;view class=&quot;gray-text&quot;&gt;{{LoadingText}}&lt;/view&gt;\n    &lt;/view&gt;\n    &lt;text&gt;当前版本: {{currentVersion}}&lt;/text&gt;\n    &lt;text&gt;远程版本: {{remoteVersion}}&lt;/text&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;upgrade&quot;&gt;点我升级&lt;/button&gt;\n&lt;/template&gt;\n</code></pre>\n<p>检查代码</p>\n<pre><code class=\"lang-js\">const {version, project} = require(&#39;robot-tools&#39;);\n\nexport default {\n    data:   {loadingModal: false, currentVersion:&#39;0.0.0&#39;,remoteVersion:&#39;&#39;},\n    created: function() {\n        var that = this;\n        this.currentVersion = version.name;\n\n        console.log(&quot;开始检查---&gt;&quot;);\n        version.checkVersion((res) =&gt; { \n            that.remoteVersion = res.version;\n            if (version.name != res.version) {\n                console.log(&#39;需要升级&#39;);\n            } else {\n                console.log(&#39;不升级&#39;);\n            }\n        });\n    },\n    methods:{\n       upgrade: function() {\n            console.log(&quot;开始升级---&gt;&quot;);\n            this.loadingModal = true;\n            this.LoadingText = &#39;升级中..&#39;;\n            version.install((status) =&gt; {\n                this.loadingModal = false;\n            });\n        } \n    }\n};\n\n</code></pre>\n<ul>\n<li>A. project.manifest.appid: </li>\n<li>B. plus.runtime.appid </li>\n</ul>\n<p>//如果你是在基座里调试， A是你代码的id， B是基座自带demo的id</p>\n<p>//如果你是发行包里运行， A==B</p>\n",
+              "desc": "<pre><code class=\"lang-html\">&lt;template&gt; \n    &lt;view class=&quot;cu-load load-modal&quot; v-if=&quot;loadingModal&quot;&gt; \n        &lt;image src=&quot;/static/logo.png&quot; mode=&quot;aspectFit&quot;&gt;&lt;/image&gt;\n        &lt;view class=&quot;gray-text&quot;&gt;{{LoadingText}}&lt;/view&gt;\n    &lt;/view&gt;\n    &lt;text&gt;当前版本: {{currentVersion}}&lt;/text&gt;\n    &lt;text&gt;远程版本: {{remoteVersion}}&lt;/text&gt;\n    &lt;button class=&quot;cu-btn bg-green shadow&quot; @tap=&quot;upgrade&quot;&gt;点我升级&lt;/button&gt;\n&lt;/template&gt;\n</code></pre>\n<p>检查代码</p>\n<pre><code class=\"lang-js\">const {version, project} = require(&#39;robot-tools&#39;);\n\nexport default {\n    data:   {loadingModal: false, currentVersion:&#39;0.0.0&#39;,remoteVersion:&#39;&#39;},\n    created: function() {\n        var that = this;\n        this.currentVersion = version.name;\n\n        console.log(&quot;开始检查---&gt;&quot;);\n        version.checkVersion((res) =&gt; { \n            that.remoteVersion = res.version;\n            if (version.name != res.version) {\n                console.log(&#39;需要升级&#39;);\n            } else {\n                console.log(&#39;不升级&#39;);\n            }\n        });\n    },\n    methods:{\n       upgrade: function() {\n            console.log(&quot;开始升级---&gt;&quot;);\n            this.loadingModal = true;\n            this.LoadingText = &#39;升级中..&#39;;\n            version.install((status) =&gt; {\n                this.loadingModal = false;\n            });\n        } \n    }\n};\n\n</code></pre>\n<p>⚠️ 提示：APPID ⚠️</p>\n<pre><code> A. project.manifest.appid: \n B. plus.runtime.appid \n\n//如果你是在基座里调试， A是你代码的id， B是基座自带demo的id\n\n//如果你是发行包里运行， A==B\n</code></pre><p>⚠️ 提示：版本号 ⚠️</p>\n<pre><code>A. version.name; //本程序代码的版本号(manifest.json里的)\nB. plus.runtime.versionCode   //基座版本号(整数)\nB. plus.runtime.version;   //基座版本号\n</code></pre><p>其他:\n<code>plus.runtime.innerVersion;\nplus.runtime.uniVersion;</code></p>\n",
               "type": "module",
               "displayName": "界面代码"
             }
           ],
           "type": "module",
-          "displayName": "2. 先 检查, 然后 更新"
+          "displayName": "2. 先 检查, 然后升级"
         }
       ],
       "type": "module",

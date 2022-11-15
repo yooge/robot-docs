@@ -6,4 +6,6 @@ RobotJs文档。可在 https://yooge.github.io/robot-docs/ 浏览。 （来自au
 
 模板、样式、generator来自[Node.js](https://github.com/nodejs/node/tree/master/doc)。
 
-打包方法：python ./auto_generate.py
+打包方法：
+cd  ./generator
+python ./auto_generate.py

@@ -13,8 +13,8 @@
           "displayName": "(10分钟就可以上手)"
         },
         {
-          "textRaw": "QQ群： 820320773",
-          "name": "qq群：_820320773",
+          "textRaw": "QQ群： 322962890",
+          "name": "qq群：_322962890",
           "modules": [
             {
               "textRaw": "1. 对app的控制(10分钟就可以上手)",
@@ -25,7 +25,7 @@
             }
           ],
           "type": "module",
-          "displayName": "QQ群： 820320773"
+          "displayName": "QQ群： 322962890"
         }
       ],
       "type": "module",
@@ -42,7 +42,7 @@
             {
               "textRaw": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
               "name": "1._下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
-              "desc": "<p>推荐下载使用<code>HbuilderX App开发版</code> 进行开发</p>\n",
+              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre>",
               "type": "module",
               "displayName": "1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },

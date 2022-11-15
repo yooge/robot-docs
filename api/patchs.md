@@ -37,7 +37,7 @@ if(version.isDebug == false){
 ```
 
 
-## 2. 先 检查, 然后 更新
+## 2. 先 检查, 然后升级
 
 ### 界面代码
 ```html
@@ -86,14 +86,25 @@ export default {
 
 ```
 
-
-* A. project.manifest.appid: 
-* B. plus.runtime.appid 
+⚠️ 提示：APPID ⚠️
+``` 
+ A. project.manifest.appid: 
+ B. plus.runtime.appid 
 
 //如果你是在基座里调试， A是你代码的id， B是基座自带demo的id
 
 //如果你是发行包里运行， A==B
+```
 
- 
-
+⚠️ 提示：版本号 ⚠️
+```
+A. version.name; //本程序代码的版本号(manifest.json里的)
+B. plus.runtime.versionCode   //基座版本号(整数)
+B. plus.runtime.version;   //基座版本号
+```
+其他:
+`
+plus.runtime.innerVersion;
+plus.runtime.uniVersion;
+`
 

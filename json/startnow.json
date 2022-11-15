@@ -8,16 +8,23 @@
         {
           "textRaw": "1. 控制代码",
           "name": "1._控制代码",
-          "desc": "<ul>\n<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>\n</ul>\n<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre>",
+          "desc": "<ul>\n<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>\n</ul>\n<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre><pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️\n⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️\n</code></pre>",
           "type": "module",
           "displayName": "1. 控制代码"
         },
         {
-          "textRaw": "QQ群：  820320773",
-          "name": "qq群：_820320773",
+          "textRaw": "QQ群： 322962890",
+          "name": "qq群：_322962890",
           "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
           "type": "module",
-          "displayName": "QQ群：  820320773"
+          "displayName": "QQ群： 322962890"
+        },
+        {
+          "textRaw": "QQ群：  322962890",
+          "name": "qq群：_322962890",
+          "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
+          "type": "module",
+          "displayName": "QQ群：  322962890"
         }
       ],
       "properties": [
@@ -26,25 +33,70 @@
           "name": "开发环境",
           "modules": [
             {
-              "textRaw": "2.1 下载代码  https://github.com/yooge/robot",
-              "name": "2.1 下载代码  https://github.com/yooge/robot",
-              "desc": "<p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "textRaw": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
+              "name": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
+              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
-              "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
+              "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },
             {
-              "textRaw": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
-              "name": "2.2_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
-              "desc": "<p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "textRaw": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
+              "name": "2.3_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
+              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
-              "displayName": "2.2 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
+              "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             }
           ]
         },
         {
           "textRaw": "3.初始化环境",
           "name": "初始化环境",
-          "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n"
+          "modules": [
+            {
+              "textRaw": "3.0 用Hbuilder打开项目 `(菜单/文件/打开目录)`",
+              "name": "3.0 用Hbuilder打开项目 `(菜单/文件/打开目录)`",
+              "modules": [
+                {
+                  "textRaw": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
+                  "name": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
+                  "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
+                  "type": "module",
+                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                },
+                {
+                  "textRaw": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`",
+                  "name": "3.2_更新运行基座，点击如下菜单，会执行_`robot-tools_init`",
+                  "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
+                  "type": "module",
+                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                }
+              ],
+              "type": "module",
+              "displayName": "点击如图菜单可完成如下2步操作"
+            },
+            {
+              "textRaw": "点击如图菜单可完成如下2步操作",
+              "name": "点击如图菜单可完成如下2步操作",
+              "modules": [
+                {
+                  "textRaw": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
+                  "name": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
+                  "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
+                  "type": "module",
+                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                },
+                {
+                  "textRaw": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`",
+                  "name": "3.2_更新运行基座，点击如下菜单，会执行_`robot-tools_init`",
+                  "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
+                  "type": "module",
+                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                }
+              ],
+              "type": "module",
+              "displayName": "点击如图菜单可完成如下2步操作"
+            }
+          ]
         },
         {
           "textRaw": "4.运行程序",

@@ -11,7 +11,7 @@
 
 
 
-## QQ群： 820320773
+## QQ群： 322962890
 
 ### 1. 对app的控制(10分钟就可以上手)
 
@@ -38,7 +38,11 @@ click(desc("评论"));
 
 ## 代码与工具
 ### 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
-推荐下载使用`HbuilderX App开发版` 进行开发
+建议下载这个版本：
+```
+链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
+提取码: 1234
+```
 
 ### 2. 克隆或下载源码
 
