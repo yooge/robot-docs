@@ -121,13 +121,17 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 	"appkey" : "去官方申请!去官方申请!去官方申请",
 	/* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
 	"package" : "com.xxxx.yyy", 
-	"SHA1" : "BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88", /* 固定值 */
+
+	"SHA1": "BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88", /* 固定值 */
+	"MD5": "BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE",
+	"SHA256": "37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3",
+
 	"logo" : "static/logo.png", /* APP图标，不要改名*/
 	"splash" : "static/splash.png", /* 开屏等待页广告，不要改名 */
 
 	"versionName" : "1.0.37", /* 版本号，用于热补丁更新 */
 	"versionCode" : 10037,   /* 版本号，用于热补丁更新 */
-  "deploy" : "release",     /* 生成正式版APK：release, 调试版基座：debug */
+    "deploy" : "release",     /* 生成正式版APK：release, 调试版基座：debug */
 
 }
 ```
@@ -135,7 +139,20 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 * appid: 在manifest操作界面上生成
 * appkey: 去Hbuider官方网址申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey
 * package: app的包名， 如果要一个手机上安装多个程序，需要修改这个
-* SHA1:  申请appkey的时候需要用到，目前是固定值
+* SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值
+
+证书指纹:  
+
+
+| key | value |
+| --- | --- |
+| MD5|  BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE|
+| SHA1 | BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88|
+|SHA256| 37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3|
+
+
+
+
 * logo:  APP的图片
 * splash: 程序启动的时候的等待页面图片
 * versionCode: 当前版本号
