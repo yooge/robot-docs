@@ -86,25 +86,30 @@ export default {
 
 ```
 
-⚠️ 提示：APPID ⚠️
+⚠️ 提示：APPID，版本号 ⚠️
 ``` 
- A. project.manifest.appid: 
- B. plus.runtime.appid 
+const {version, project} = require('robot-tools');
 
-//如果你是在基座里调试， A是你代码的id， B是基座自带demo的id
+A. project.manifest.id;  // 你代码的id (manifest里的)
+A. project.manifest.appid; 
+A. project.manifest.version.name; //你代码的版本号
+A. project.manifest.version.code;
+A. project.manifest; //打印一下看看
+A. version.name;  //你代码的版本号 (manifest里的)
 
-//如果你是发行包里运行， A==B
+
+B. plus.runtime.appid;
+B. plus.runtime.versionCode;   //基座版本号(整数)
+B. plus.runtime.version;      //基座版本号
+B. plus.runtime.innerVersion;
+B. plus.runtime.uniVersion;
+
+// A是manifest.json里的内容
+// B是基座的信息（调试环境和正式环境，信息不同）
+// ⚠️ 请用A，不要用B ⚠️ 
 ```
 
-⚠️ 提示：版本号 ⚠️
-```
-A. version.name; //本程序代码的版本号(manifest.json里的)
-B. plus.runtime.versionCode   //基座版本号(整数)
-B. plus.runtime.version;   //基座版本号
-```
-其他:
-`
-plus.runtime.innerVersion;
-plus.runtime.uniVersion;
-`
+
+
+ 
 
