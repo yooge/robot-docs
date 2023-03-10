@@ -8,9 +8,23 @@
         {
           "textRaw": "1. 控制代码",
           "name": "1._控制代码",
-          "desc": "<ul>\n<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>\n</ul>\n<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre><pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️\n⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️\n</code></pre>",
+          "desc": "<ul>\n<li>可以用如下简单的JS代码，控制手机上的第三方APP的行为，实现自动测试等目的 *</li>\n</ul>\n<pre><code>launchApp(&quot;微信&quot;); \nclick(&quot;发现&quot;);\nclick(&quot;朋友圈&quot;);\nsleep(3000);\nclick(desc(&quot;评论&quot;));\n\n</code></pre>",
           "type": "module",
           "displayName": "1. 控制代码"
+        },
+        {
+          "textRaw": "[本项目完全兼容  uni-app + autoJs](https://uniapp.dcloud.net.cn/)",
+          "name": "[本项目完全兼容  uni-app + autoJs](https://uniapp.dcloud.net.cn/)",
+          "desc": "<pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️\n⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️\n</code></pre>",
+          "type": "module",
+          "displayName": "声明"
+        },
+        {
+          "textRaw": "声明",
+          "name": "声明",
+          "desc": "<pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️\n⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️\n</code></pre>",
+          "type": "module",
+          "displayName": "声明"
         },
         {
           "textRaw": "QQ群： 322962890",

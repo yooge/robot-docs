@@ -11,6 +11,12 @@ sleep(3000);
 click(desc("评论"));
 
 ```
+
+## 本项目完全兼容  uni-app + autoJs 
+## [本项目完全兼容  uni-app + autoJs](https://uniapp.dcloud.net.cn/)
+
+## 声明
+
 ```
 ⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️
 ⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️

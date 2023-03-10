@@ -6,9 +6,9 @@
 * [Hello World](hello.html)
 * [与vue交互](autojs-vue.html)
 * [常用api](normal.html)
-* [支持库](links.html)
+* [支持库(超强)](links.html)
 * [热更新](patchs.html)
-* [vue快速入门](vue.html)
+* [打包](deploy.html)
 
 <div class="line"></div>
 

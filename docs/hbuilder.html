@@ -22,9 +22,9 @@
 <li><a class="nav-hello" href="hello.html">Hello World</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
-<li><a class="nav-links" href="links.html">支持库</a></li>
+<li><a class="nav-links" href="links.html">支持库(超强)</a></li>
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
-<li><a class="nav-vue" href="vue.html">vue快速入门</a></li>
+<li><a class="nav-deploy" href="deploy.html">打包</a></li>
 </ul>
 <div class="line"></div>
 
@@ -222,13 +222,9 @@ click(desc(&quot;评论&quot;));
 <pre><code class="lang-js">{        
     &quot;name&quot; : &quot;app名称&quot;,
     &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */
-    &quot;appkey&quot; : &quot;去官方申请!去官方申请!去官方申请&quot;,
+    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,
     /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
     &quot;package&quot; : &quot;com.xxxx.yyy&quot;, 
-
-    &quot;SHA1&quot;: &quot;BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88&quot;, /* 固定值 */
-    &quot;MD5&quot;: &quot;BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE&quot;,
-    &quot;SHA256&quot;: &quot;37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3&quot;,
 
     &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/
     &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */
@@ -236,6 +232,7 @@ click(desc(&quot;评论&quot;));
     &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */
     &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */
     &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */
+    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/
 
 }
 </code></pre>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>打包生成APP， 本地打包 | RobotJs | 用JS任意控制手机上的APP</title>
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/deploy.html">
+</head>
+<body class="alt apidoc" id="api-section-deploy">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="/" title="返回首页">
+          RobotJs
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-startnow" href="startnow.html">开始</a></li>
+<li><a class="nav-hbuilder" href="hbuilder.html">Demo, 调试运行, 生成APP</a></li>
+<li><a class="nav-hello" href="hello.html">Hello World</a></li>
+<li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
+<li><a class="nav-normal" href="normal.html">常用api</a></li>
+<li><a class="nav-links" href="links.html">支持库(超强)</a></li>
+<li><a class="nav-patchs" href="patchs.html">热更新</a></li>
+<li><a class="nav-deploy active" href="deploy.html">打包</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav--" href="#">【API文档】:</a></li>
+<li><p><a class="nav-overview" href="overview.html">Overview - 综述</a></p>
+</li>
+<li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
+</li>
+<li><p><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></p>
+</li>
+<li><p><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">Click - 基于坐标的操作</a></p>
+</li>
+<li><a class="nav-widgetsBasedAutomation" href="widgetsBasedAutomation.html">开始 - 基于控件的操作</a></li>
+<li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_simpleactionautomator" href="widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator">Click - 基于控件的操作</a></li>
+<li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiselector" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiselector">UiSelector - 查找控件</a></li>
+<li><p><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiobject" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiobject">UiObject - 控件</a></p>
+</li>
+<li><p><a class="nav-app" href="app.html">App - 应用</a></p>
+</li>
+<li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
+<li><a class="nav-console" href="console.html">Console - 控制台</a></li>
+<li><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
+<li><a class="nav-device" href="device.html">Device - 设备</a></li>
+<li><a class="nav-dialogs" href="dialogs.html">Dialogs - 对话框</a></li>
+<li><a class="nav-engines" href="engines.html">Engines - 脚本引擎</a></li>
+<li><a class="nav-events" href="events.html">Events - 事件与监听</a></li>
+<li><a class="nav-floaty" href="floaty.html">Floaty - 悬浮窗</a></li>
+<li><a class="nav-files" href="files.html">Files - 文件系统</a></li>
+<li><a class="nav-globals" href="globals.html">Globals - 一般全局函数</a></li>
+<li><a class="nav-http" href="http.html">Http - HTTP</a></li>
+<li><a class="nav-images" href="images.html">Images - 图片与图色处理</a></li>
+<li><a class="nav-keys" href="keys.html">Keys - 按键模拟</a></li>
+<li><a class="nav-media" href="media.html">Media - 多媒体</a></li>
+<li><a class="nav-modules" href="modules.html">Modules - 模块</a></li>
+<li><a class="nav-sensors" href="sensors.html">Sensors - 传感器</a></li>
+<li><a class="nav-shell" href="shell.html">Shell - Shell命令</a></li>
+<li><a class="nav-storages" href="storages.html">Storages - 本地存储</a></li>
+<li><a class="nav-threads" href="threads.html">Threads - 多线程</a></li>
+<li><a class="nav-timers" href="timers.html">Timers - 定时器</a></li>
+<li><a class="nav-ui" href="ui.html">UI - 用户界面</a></li>
+<li><a class="nav-https-developer-mozilla-org-zh-CN-docs-Mozilla-Projects-Rhino-Scripting_Java" href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java">Work with Java - 调用Java API</a></li>
+</ul>
+<div class="line"></div>
+
+
+
+    </div>
+
+    <div id="column1" data-id="deploy" class="interior">
+      <header>
+        <h1>用JS任意控制手机上的APP</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.html" name="toc">索引</a> |
+            <a href="all.html">查看全部</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>目录</h2>
+        <ul>
+<li><span class="stability_undefined"><a href="#deploy_app">打包生成APP， 本地打包</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_a_app">A. 打包生成APP</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_apk">打包APK</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_app_1"><code>提示：每次打包或生成补丁前，需要生成app资源</code></a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_1_hbuiderx_app"><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_2_hbuiderx_apk"><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#deploy_manifest_json">自定义manifest.json文件</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#deploy_b">B. 离线打包，基座源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy">离线打包，基座源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_1_android_studio">1. 用安卓开发环境Android Studio 打开源码</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_2_uni_aj_assets">2. 将你uni源码或加密后的代码(包括aj代码)，放到 assets目录中</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_3_android_studio">3. 运行Android Studio打包功能</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#deploy_1">声明</a></span></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>打包生成APP， 本地打包<span><a class="mark" href="#deploy_app" id="deploy_app">#</a></span></h1>
+<h2>A. 打包生成APP<span><a class="mark" href="#deploy_a_app" id="deploy_a_app">#</a></span></h2>
+<h3>打包APK<span><a class="mark" href="#deploy_apk" id="deploy_apk">#</a></span></h3>
+<h4><code>提示：每次打包或生成补丁前，需要生成app资源</code><span><a class="mark" href="#deploy_app_1" id="deploy_app_1">#</a></span></h4>
+<h5><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源<span><a class="mark" href="#deploy_1_hbuiderx_app" id="deploy_1_hbuiderx_app">#</a></span></h5>
+<h5><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK<span><a class="mark" href="#deploy_2_hbuiderx_apk" id="deploy_2_hbuiderx_apk">#</a></span></h5>
+<h4>自定义manifest.json文件<span><a class="mark" href="#deploy_manifest_json" id="deploy_manifest_json">#</a></span></h4>
+<pre><code class="lang-js">{        
+    &quot;name&quot; : &quot;app名称&quot;,
+    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */
+    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,
+    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
+    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, 
+
+    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，不要改名*/
+    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，不要改名 */
+
+    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */
+    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */
+    &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */
+    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/
+
+}
+</code></pre>
+<ul>
+<li>appid: 在manifest操作界面上生成</li>
+<li>appkey: 去Hbuider官方网址申请： <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>
+<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>
+<li>SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值</li>
+</ul>
+<p>证书指纹:  </p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD5</td>
+<td>BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE</td>
+</tr>
+<tr>
+<td>SHA1</td>
+<td>BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88</td>
+</tr>
+<tr>
+<td>SHA256</td>
+<td>37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>logo:  APP的图片</li>
+<li>splash: 程序启动的时候的等待页面图片</li>
+<li>versionCode: 当前版本号</li>
+<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>
+</ul>
+<pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁
+
+⚠️ 提示：每次打包前，一定要记得上述[步骤1]
+
+</code></pre><h2>B. 离线打包，基座源码<span><a class="mark" href="#deploy_b" id="deploy_b">#</a></span></h2>
+<h3>离线打包，基座源码<span><a class="mark" href="#deploy" id="deploy">#</a></span></h3>
+<p>本项目基座的源码</p>
+<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
+提取码: 1234
+</code></pre><h4>1. 用安卓开发环境Android Studio 打开源码<span><a class="mark" href="#deploy_1_android_studio" id="deploy_1_android_studio">#</a></span></h4>
+<h4>2. 将你uni源码或加密后的代码(包括aj代码)，放到 assets目录中<span><a class="mark" href="#deploy_2_uni_aj_assets" id="deploy_2_uni_aj_assets">#</a></span></h4>
+<h4>3. 运行Android Studio打包功能<span><a class="mark" href="#deploy_3_android_studio" id="deploy_3_android_studio">#</a></span></h4>
+<h2>声明<span><a class="mark" href="#deploy_1" id="deploy_1">#</a></span></h2>
+<pre><code>⚠️ 声明：
+由于安卓开发环境受各种因素影响，操作起比较困难。
+请自行解决问题或与其他开发者交流，QQ群:322962890
+作者精力有限，在这里无法提供详细的说明文档。
+</code></pre><pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️
+⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关。 ⚠️
+⚠️ 警告：此为开放源码，没有针对任何目标程序；
+任何人都可以使用本源码，原作者均不知晓本源码的续用途。 ⚠️
+</code></pre>
+      </div>
+    </div>
+  </div>
+  <script src="assets/sh_main.js"></script>
+  <script src="assets/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+  <!-- __TRACKING__ -->
+</body>
+</html>
