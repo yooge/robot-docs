@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>打包生成APP， 本地打包 | RobotJs | 用JS任意控制手机上的APP</title>
+  <title>打包生成APP：A.云打包 B.本地打包 | RobotJs | 用JS任意控制手机上的APP</title>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/sh.css">
@@ -18,7 +18,7 @@
       </div>
       <ul>
 <li><a class="nav-startnow" href="startnow.html">开始</a></li>
-<li><a class="nav-hbuilder" href="hbuilder.html">Demo, 调试运行, 生成APP</a></li>
+<li><a class="nav-hbuilder" href="hbuilder.html">Demo, 调试运行</a></li>
 <li><a class="nav-hello" href="hello.html">Hello World</a></li>
 <li><a class="nav-autojs-vue" href="autojs-vue.html">与vue交互</a></li>
 <li><a class="nav-normal" href="normal.html">常用api</a></li>
@@ -89,10 +89,11 @@
       <div id="toc">
         <h2>目录</h2>
         <ul>
-<li><span class="stability_undefined"><a href="#deploy_app">打包生成APP， 本地打包</a></span><ul>
-<li><span class="stability_undefined"><a href="#deploy_a_app">A. 打包生成APP</a></span><ul>
-<li><span class="stability_undefined"><a href="#deploy_apk">打包APK</a></span><ul>
-<li><span class="stability_undefined"><a href="#deploy_app_1"><code>提示：每次打包或生成补丁前，需要生成app资源</code></a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_app_a_b">打包生成APP：A.云打包 B.本地打包</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_a_app">A. 云打包生成APP</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_apk">云打包APK</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_app"><code>提示：每次打包或生成补丁前，需要生成app资源</code></a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_1_2"><code>提示：云打包大约需要1-2分钟下载资料到本地</code></a></span><ul>
 <li><span class="stability_undefined"><a href="#deploy_1_hbuiderx_app"><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源</a></span></li>
 <li><span class="stability_undefined"><a href="#deploy_2_hbuiderx_apk"><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK</a></span></li>
 </ul>
@@ -102,7 +103,7 @@
 </li>
 </ul>
 </li>
-<li><span class="stability_undefined"><a href="#deploy_b">B. 离线打包，基座源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_b">B. 本地(离线)打包，基座源码</a></span><ul>
 <li><span class="stability_undefined"><a href="#deploy">离线打包，基座源码</a></span><ul>
 <li><span class="stability_undefined"><a href="#deploy_1_android_studio">1. 用安卓开发环境Android Studio 打开源码</a></span></li>
 <li><span class="stability_undefined"><a href="#deploy_2_uni_aj_assets">2. 将你uni源码或加密后的代码(包括aj代码)，放到 assets目录中</a></span></li>
@@ -119,10 +120,11 @@
       </div>
 
       <div id="apicontent">
-        <h1>打包生成APP， 本地打包<span><a class="mark" href="#deploy_app" id="deploy_app">#</a></span></h1>
-<h2>A. 打包生成APP<span><a class="mark" href="#deploy_a_app" id="deploy_a_app">#</a></span></h2>
-<h3>打包APK<span><a class="mark" href="#deploy_apk" id="deploy_apk">#</a></span></h3>
-<h4><code>提示：每次打包或生成补丁前，需要生成app资源</code><span><a class="mark" href="#deploy_app_1" id="deploy_app_1">#</a></span></h4>
+        <h1>打包生成APP：A.云打包 B.本地打包<span><a class="mark" href="#deploy_app_a_b" id="deploy_app_a_b">#</a></span></h1>
+<h2>A. 云打包生成APP<span><a class="mark" href="#deploy_a_app" id="deploy_a_app">#</a></span></h2>
+<h3>云打包APK<span><a class="mark" href="#deploy_apk" id="deploy_apk">#</a></span></h3>
+<h4><code>提示：每次打包或生成补丁前，需要生成app资源</code><span><a class="mark" href="#deploy_app" id="deploy_app">#</a></span></h4>
+<h4><code>提示：云打包大约需要1-2分钟下载资料到本地</code><span><a class="mark" href="#deploy_1_2" id="deploy_1_2">#</a></span></h4>
 <h5><code>[步骤]</code>1. HbuiderX菜单 -&gt; 发行 -&gt; 本地打包 -&gt; 生成app资源<span><a class="mark" href="#deploy_1_hbuiderx_app" id="deploy_1_hbuiderx_app">#</a></span></h5>
 <h5><code>[步骤]</code>2. HbuiderX菜单 -&gt; 运行 -&gt; 运行到终端 -&gt; 生成APK<span><a class="mark" href="#deploy_2_hbuiderx_apk" id="deploy_2_hbuiderx_apk">#</a></span></h5>
 <h4>自定义manifest.json文件<span><a class="mark" href="#deploy_manifest_json" id="deploy_manifest_json">#</a></span></h4>
@@ -173,14 +175,14 @@
 </tbody>
 </table>
 <ul>
-<li>logo:  APP的图片</li>
-<li>splash: 程序启动的时候的等待页面图片</li>
+<li>logo:  APP的图片(路径是死的)</li>
+<li>splash: 程序启动的时候的等待页面图片(路径是死的)</li>
 <li>versionCode: 当前版本号</li>
 <li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>
 </ul>
 <pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁
 ⚠️ 提示：每次打包前，一定要记得上述[步骤1]
-</code></pre><h2>B. 离线打包，基座源码<span><a class="mark" href="#deploy_b" id="deploy_b">#</a></span></h2>
+</code></pre><h2>B. 本地(离线)打包，基座源码<span><a class="mark" href="#deploy_b" id="deploy_b">#</a></span></h2>
 <h3>离线打包，基座源码<span><a class="mark" href="#deploy" id="deploy">#</a></span></h3>
 <p>⚠️  感谢uni-app官方提供源码⚠️ </p>
 <pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 

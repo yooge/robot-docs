@@ -2,7 +2,7 @@
 @// point at the new location.
 
 * [开始](startnow.html)
-* [Demo, 调试运行, 生成APP](hbuilder.html)
+* [Demo, 调试运行](hbuilder.html)
 * [Hello World](hello.html)
 * [与vue交互](autojs-vue.html)
 * [常用api](normal.html)
