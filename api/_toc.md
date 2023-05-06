@@ -9,7 +9,8 @@
 * [支持库(超强)](links.html)
 * [热更新](patchs.html)
 * [打包](deploy.html)
-
+* [Q&A - 常见问题](qa.html)
+* 
 <div class="line"></div>
 
 * [【API文档】:](#)
@@ -17,7 +18,7 @@
 
 * [Tip - 阅读说明](documentation.html)
 
-* [Q&A - 常见问题](qa.html)
+
 
 * [Click - 基于坐标的操作](coordinatesBasedAutomation.html)
 * [开始 - 基于控件的操作](widgetsBasedAutomation.html)

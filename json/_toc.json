@@ -87,26 +87,31 @@
       "text": "[打包](deploy.html)"
     },
     {
-      "type": "space"
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
+      "text": "[Q&A - 常见问题](qa.html)"
     },
     {
       "type": "list_item_end"
     },
     {
-      "type": "list_end"
+      "type": "loose_item_start"
     },
     {
       "type": "html",
       "pre": false,
-      "text": "<div class=\"line\"></div>\n\n"
+      "text": "<div class=\"line\"></div>\n"
     },
     {
-      "type": "list_start",
-      "ordered": false,
-      "start": ""
+      "type": "list_item_end"
     },
     {
-      "type": "list_item_start"
+      "type": "loose_item_start"
     },
     {
       "type": "text",
@@ -133,20 +138,21 @@
       "text": "[Tip - 阅读说明](documentation.html)"
     },
     {
-      "type": "list_item_end"
-    },
-    {
-      "type": "loose_item_start"
-    },
-    {
-      "type": "text",
-      "text": "[Q&A - 常见问题](qa.html)"
+      "type": "space"
     },
     {
       "type": "list_item_end"
     },
     {
-      "type": "loose_item_start"
+      "type": "list_end"
+    },
+    {
+      "type": "list_start",
+      "ordered": false,
+      "start": ""
+    },
+    {
+      "type": "list_item_start"
     },
     {
       "type": "text",

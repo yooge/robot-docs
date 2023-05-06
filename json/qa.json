@@ -4,12 +4,30 @@
     {
       "textRaw": "Q & A",
       "name": "q_&_a",
-      "desc": "<p>参见项目与项目配置。</p>\n",
       "properties": [
         {
-          "textRaw": "Auto.js自带的模块和函数中没有的功能如何实现",
-          "name": "js自带的模块和函数中没有的功能如何实现",
-          "desc": "<p>由于Auto.js支持直接调用Android的API，对于Auto.js没有内置的函数，可以直接通过修改Android代码为JavaScript代码实现。例如旋转图片的Android代码为：</p>\n<pre><code>import android.graphics.Bitmap;\nimport android.graphics.Matrix;\n\npublic static Bitmap rotate(final Bitmap src,\n                            final int degrees,\n                            final float px,\n                            final float py) {\n    if (degrees == 0) return src;\n    Matrix matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    Bitmap ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>转换为JavaScript的代码后为：</p>\n<pre><code>importClass(android.graphics.Bitmap);\nimportClass(android.graphics.Matrix);\n\nfunction rotate(src, degrees, px, py){\n    if (degrees == 0) return src;\n    var matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    var ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>有关调用Android和Java的API的更多信息，参见<a href=\"https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java\">Work with Java</a>。</p>\n"
+          "textRaw": "问题交流QQ群：714554851",
+          "name": "问题交流QQ群：714554851",
+          "desc": "<p>  初始化项目环境配置 不对：\n  手机上未安装正确的调试基座，会提示Robot对象不存在\n  请参考：<a href=\"hbuilder.html#hbuilder_1\">Demo,调试,运行</a> </p>\n"
+        },
+        {
+          "textRaw": "1.运行基座时报错：Robot对象不存在",
+          "name": "运行基座时报错：Robot对象不存在",
+          "desc": "<p>  初始化项目环境配置 不对：\n  手机上未安装正确的调试基座，会提示Robot对象不存在\n  请参考：<a href=\"hbuilder.html#hbuilder_1\">Demo,调试,运行</a> </p>\n"
+        },
+        {
+          "textRaw": "2.打包异常",
+          "name": "打包异常",
+          "desc": "<ol>\n<li>本项目仅供学习交流，不提供打包技术支持 <a href=\"deploy.html\">deploy.html</a></li>\n<li>离线打包，请学者自行研究方法，不提供技术支持</li>\n</ol>\n"
+        }
+      ],
+      "modules": [
+        {
+          "textRaw": "3. Auto.js自带的模块和函数中没有的功能如何实现",
+          "name": "3._auto.js自带的模块和函数中没有的功能如何实现",
+          "desc": "<p>由于Auto.js支持直接调用Android的API，对于Auto.js没有内置的函数，可以直接通过修改Android代码为JavaScript代码实现。例如旋转图片的Android代码为：</p>\n<pre><code>import android.graphics.Bitmap;\nimport android.graphics.Matrix;\n\npublic static Bitmap rotate(final Bitmap src,\n                            final int degrees,\n                            final float px,\n                            final float py) {\n    if (degrees == 0) return src;\n    Matrix matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    Bitmap ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>转换为JavaScript的代码后为：</p>\n<pre><code>importClass(android.graphics.Bitmap);\nimportClass(android.graphics.Matrix);\n\nfunction rotate(src, degrees, px, py){\n    if (degrees == 0) return src;\n    var matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    var ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>有关调用Android和Java的API的更多信息，参见<a href=\"https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java\">Work with Java</a>。</p>\n",
+          "type": "module",
+          "displayName": "3. Auto.js自带的模块和函数中没有的功能如何实现"
         }
       ],
       "type": "module",

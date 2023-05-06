@@ -97,6 +97,7 @@ A. project.manifest.version.code;
 A. project.manifest; //打印一下看看
 A. version.name;  //你代码的版本号 (manifest里的)
 
+//----⚠️ 请用A，不要用B ⚠️----
 
 B. plus.runtime.appid;
 B. plus.runtime.versionCode;   //基座版本号(整数)
