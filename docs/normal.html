@@ -25,6 +25,7 @@
 <li><a class="nav-links" href="links.html">支持库(超强)</a></li>
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy" href="deploy.html">打包</a></li>
+<li><a class="nav-remote" href="remote.html">远程部署</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
 <li><div class="line"></div>
 </li>
@@ -116,6 +117,11 @@
 <li><span class="stability_undefined"><a href="#normal_6">6. 其他</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_7">7. 手指操作</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_8_api">8. 截图, 找图 (原API，没有新增，老手请请忽略)</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_9_app">9. 与安卓其他APP交互</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_1">发送广播</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_2">接收广播</a></span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -534,6 +540,23 @@ var point = findColor(img, &quot;#00ff00&quot;, {
 </code></pre>
 <p>.
 .</p>
+<h2>9. 与安卓其他APP交互<span><a class="mark" href="#normal_9_app" id="normal_9_app">#</a></span></h2>
+<h3>发送广播<span><a class="mark" href="#normal_1" id="normal_1">#</a></span></h3>
+<pre><code class="lang-js"> var it = {
+    action: &quot;APP_EVENT&quot;,
+    extras: {
+        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  
+    }
+ };
+app.sendBroadcast(it);
+</code></pre>
+<h3>接收广播<span><a class="mark" href="#normal_2" id="normal_2">#</a></span></h3>
+<pre><code class="lang-js">//找作者要补丁
+app.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {
+        console.log(&#39;接收数据: &#39;) ;
+        console.log(data.getString(&#39;mydata&#39;)) ;
+})
+</code></pre>
 
       </div>
     </div>

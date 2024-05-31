@@ -94,6 +94,16 @@
     },
     {
       "type": "text",
+      "text": "[远程部署](remote.html)"
+    },
+    {
+      "type": "list_item_end"
+    },
+    {
+      "type": "list_item_start"
+    },
+    {
+      "type": "text",
       "text": "[Q&A - 常见问题](qa.html)"
     },
     {

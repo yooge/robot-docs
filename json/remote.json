@@ -1,0 +1,53 @@
+{
+  "source": "../api/remote.md",
+  "modules": [
+    {
+      "textRaw": "远程部署",
+      "name": "远程部署",
+      "modules": [
+        {
+          "textRaw": "把你的所有的 页面+脚本，放到远程服务器",
+          "name": "把你的所有的 页面+脚本，放到远程服务器",
+          "modules": [
+            {
+              "textRaw": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "name": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "type": "module",
+              "displayName": "3."
+            },
+            {
+              "textRaw": "3.",
+              "name": "3.",
+              "type": "module",
+              "displayName": "3."
+            }
+          ],
+          "type": "module",
+          "displayName": "操作流程"
+        },
+        {
+          "textRaw": "操作流程",
+          "name": "操作流程",
+          "modules": [
+            {
+              "textRaw": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "name": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "type": "module",
+              "displayName": "3."
+            },
+            {
+              "textRaw": "3.",
+              "name": "3.",
+              "type": "module",
+              "displayName": "3."
+            }
+          ],
+          "type": "module",
+          "displayName": "操作流程"
+        }
+      ],
+      "type": "module",
+      "displayName": "远程部署"
+    }
+  ]
+}

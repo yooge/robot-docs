@@ -34,18 +34,18 @@
           "displayName": "声明"
         },
         {
-          "textRaw": "QQ群： 714554851",
-          "name": "qq群：_714554851",
+          "textRaw": "QQ群： 862460452",
+          "name": "qq群：_862460452",
           "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
           "type": "module",
-          "displayName": "QQ群： 714554851"
+          "displayName": "QQ群： 862460452"
         },
         {
-          "textRaw": "QQ群：  714554851",
-          "name": "qq群：_714554851",
+          "textRaw": "QQ群：  862460452",
+          "name": "qq群：_862460452",
           "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n<!-- [end-include:startnow.md] -->\n<!-- [start-include:autojs-vue.md] -->\n",
           "type": "module",
-          "displayName": "QQ群：  714554851"
+          "displayName": "QQ群：  862460452"
         }
       ],
       "properties": [
@@ -56,14 +56,14 @@
             {
               "textRaw": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
               "name": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
-              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p>建议下载这个版本(不再建议了，请去下载最新的吧 4.15)：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },
             {
               "textRaw": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
               "name": "2.3_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
-              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p>建议下载这个版本(不再建议了，请去下载最新的吧 4.15)：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             }
@@ -303,8 +303,8 @@
       "name": "q_&_a",
       "properties": [
         {
-          "textRaw": "问题交流QQ群：714554851",
-          "name": "问题交流QQ群：714554851",
+          "textRaw": "问题交流QQ群：862460452",
+          "name": "问题交流QQ群：862460452",
           "desc": "<p>  初始化项目环境配置 不对：\n  手机上未安装正确的调试基座，会提示Robot对象不存在\n  请参考：<a href=\"hbuilder.html#hbuilder_1\">Demo,调试,运行</a> </p>\n"
         },
         {
@@ -315,20 +315,72 @@
         {
           "textRaw": "2.打包异常",
           "name": "打包异常",
-          "desc": "<ol>\n<li>本项目仅供学习交流，不提供打包技术支持 <a href=\"deploy.html\">deploy.html</a></li>\n<li>离线打包，请学者自行研究方法，不提供技术支持</li>\n</ol>\n"
+          "desc": "<ol>\n<li>本项目仅供学习交流， 打包技术支持 &gt;&gt;&gt; <a href=\"deploy.html\">deploy.html</a></li>\n<li>离线打包，请学者自行研究方法，不提供技术支持</li>\n</ol>\n"
         }
       ],
       "modules": [
         {
           "textRaw": "3. Auto.js自带的模块和函数中没有的功能如何实现",
           "name": "3._auto.js自带的模块和函数中没有的功能如何实现",
-          "desc": "<p>由于Auto.js支持直接调用Android的API，对于Auto.js没有内置的函数，可以直接通过修改Android代码为JavaScript代码实现。例如旋转图片的Android代码为：</p>\n<pre><code>import android.graphics.Bitmap;\nimport android.graphics.Matrix;\n\npublic static Bitmap rotate(final Bitmap src,\n                            final int degrees,\n                            final float px,\n                            final float py) {\n    if (degrees == 0) return src;\n    Matrix matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    Bitmap ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>转换为JavaScript的代码后为：</p>\n<pre><code>importClass(android.graphics.Bitmap);\nimportClass(android.graphics.Matrix);\n\nfunction rotate(src, degrees, px, py){\n    if (degrees == 0) return src;\n    var matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    var ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>有关调用Android和Java的API的更多信息，参见<a href=\"https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java\">Work with Java</a>。\n<!-- [end-include:qa.md] --></p>\n<!-- [start-include:app.md] -->\n",
+          "desc": "<p>由于Auto.js支持直接调用Android的API，对于Auto.js没有内置的函数，可以直接通过修改Android代码为JavaScript代码实现。例如旋转图片的Android代码为：</p>\n<pre><code>import android.graphics.Bitmap;\nimport android.graphics.Matrix;\n\npublic static Bitmap rotate(final Bitmap src,\n                            final int degrees,\n                            final float px,\n                            final float py) {\n    if (degrees == 0) return src;\n    Matrix matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    Bitmap ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>转换为JavaScript的代码后为：</p>\n<pre><code>importClass(android.graphics.Bitmap);\nimportClass(android.graphics.Matrix);\n\nfunction rotate(src, degrees, px, py){\n    if (degrees == 0) return src;\n    var matrix = new Matrix();\n    matrix.setRotate(degrees, px, py);\n    var ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);\n    return ret;\n}\n</code></pre><p>有关调用Android和Java的API的更多信息，参见<a href=\"https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java\">Work with Java</a>。\n<!-- [end-include:qa.md] --></p>\n<!-- [start-include:remote.md] -->\n",
           "type": "module",
           "displayName": "3. Auto.js自带的模块和函数中没有的功能如何实现"
         }
       ],
       "type": "module",
       "displayName": "Q & A"
+    },
+    {
+      "textRaw": "远程部署",
+      "name": "远程部署",
+      "modules": [
+        {
+          "textRaw": "把你的所有的 页面+脚本，放到远程服务器",
+          "name": "把你的所有的 页面+脚本，放到远程服务器",
+          "modules": [
+            {
+              "textRaw": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "name": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "desc": "<!-- [end-include:remote.md] -->\n<!-- [start-include:app.md] -->\n",
+              "type": "module",
+              "displayName": "3."
+            },
+            {
+              "textRaw": "3.",
+              "name": "3.",
+              "desc": "<!-- [end-include:remote.md] -->\n<!-- [start-include:app.md] -->\n",
+              "type": "module",
+              "displayName": "3."
+            }
+          ],
+          "type": "module",
+          "displayName": "操作流程"
+        },
+        {
+          "textRaw": "操作流程",
+          "name": "操作流程",
+          "modules": [
+            {
+              "textRaw": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "name": "2. 点击菜单： 运行 > 运行到终端 > 3热补丁",
+              "desc": "<!-- [end-include:remote.md] -->\n<!-- [start-include:app.md] -->\n",
+              "type": "module",
+              "displayName": "3."
+            },
+            {
+              "textRaw": "3.",
+              "name": "3.",
+              "desc": "<!-- [end-include:remote.md] -->\n<!-- [start-include:app.md] -->\n",
+              "type": "module",
+              "displayName": "3."
+            }
+          ],
+          "type": "module",
+          "displayName": "操作流程"
+        }
+      ],
+      "type": "module",
+      "displayName": "远程部署"
     },
     {
       "textRaw": "App",
@@ -7180,7 +7232,7 @@
           "desc": "<p>相当于<code>toast(message);log(message)</code>。显示信息message并在控制台中输出。参见console.log。</p>\n"
         },
         {
-          "textRaw": "waitForActivity(activity[, period = 200])",
+          "textRaw": "waitForActivity(activity, period = 200)",
           "type": "method",
           "name": "waitForActivity",
           "signatures": [
@@ -7195,7 +7247,6 @@
                   "textRaw": "`period` 轮询等待间隔（毫秒） ",
                   "name": "period",
                   "desc": "轮询等待间隔（毫秒）",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -7207,7 +7258,6 @@
                 },
                 {
                   "name": "period ",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -7216,7 +7266,7 @@
           "desc": "<p>等待指定的Activity出现，period为检查Activity的间隔。</p>\n"
         },
         {
-          "textRaw": "waitForPackage(package[, period = 200])",
+          "textRaw": "waitForPackage(package, period = 200)",
           "type": "method",
           "name": "waitForPackage",
           "signatures": [
@@ -7231,7 +7281,6 @@
                   "textRaw": "`period` 轮询等待间隔（毫秒） ",
                   "name": "period",
                   "desc": "轮询等待间隔（毫秒）",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -7243,7 +7292,6 @@
                 },
                 {
                   "name": "period ",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -10261,10 +10309,10 @@
             {
               "params": [
                 {
-                  "textRaw": "`path` {string} 音乐文件路径 ",
+                  "textRaw": "`path` {string} 音乐文件路径或url ",
                   "name": "path",
                   "type": "string",
-                  "desc": "音乐文件路径"
+                  "desc": "音乐文件路径或url"
                 },
                 {
                   "textRaw": "`volume` {number} 播放音量，为0~1的浮点数，默认为1 ",
@@ -15547,9 +15595,31 @@
         {
           "textRaw": "8. 截图, 找图 (原API，没有新增，老手请请忽略)",
           "name": "8._截图,_找图_(原api，没有新增，老手请请忽略)",
-          "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.\n<!-- [end-include:normal.md] --></p>\n<!-- [start-include:hello.md] -->\n",
+          "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
           "type": "module",
           "displayName": "8. 截图, 找图 (原API，没有新增，老手请请忽略)"
+        },
+        {
+          "textRaw": "9. 与安卓其他APP交互",
+          "name": "9._与安卓其他app交互",
+          "modules": [
+            {
+              "textRaw": "发送广播",
+              "name": "发送广播",
+              "desc": "<pre><code class=\"lang-js\"> var it = {\n    action: &quot;APP_EVENT&quot;,\n    extras: {\n        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  \n    }\n };\napp.sendBroadcast(it);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "发送广播"
+            },
+            {
+              "textRaw": "接收广播",
+              "name": "接收广播",
+              "desc": "<pre><code class=\"lang-js\">//找作者要补丁\napp.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {\n        console.log(&#39;接收数据: &#39;) ;\n        console.log(data.getString(&#39;mydata&#39;)) ;\n})\n</code></pre>\n<!-- [end-include:normal.md] -->\n<!-- [start-include:hello.md] -->\n",
+              "type": "module",
+              "displayName": "接收广播"
+            }
+          ],
+          "type": "module",
+          "displayName": "9. 与安卓其他APP交互"
         }
       ],
       "signatures": [
@@ -15708,9 +15778,31 @@
         {
           "textRaw": "8. 截图, 找图 (原API，没有新增，老手请请忽略)",
           "name": "8._截图,_找图_(原api，没有新增，老手请请忽略)",
-          "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.\n<!-- [end-include:normal.md] --></p>\n<!-- [start-include:hello.md] -->\n",
+          "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
           "type": "module",
           "displayName": "8. 截图, 找图 (原API，没有新增，老手请请忽略)"
+        },
+        {
+          "textRaw": "9. 与安卓其他APP交互",
+          "name": "9._与安卓其他app交互",
+          "modules": [
+            {
+              "textRaw": "发送广播",
+              "name": "发送广播",
+              "desc": "<pre><code class=\"lang-js\"> var it = {\n    action: &quot;APP_EVENT&quot;,\n    extras: {\n        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  \n    }\n };\napp.sendBroadcast(it);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "发送广播"
+            },
+            {
+              "textRaw": "接收广播",
+              "name": "接收广播",
+              "desc": "<pre><code class=\"lang-js\">//找作者要补丁\napp.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {\n        console.log(&#39;接收数据: &#39;) ;\n        console.log(data.getString(&#39;mydata&#39;)) ;\n})\n</code></pre>\n<!-- [end-include:normal.md] -->\n<!-- [start-include:hello.md] -->\n",
+              "type": "module",
+              "displayName": "接收广播"
+            }
+          ],
+          "type": "module",
+          "displayName": "9. 与安卓其他APP交互"
         }
       ],
       "signatures": [

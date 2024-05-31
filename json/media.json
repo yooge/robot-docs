@@ -41,10 +41,10 @@
             {
               "params": [
                 {
-                  "textRaw": "`path` {string} 音乐文件路径 ",
+                  "textRaw": "`path` {string} 音乐文件路径或url ",
                   "name": "path",
                   "type": "string",
-                  "desc": "音乐文件路径"
+                  "desc": "音乐文件路径或url"
                 },
                 {
                   "textRaw": "`volume` {number} 播放音量，为0~1的浮点数，默认为1 ",

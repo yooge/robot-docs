@@ -9,6 +9,7 @@
 * [支持库(超强)](links.html)
 * [热更新](patchs.html)
 * [打包](deploy.html)
+* [远程部署](remote.html)
 * [Q&A - 常见问题](qa.html)
 * 
 <div class="line"></div>

@@ -87,13 +87,13 @@ for(var i = 0; i < 100; i++){
 
 相当于`toast(message);log(message)`。显示信息message并在控制台中输出。参见console.log。
 
-## waitForActivity(activity[, period = 200])
+## waitForActivity(activity, period = 200)
 * `activity` Activity名称
 * `period` 轮询等待间隔（毫秒）
 
 等待指定的Activity出现，period为检查Activity的间隔。
 
-## waitForPackage(package[, period = 200])
+## waitForPackage(package, period = 200)
 * `package` 包名
 * `period` 轮询等待间隔（毫秒）
 

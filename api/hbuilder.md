@@ -11,7 +11,7 @@
 
 
 
-## QQ群： 714554851
+## QQ群： 862460452
 
 ### 1. 对app的控制(10分钟就可以上手)
 
@@ -38,7 +38,7 @@ click(desc("评论"));
 
 ## 代码与工具
 ### 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
-建议下载这个版本：
+建议下载这个版本：(不再建议了，请去下载最新的吧 4.15)：
 ```
 链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
 提取码: 1234
@@ -72,7 +72,7 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 #### `[步骤1]`1. HbuiderX菜单 -> 运行 -> 运行到终端 -> 1.初始化/依赖包
 
 
-#### `[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座
+#### `[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座 （可忽略）
 
 #### `[步骤3]`3. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座
 
@@ -87,6 +87,7 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 * 基座是用于动态调试的APP程序。
 * 如果步骤2步骤3忘记操作，会意外安装错误的手机程序，会提示Robot对象不存在
 
+<img src='images/start-app.png' width="400">
 .
 
 ### 2. 执行 (调试/运行) 

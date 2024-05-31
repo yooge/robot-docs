@@ -167,7 +167,7 @@
           "desc": "<p>相当于<code>toast(message);log(message)</code>。显示信息message并在控制台中输出。参见console.log。</p>\n"
         },
         {
-          "textRaw": "waitForActivity(activity[, period = 200])",
+          "textRaw": "waitForActivity(activity, period = 200)",
           "type": "method",
           "name": "waitForActivity",
           "signatures": [
@@ -182,7 +182,6 @@
                   "textRaw": "`period` 轮询等待间隔（毫秒） ",
                   "name": "period",
                   "desc": "轮询等待间隔（毫秒）",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -194,7 +193,6 @@
                 },
                 {
                   "name": "period ",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -203,7 +201,7 @@
           "desc": "<p>等待指定的Activity出现，period为检查Activity的间隔。</p>\n"
         },
         {
-          "textRaw": "waitForPackage(package[, period = 200])",
+          "textRaw": "waitForPackage(package, period = 200)",
           "type": "method",
           "name": "waitForPackage",
           "signatures": [
@@ -218,7 +216,6 @@
                   "textRaw": "`period` 轮询等待间隔（毫秒） ",
                   "name": "period",
                   "desc": "轮询等待间隔（毫秒）",
-                  "optional": true,
                   "default": " 200"
                 }
               ]
@@ -230,7 +227,6 @@
                 },
                 {
                   "name": "period ",
-                  "optional": true,
                   "default": " 200"
                 }
               ]

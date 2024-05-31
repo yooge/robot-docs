@@ -25,6 +25,7 @@
 <li><a class="nav-links" href="links.html">支持库(超强)</a></li>
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy" href="deploy.html">打包</a></li>
+<li><a class="nav-remote" href="remote.html">远程部署</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
 <li><div class="line"></div>
 </li>
@@ -93,7 +94,7 @@
 <li><span class="stability_undefined"><a href="#startnow_uni_app_autojs">本项目完全兼容  uni-app + autoJs</a></span></li>
 <li><span class="stability_undefined"><a href="#startnow_uni_app_autojs_https_uniapp_dcloud_net_cn"><a href="https://uniapp.dcloud.net.cn/">本项目完全兼容  uni-app + autoJs</a></a></span></li>
 <li><span class="stability_undefined"><a href="#startnow">声明</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_qq_714554851">QQ群： 714554851</a></span></li>
+<li><span class="stability_undefined"><a href="#startnow_qq_862460452">QQ群： 862460452</a></span></li>
 <li><span class="stability_undefined"><a href="#startnow_2">2.开发环境</a></span><ul>
 <li><span class="stability_undefined"><a href="#startnow_2_1_https_github_com_yooge_robot">2.1 下载代码  https://github.com/yooge/robot</a></span></li>
 <li><span class="stability_undefined"><a href="#startnow_2_2_nodejs_http_www_nodejs_com_cn">2.2 下载<a href="http://www.nodejs.com.cn/">NodeJs</a></a></span></li>
@@ -111,7 +112,7 @@
 </li>
 <li><span class="stability_undefined"><a href="#startnow_4">4.运行程序</a></span></li>
 <li><span class="stability_undefined"><a href="#startnow_5">5.代码结构</a></span></li>
-<li><span class="stability_undefined"><a href="#startnow_qq_714554851_1">QQ群：  714554851</a></span></li>
+<li><span class="stability_undefined"><a href="#startnow_qq_862460452_1">QQ群：  862460452</a></span></li>
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#autojs_vue_vue">vue与控制脚本的交互</a></span><ul>
@@ -157,6 +158,11 @@
 <li><span class="stability_undefined"><a href="#normal_6">6. 其他</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_7">7. 手指操作</a></span></li>
 <li><span class="stability_undefined"><a href="#normal_8_api">8. 截图, 找图 (原API，没有新增，老手请请忽略)</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_9_app">9. 与安卓其他APP交互</a></span><ul>
+<li><span class="stability_undefined"><a href="#normal_1">发送广播</a></span></li>
+<li><span class="stability_undefined"><a href="#normal_2">接收广播</a></span></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#hello_vue">vue与控制脚本的交互</a></span><ul>
@@ -174,10 +180,20 @@
 </li>
 <li><span class="stability_undefined"><a href="#overview">综述</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_q_a">Q &amp; A</a></span><ul>
-<li><span class="stability_undefined"><a href="#qa_qq_714554851">问题交流QQ群：714554851</a></span></li>
+<li><span class="stability_undefined"><a href="#qa_qq_862460452">问题交流QQ群：862460452</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_1_robot">1.运行基座时报错：Robot对象不存在</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_2">2.打包异常</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_3_auto_js">3. Auto.js自带的模块和函数中没有的功能如何实现</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#remote">远程部署</a></span><ul>
+<li><span class="stability_undefined"><a href="#remote_1">把你的所有的 页面+脚本，放到远程服务器</a></span></li>
+<li><span class="stability_undefined"><a href="#remote_2">操作流程</a></span><ul>
+<li><span class="stability_undefined"><a href="#remote_1_app_app">1. 点击菜单： 发行 &gt; 原生app本地打包 &gt; 生成APP打包资源</a></span></li>
+<li><span class="stability_undefined"><a href="#remote_2_3">2. 点击菜单： 运行 &gt; 运行到终端 &gt; 3热补丁</a></span></li>
+<li><span class="stability_undefined"><a href="#remote_3">3.</a></span></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#app_app">App</a></span><ul>
@@ -562,8 +578,8 @@
 <li><span class="stability_undefined"><a href="#globals_getclip">getClip()</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_toast_message">toast(message)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_toastlog_message">toastLog(message)</a></span></li>
-<li><span class="stability_undefined"><a href="#globals_waitforactivity_activity_period_200">waitForActivity(activity[, period = 200])</a></span></li>
-<li><span class="stability_undefined"><a href="#globals_waitforpackage_package_period_200">waitForPackage(package[, period = 200])</a></span></li>
+<li><span class="stability_undefined"><a href="#globals_waitforactivity_activity_period_200">waitForActivity(activity, period = 200)</a></span></li>
+<li><span class="stability_undefined"><a href="#globals_waitforpackage_package_period_200">waitForPackage(package, period = 200)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_exit">exit()</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_random_min_max">random(min, max)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_random">random()</a></span></li>
@@ -1132,14 +1148,14 @@ click(desc(&quot;评论&quot;));
 <h2>声明<span><a class="mark" href="#startnow" id="startnow">#</a></span></h2>
 <pre><code>⚠️ 警告：本项目仅供大家学习交流，请勿用于非法目的 ⚠️
 ⚠️ 警告：本项目之衍生产品，其用途均与本项目作者无关 ⚠️
-</code></pre><h2>QQ群： 714554851<span><a class="mark" href="#startnow_qq_714554851" id="startnow_qq_714554851">#</a></span></h2>
+</code></pre><h2>QQ群： 862460452<span><a class="mark" href="#startnow_qq_862460452" id="startnow_qq_862460452">#</a></span></h2>
 <pre><code class="lang-js">  如果喜欢这个项目，可以请赠我一包华子 
 </code></pre>
 <h2>2.开发环境<span><a class="mark" href="#startnow_2" id="startnow_2">#</a></span></h2>
 <h3>2.1 下载代码  <a href="https://github.com/yooge/robot">https://github.com/yooge/robot</a><span><a class="mark" href="#startnow_2_1_https_github_com_yooge_robot" id="startnow_2_1_https_github_com_yooge_robot">#</a></span></h3>
 <h3>2.2 下载<a href="http://www.nodejs.com.cn/">NodeJs</a><span><a class="mark" href="#startnow_2_2_nodejs_http_www_nodejs_com_cn" id="startnow_2_2_nodejs_http_www_nodejs_com_cn">#</a></span></h3>
 <h3>2.3 下载安装开发工具<a href="https://www.dcloud.io/hbuilderx.html">HbuilderX</a><span><a class="mark" href="#startnow_2_3_hbuilderx_https_www_dcloud_io_hbuilderx_html" id="startnow_2_3_hbuilderx_https_www_dcloud_io_hbuilderx_html">#</a></span></h3>
-<p>建议下载这个版本：</p>
+<p>建议下载这个版本(不再建议了，请去下载最新的吧 4.15)：</p>
 <pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
 提取码: 1234
 </code></pre><p><img src="images/start0.png" alt=""></p>
@@ -1153,7 +1169,7 @@ click(desc(&quot;评论&quot;));
 <p><img src="images/start2.png" alt=""></p>
 <h2>5.代码结构<span><a class="mark" href="#startnow_5" id="startnow_5">#</a></span></h2>
 <p><img src="images/start3.png" alt=""></p>
-<h2>QQ群：  714554851<span><a class="mark" href="#startnow_qq_714554851_1" id="startnow_qq_714554851_1">#</a></span></h2>
+<h2>QQ群：  862460452<span><a class="mark" href="#startnow_qq_862460452_1" id="startnow_qq_862460452_1">#</a></span></h2>
 <pre><code class="lang-js">  如果喜欢这个项目，可以请赠我一包华子 
 </code></pre>
 <!-- [end-include:startnow.md] -->
@@ -1699,8 +1715,25 @@ var point = findColor(img, &quot;#00ff00&quot;, {
  //result.matches 
 </code></pre>
 <p>.
-.
-<!-- [end-include:normal.md] --></p>
+.</p>
+<h2>9. 与安卓其他APP交互<span><a class="mark" href="#normal_9_app" id="normal_9_app">#</a></span></h2>
+<h3>发送广播<span><a class="mark" href="#normal_1" id="normal_1">#</a></span></h3>
+<pre><code class="lang-js"> var it = {
+    action: &quot;APP_EVENT&quot;,
+    extras: {
+        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  
+    }
+ };
+app.sendBroadcast(it);
+</code></pre>
+<h3>接收广播<span><a class="mark" href="#normal_2" id="normal_2">#</a></span></h3>
+<pre><code class="lang-js">//找作者要补丁
+app.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {
+        console.log(&#39;接收数据: &#39;) ;
+        console.log(data.getString(&#39;mydata&#39;)) ;
+})
+</code></pre>
+<!-- [end-include:normal.md] -->
 <!-- [start-include:hello.md] -->
 <h1>vue与控制脚本的交互<span><a class="mark" href="#hello_vue" id="hello_vue">#</a></span></h1>
 <p>建议先大致了解Vue项目结构后进行</p>
@@ -1777,14 +1810,14 @@ APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从�
 <!-- [end-include:overview.md] -->
 <!-- [start-include:qa.md] -->
 <h1>Q &amp; A<span><a class="mark" href="#qa_q_a" id="qa_q_a">#</a></span></h1>
-<h2>问题交流QQ群：714554851<span><a class="mark" href="#qa_qq_714554851" id="qa_qq_714554851">#</a></span></h2>
+<h2>问题交流QQ群：862460452<span><a class="mark" href="#qa_qq_862460452" id="qa_qq_862460452">#</a></span></h2>
 <h2>1.运行基座时报错：Robot对象不存在<span><a class="mark" href="#qa_1_robot" id="qa_1_robot">#</a></span></h2>
 <p>  初始化项目环境配置 不对：
   手机上未安装正确的调试基座，会提示Robot对象不存在
   请参考：<a href="hbuilder.html#hbuilder_1">Demo,调试,运行</a> </p>
 <h2>2.打包异常<span><a class="mark" href="#qa_2" id="qa_2">#</a></span></h2>
 <div class="signature"><ol>
-<li>本项目仅供学习交流，不提供打包技术支持 <a href="deploy.html">deploy.html</a></li>
+<li>本项目仅供学习交流， 打包技术支持 &gt;&gt;&gt; <a href="deploy.html">deploy.html</a></li>
 <li>离线打包，请学者自行研究方法，不提供技术支持</li>
 </ol>
 </div><h2>3. Auto.js自带的模块和函数中没有的功能如何实现<span><a class="mark" href="#qa_3_auto_js" id="qa_3_auto_js">#</a></span></h2>
@@ -1815,6 +1848,14 @@ function rotate(src, degrees, px, py){
 }
 </code></pre><p>有关调用Android和Java的API的更多信息，参见<a href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java">Work with Java</a>。
 <!-- [end-include:qa.md] --></p>
+<!-- [start-include:remote.md] -->
+<h1>远程部署<span><a class="mark" href="#remote" id="remote">#</a></span></h1>
+<h2>把你的所有的 页面+脚本，放到远程服务器<span><a class="mark" href="#remote_1" id="remote_1">#</a></span></h2>
+<h2>操作流程<span><a class="mark" href="#remote_2" id="remote_2">#</a></span></h2>
+<h3>1. 点击菜单： 发行 &gt; 原生app本地打包 &gt; 生成APP打包资源<span><a class="mark" href="#remote_1_app_app" id="remote_1_app_app">#</a></span></h3>
+<h3>2. 点击菜单： 运行 &gt; 运行到终端 &gt; 3热补丁<span><a class="mark" href="#remote_2_3" id="remote_2_3">#</a></span></h3>
+<h3>3.<span><a class="mark" href="#remote_3" id="remote_3">#</a></span></h3>
+<!-- [end-include:remote.md] -->
 <!-- [start-include:app.md] -->
 <h1>App<span><a class="mark" href="#app_app" id="app_app">#</a></span></h1>
 <p>app模块提供一系列函数，用于使用其他应用、与其他应用交互。例如发送意图、打开文件、发送邮件等。</p>
@@ -4442,13 +4483,13 @@ for(var i = 0; i &lt; 100; i++){
 <li>message <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 要显示的信息</li>
 </ul>
 </div><p>相当于<code>toast(message);log(message)</code>。显示信息message并在控制台中输出。参见console.log。</p>
-<h2>waitForActivity(activity[, period = 200])<span><a class="mark" href="#globals_waitforactivity_activity_period_200" id="globals_waitforactivity_activity_period_200">#</a></span></h2>
+<h2>waitForActivity(activity, period = 200)<span><a class="mark" href="#globals_waitforactivity_activity_period_200" id="globals_waitforactivity_activity_period_200">#</a></span></h2>
 <div class="signature"><ul>
 <li><code>activity</code> Activity名称</li>
 <li><code>period</code> 轮询等待间隔（毫秒）</li>
 </ul>
 </div><p>等待指定的Activity出现，period为检查Activity的间隔。</p>
-<h2>waitForPackage(package[, period = 200])<span><a class="mark" href="#globals_waitforpackage_package_period_200" id="globals_waitforpackage_package_period_200">#</a></span></h2>
+<h2>waitForPackage(package, period = 200)<span><a class="mark" href="#globals_waitforpackage_package_period_200" id="globals_waitforpackage_package_period_200">#</a></span></h2>
 <div class="signature"><ul>
 <li><code>package</code> 包名</li>
 <li><code>period</code> 轮询等待间隔（毫秒）</li>
@@ -5685,7 +5726,7 @@ im.saveTo(path);
 media.scanFile(path);
 </code></pre><h2>media.playMusic(path[, volume, looping])<span><a class="mark" href="#media_media_playmusic_path_volume_looping" id="media_media_playmusic_path_volume_looping">#</a></span></h2>
 <div class="signature"><ul>
-<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 音乐文件路径</li>
+<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 音乐文件路径或url</li>
 <li><code>volume</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> 播放音量，为0~1的浮点数，默认为1</li>
 <li><code>looping</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> 是否循环播放，如果looping为<code>true</code>则循环播放，默认为<code>false</code></li>
 </ul>

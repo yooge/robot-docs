@@ -6,8 +6,8 @@
       "name": "q_&_a",
       "properties": [
         {
-          "textRaw": "问题交流QQ群：714554851",
-          "name": "问题交流QQ群：714554851",
+          "textRaw": "问题交流QQ群：862460452",
+          "name": "问题交流QQ群：862460452",
           "desc": "<p>  初始化项目环境配置 不对：\n  手机上未安装正确的调试基座，会提示Robot对象不存在\n  请参考：<a href=\"hbuilder.html#hbuilder_1\">Demo,调试,运行</a> </p>\n"
         },
         {
@@ -18,7 +18,7 @@
         {
           "textRaw": "2.打包异常",
           "name": "打包异常",
-          "desc": "<ol>\n<li>本项目仅供学习交流，不提供打包技术支持 <a href=\"deploy.html\">deploy.html</a></li>\n<li>离线打包，请学者自行研究方法，不提供技术支持</li>\n</ol>\n"
+          "desc": "<ol>\n<li>本项目仅供学习交流， 打包技术支持 &gt;&gt;&gt; <a href=\"deploy.html\">deploy.html</a></li>\n<li>离线打包，请学者自行研究方法，不提供技术支持</li>\n</ol>\n"
         }
       ],
       "modules": [

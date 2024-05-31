@@ -152,6 +152,28 @@
           "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
           "type": "module",
           "displayName": "8. 截图, 找图 (原API，没有新增，老手请请忽略)"
+        },
+        {
+          "textRaw": "9. 与安卓其他APP交互",
+          "name": "9._与安卓其他app交互",
+          "modules": [
+            {
+              "textRaw": "发送广播",
+              "name": "发送广播",
+              "desc": "<pre><code class=\"lang-js\"> var it = {\n    action: &quot;APP_EVENT&quot;,\n    extras: {\n        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  \n    }\n };\napp.sendBroadcast(it);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "发送广播"
+            },
+            {
+              "textRaw": "接收广播",
+              "name": "接收广播",
+              "desc": "<pre><code class=\"lang-js\">//找作者要补丁\napp.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {\n        console.log(&#39;接收数据: &#39;) ;\n        console.log(data.getString(&#39;mydata&#39;)) ;\n})\n</code></pre>\n",
+              "type": "module",
+              "displayName": "接收广播"
+            }
+          ],
+          "type": "module",
+          "displayName": "9. 与安卓其他APP交互"
         }
       ],
       "signatures": [
@@ -313,6 +335,28 @@
           "desc": "<pre><code class=\"lang-js\">\n//请求\nrequestScreenCapture(true);\n//1,截图\nvar img = captureScreen(); \n\nvar color = images.pixel(img, 100, 100);\n//\ntoast(colors.toString(color));\n\n\n//2,找到红色\nwhile(true){\n    var img = captureScreen();\n    var point = findColor(img, &quot;#ff0000&quot;);\n    if(point){\n        toast(&quot;找到红色，坐标为(&quot; + point.x + &quot;, &quot; + point.y + &quot;)&quot;);\n    }\n}\n\n//3.\n//指定找色区域(400, 500),宽为300,长为200的区域，色临界值 默认4 (范围:0-255) \nvar point = findColor(img, &quot;#00ff00&quot;, {\n     region: [400, 500, 300, 200],\n     threshold: 4\n });\n\n //4, 根据颜色找坐标\n var p = findColorEquals(captureScreen(), &quot;#f64d30&quot;);\n\n //5. 找图片\n var img = images.read(&quot;/sdcard/大图.png&quot;);\n var template = images.read(&quot;/sdcard/小图.png&quot;);\n var p = findImage(img, template);\n if(p){\n     toast(&quot;找到啦:&quot; + p);\n }else{\n     toast(&quot;没找到&quot;);\n }\n img.recycle();\n template.recycle();\n\n //在一定范围内找\n var p = findImage(captureScreen(), template, {\n     region: [0, 50],\n     threshold: 0.8 //相似度,默认值0.9\n });\n\n //\n var j=findImage(img, template, {\n     region: [x, y, width, height],\n     threshold: 0.8 //相似度\n })\n\n //找100个给给我\n var result = images.matchTemplate(img, template, {\n     region: [x, y, width, height],\n     threshold:0.8,\n     max: 100\n });\n //result.matches \n</code></pre>\n<p>.\n.</p>\n",
           "type": "module",
           "displayName": "8. 截图, 找图 (原API，没有新增，老手请请忽略)"
+        },
+        {
+          "textRaw": "9. 与安卓其他APP交互",
+          "name": "9._与安卓其他app交互",
+          "modules": [
+            {
+              "textRaw": "发送广播",
+              "name": "发送广播",
+              "desc": "<pre><code class=\"lang-js\"> var it = {\n    action: &quot;APP_EVENT&quot;,\n    extras: {\n        &#39;mydata&#39;: &#39;xxxxxxxx&#39;  \n    }\n };\napp.sendBroadcast(it);\n</code></pre>\n",
+              "type": "module",
+              "displayName": "发送广播"
+            },
+            {
+              "textRaw": "接收广播",
+              "name": "接收广播",
+              "desc": "<pre><code class=\"lang-js\">//找作者要补丁\napp.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {\n        console.log(&#39;接收数据: &#39;) ;\n        console.log(data.getString(&#39;mydata&#39;)) ;\n})\n</code></pre>\n",
+              "type": "module",
+              "displayName": "接收广播"
+            }
+          ],
+          "type": "module",
+          "displayName": "9. 与安卓其他APP交互"
         }
       ],
       "signatures": [

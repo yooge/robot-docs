@@ -27,18 +27,18 @@
           "displayName": "声明"
         },
         {
-          "textRaw": "QQ群： 714554851",
-          "name": "qq群：_714554851",
+          "textRaw": "QQ群： 862460452",
+          "name": "qq群：_862460452",
           "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
           "type": "module",
-          "displayName": "QQ群： 714554851"
+          "displayName": "QQ群： 862460452"
         },
         {
-          "textRaw": "QQ群：  714554851",
-          "name": "qq群：_714554851",
+          "textRaw": "QQ群：  862460452",
+          "name": "qq群：_862460452",
           "desc": "<pre><code class=\"lang-js\">  如果喜欢这个项目，可以请赠我一包华子 \n</code></pre>\n",
           "type": "module",
-          "displayName": "QQ群：  714554851"
+          "displayName": "QQ群：  862460452"
         }
       ],
       "properties": [
@@ -49,14 +49,14 @@
             {
               "textRaw": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
               "name": "2.2 下载[NodeJs](http://www.nodejs.com.cn/)",
-              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p>建议下载这个版本(不再建议了，请去下载最新的吧 4.15)：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             },
             {
               "textRaw": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)",
               "name": "2.3_下载安装开发工具[hbuilderx](https://www.dcloud.io/hbuilderx.html)",
-              "desc": "<p>建议下载这个版本：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
+              "desc": "<p>建议下载这个版本(不再建议了，请去下载最新的吧 4.15)：</p>\n<pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 \n提取码: 1234\n</code></pre><p><img src=\"images/start0.png\" alt=\"\"></p>\n",
               "type": "module",
               "displayName": "2.3 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)"
             }

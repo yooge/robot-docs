@@ -32,7 +32,7 @@ media.scanFile(path);
 ```
 
 ## media.playMusic(path[, volume, looping])
-* `path` {string} 音乐文件路径
+* `path` {string} 音乐文件路径或url
 * `volume` {number} 播放音量，为0~1的浮点数，默认为1
 * `looping` {boolean} 是否循环播放，如果looping为`true`则循环播放，默认为`false`
 

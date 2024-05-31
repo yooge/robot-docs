@@ -25,6 +25,7 @@
 <li><a class="nav-links" href="links.html">支持库(超强)</a></li>
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy" href="deploy.html">打包</a></li>
+<li><a class="nav-remote" href="remote.html">远程部署</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
 <li><div class="line"></div>
 </li>
@@ -96,8 +97,8 @@
 <li><span class="stability_undefined"><a href="#globals_getclip">getClip()</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_toast_message">toast(message)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_toastlog_message">toastLog(message)</a></span></li>
-<li><span class="stability_undefined"><a href="#globals_waitforactivity_activity_period_200">waitForActivity(activity[, period = 200])</a></span></li>
-<li><span class="stability_undefined"><a href="#globals_waitforpackage_package_period_200">waitForPackage(package[, period = 200])</a></span></li>
+<li><span class="stability_undefined"><a href="#globals_waitforactivity_activity_period_200">waitForActivity(activity, period = 200)</a></span></li>
+<li><span class="stability_undefined"><a href="#globals_waitforpackage_package_period_200">waitForPackage(package, period = 200)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_exit">exit()</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_random_min_max">random(min, max)</a></span></li>
 <li><span class="stability_undefined"><a href="#globals_random">random()</a></span></li>
@@ -184,13 +185,13 @@ for(var i = 0; i &lt; 100; i++){
 <li>message <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> 要显示的信息</li>
 </ul>
 </div><p>相当于<code>toast(message);log(message)</code>。显示信息message并在控制台中输出。参见console.log。</p>
-<h2>waitForActivity(activity[, period = 200])<span><a class="mark" href="#globals_waitforactivity_activity_period_200" id="globals_waitforactivity_activity_period_200">#</a></span></h2>
+<h2>waitForActivity(activity, period = 200)<span><a class="mark" href="#globals_waitforactivity_activity_period_200" id="globals_waitforactivity_activity_period_200">#</a></span></h2>
 <div class="signature"><ul>
 <li><code>activity</code> Activity名称</li>
 <li><code>period</code> 轮询等待间隔（毫秒）</li>
 </ul>
 </div><p>等待指定的Activity出现，period为检查Activity的间隔。</p>
-<h2>waitForPackage(package[, period = 200])<span><a class="mark" href="#globals_waitforpackage_package_period_200" id="globals_waitforpackage_package_period_200">#</a></span></h2>
+<h2>waitForPackage(package, period = 200)<span><a class="mark" href="#globals_waitforpackage_package_period_200" id="globals_waitforpackage_package_period_200">#</a></span></h2>
 <div class="signature"><ul>
 <li><code>package</code> 包名</li>
 <li><code>period</code> 轮询等待间隔（毫秒）</li>

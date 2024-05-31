@@ -475,3 +475,25 @@ var point = findColor(img, "#00ff00", {
 ```
 .
 .
+
+
+## 9. 与安卓其他APP交互
+### 发送广播
+```js
+ var it = {
+	action: "APP_EVENT",
+	extras: {
+		'mydata': 'xxxxxxxx'  
+	}
+ };
+app.sendBroadcast(it);
+```
+### 接收广播
+```js
+//找作者要补丁
+app.broadcast.receiver('APP_EVENT', function(act, data, it, ctx) {
+		console.log('接收数据: ') ;
+		console.log(data.getString('mydata')) ;
+})
+```
+
