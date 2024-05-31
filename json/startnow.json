@@ -75,14 +75,14 @@
                   "name": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
                   "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
                   "type": "module",
-                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                  "displayName": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`"
                 },
                 {
-                  "textRaw": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`",
-                  "name": "3.2_更新运行基座，点击如下菜单，会执行_`robot-tools_init`",
+                  "textRaw": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`",
+                  "name": "3.2_更新运行基座【请忽略】，点击如下菜单，会执行_`robot-tools_init`",
                   "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
                   "type": "module",
-                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                  "displayName": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`"
                 }
               ],
               "type": "module",
@@ -97,14 +97,14 @@
                   "name": "3.1 更新支持库(依赖包)，点击如下菜单，会执行 `npm i`",
                   "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
                   "type": "module",
-                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                  "displayName": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`"
                 },
                 {
-                  "textRaw": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`",
-                  "name": "3.2_更新运行基座，点击如下菜单，会执行_`robot-tools_init`",
+                  "textRaw": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`",
+                  "name": "3.2_更新运行基座【请忽略】，点击如下菜单，会执行_`robot-tools_init`",
                   "desc": "<p><img src=\"images/start1.png\" alt=\"\"></p>\n",
                   "type": "module",
-                  "displayName": "3.2 更新运行基座，点击如下菜单，会执行 `robot-tools init`"
+                  "displayName": "3.2 更新运行基座【请忽略】，点击如下菜单，会执行 `robot-tools init`"
                 }
               ],
               "type": "module",
