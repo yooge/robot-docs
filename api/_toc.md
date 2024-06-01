@@ -10,23 +10,18 @@
 * [热更新](patchs.html)
 * [打包](deploy.html)
 * [远程部署](remote.html)
+* [与java交互](java.html)
 * [Q&A - 常见问题](qa.html)
-* 
+* <a href="https://miren.lovemi.ren/colorui-document/" target="_blank" rel="noopener noreferrer">UI设计</a>
 <div class="line"></div>
-
 * [【API文档】:](#)
 * [Overview - 综述](overview.html)
-
 * [Tip - 阅读说明](documentation.html)
-
-
-
 * [Click - 基于坐标的操作](coordinatesBasedAutomation.html)
 * [开始 - 基于控件的操作](widgetsBasedAutomation.html)
 * [Click - 基于控件的操作](widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator)
 * [UiSelector - 查找控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiselector)
 * [UiObject - 控件](widgetsBasedAutomation.html#widgetsbasedautomation_uiobject)
-
 * [App - 应用](app.html)
 * [Canvas - 画布](canvas.html)
 * [Console - 控制台](console.html)

@@ -86,6 +86,11 @@ export default {
 
 ```
 
+## 3. 存储热补丁到自定义服务器
+自定义服务器，请参考 [内核与打包](https://gitee.com/vnool/robot-tools)
+### .
+
+
 ⚠️ 提示：APPID，版本号 ⚠️
 ``` 
 const {version, project} = require('robot-tools');

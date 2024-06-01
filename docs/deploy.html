@@ -26,25 +26,18 @@
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy active" href="deploy.html">打包</a></li>
 <li><a class="nav-remote" href="remote.html">远程部署</a></li>
+<li><a class="nav-java" href="java.html">与java交互</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
-<li><div class="line"></div>
-</li>
-<li><p><a class="nav--" href="#">【API文档】:</a></p>
-</li>
-<li><p><a class="nav-overview" href="overview.html">Overview - 综述</a></p>
-</li>
-<li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
-</li>
-</ul>
-<ul>
+<li><a class="nav-https-miren-lovemi-ren-colorui-document-" href="https://miren.lovemi.ren/colorui-document/" target="_blank" rel="noopener noreferrer">UI设计</a><div class="line"></div></li>
+<li><a class="nav--" href="#">【API文档】:</a></li>
+<li><a class="nav-overview" href="overview.html">Overview - 综述</a></li>
+<li><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></li>
 <li><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">Click - 基于坐标的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation" href="widgetsBasedAutomation.html">开始 - 基于控件的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_simpleactionautomator" href="widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator">Click - 基于控件的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiselector" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiselector">UiSelector - 查找控件</a></li>
-<li><p><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiobject" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiobject">UiObject - 控件</a></p>
-</li>
-<li><p><a class="nav-app" href="app.html">App - 应用</a></p>
-</li>
+<li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiobject" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiobject">UiObject - 控件</a></li>
+<li><a class="nav-app" href="app.html">App - 应用</a></li>
 <li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
 <li><a class="nav-console" href="console.html">Console - 控制台</a></li>
 <li><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
@@ -100,13 +93,20 @@
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#deploy_manifest_json">自定义manifest.json文件</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_1">悬浮机器人图标更换</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_2">日志窗口样式</a></span></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><span class="stability_undefined"><a href="#deploy_b">B. 本地(离线)打包，基座源码</a></span><ul>
-<li><span class="stability_undefined"><a href="#deploy_1">离线打包，基座源码</a></span><ul>
-<li><span class="stability_undefined"><a href="#deploy_2">请学者自行研究</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_b">B. 打包或热补丁存到自定义服务器</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_https_gitee_com_vnool_robot_tools">参考文档， 自定义服务器，参考<a href="https://gitee.com/vnool/robot-tools">内核与打包</a></a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_3">.</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#deploy_c">C. 本地(离线)打包，基座源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_4">离线打包，基座源码</a></span><ul>
+<li><span class="stability_undefined"><a href="#deploy_5">请学者自行研究</a></span></li>
 <li><span class="stability_undefined"><a href="#deploy_1_android_studio">1. 用安卓开发环境Android Studio 打开源码</a></span></li>
 <li><span class="stability_undefined"><a href="#deploy_2_uni_aj_assets">2. 将你uni源码或加密后的代码(包括aj代码)，放到 assets目录中</a></span></li>
 <li><span class="stability_undefined"><a href="#deploy_3_android_studio">3. 运行Android Studio打包功能</a></span></li>
@@ -114,7 +114,7 @@
 </li>
 </ul>
 </li>
-<li><span class="stability_undefined"><a href="#deploy_3">声明</a></span></li>
+<li><span class="stability_undefined"><a href="#deploy_6">声明</a></span></li>
 </ul>
 </li>
 </ul>
@@ -138,8 +138,8 @@
     /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
     &quot;package&quot; : &quot;com.xxxx.yyy&quot;, 
 
-    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不要改名*/
-    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不要改名 */
+    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不可改名*/
+    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不可改名 */ 
 
     &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */
     &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */
@@ -185,16 +185,36 @@
 </ul>
 <pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁
 ⚠️ 提示：每次打包前，一定要记得上述[步骤1]
-</code></pre><h2>B. 本地(离线)打包，基座源码<span><a class="mark" href="#deploy_b" id="deploy_b">#</a></span></h2>
-<h3>离线打包，基座源码<span><a class="mark" href="#deploy_1" id="deploy_1">#</a></span></h3>
-<h4>请学者自行研究<span><a class="mark" href="#deploy_2" id="deploy_2">#</a></span></h4>
+</code></pre><h4>悬浮机器人图标更换<span><a class="mark" href="#deploy_1" id="deploy_1">#</a></span></h4>
+<p>可以更换下列图标文件</p>
+<pre><code>  static/images/robot.png,  /* 机器人静态 */
+  static/images/robot1.png, /* 机器人运行时图1 */
+  static/images/robot2.png, /* 机器人运行时图2 */
+  static/images/start.png,  /* 机器人-启动 */
+  static/images/stop.png,   /* 机器人-停止 */
+  static/images/close.png,  /* 机器人-关闭 */
+  static/images/help.png,   /* 机器人-日志 */
+  static/images/option.png, /* 机器人-设置 */
+</code></pre><h4>日志窗口样式<span><a class="mark" href="#deploy_2" id="deploy_2">#</a></span></h4>
+<p> 参考文档，请看<a href="normal.html#normal_6">日志章节</a>章节</p>
+<p>。</p>
+<h2>B. 打包或热补丁存到自定义服务器<span><a class="mark" href="#deploy_b" id="deploy_b">#</a></span></h2>
+<pre><code> robot-tools deploy apk=false server=http://abc.com/
+ //apk=false //仅生成热补丁，不打包
+ //server 自定义服务器地址(默认为空)
+</code></pre><h3>参考文档， 自定义服务器，参考<a href="https://gitee.com/vnool/robot-tools">内核与打包</a><span><a class="mark" href="#deploy_https_gitee_com_vnool_robot_tools" id="deploy_https_gitee_com_vnool_robot_tools">#</a></span></h3>
+<h3>.<span><a class="mark" href="#deploy_3" id="deploy_3">#</a></span></h3>
+<p>.</p>
+<h2>C. 本地(离线)打包，基座源码<span><a class="mark" href="#deploy_c" id="deploy_c">#</a></span></h2>
+<h3>离线打包，基座源码<span><a class="mark" href="#deploy_4" id="deploy_4">#</a></span></h3>
+<h4>请学者自行研究<span><a class="mark" href="#deploy_5" id="deploy_5">#</a></span></h4>
 <p>⚠️  感谢uni-app官方提供源码⚠️ </p>
 <pre><code>链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
 提取码: 1234
 </code></pre><h4>1. 用安卓开发环境Android Studio 打开源码<span><a class="mark" href="#deploy_1_android_studio" id="deploy_1_android_studio">#</a></span></h4>
 <h4>2. 将你uni源码或加密后的代码(包括aj代码)，放到 assets目录中<span><a class="mark" href="#deploy_2_uni_aj_assets" id="deploy_2_uni_aj_assets">#</a></span></h4>
 <h4>3. 运行Android Studio打包功能<span><a class="mark" href="#deploy_3_android_studio" id="deploy_3_android_studio">#</a></span></h4>
-<h2>声明<span><a class="mark" href="#deploy_3" id="deploy_3">#</a></span></h2>
+<h2>声明<span><a class="mark" href="#deploy_6" id="deploy_6">#</a></span></h2>
 <pre><code>⚠️ 声明：
 由于安卓开发环境受各种因素影响，操作起比较困难。
 请自行解决问题或与其他开发者交流，QQ群: 862460452

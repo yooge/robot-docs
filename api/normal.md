@@ -496,4 +496,4 @@ app.broadcast.receiver('APP_EVENT', function(act, data, it, ctx) {
 		console.log(data.getString('mydata')) ;
 })
 ```
-
+## 参考[js与java+Android交互](java.html)的章节

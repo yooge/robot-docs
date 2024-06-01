@@ -57,13 +57,27 @@
                   ],
                   "type": "module",
                   "displayName": "`提示：云打包大约需要1-2分钟下载资料到本地`"
+                },
+                {
+                  "textRaw": "悬浮机器人图标更换",
+                  "name": "悬浮机器人图标更换",
+                  "desc": "<p>可以更换下列图标文件</p>\n<pre><code>  static/images/robot.png,  /* 机器人静态 */\n  static/images/robot1.png, /* 机器人运行时图1 */\n  static/images/robot2.png, /* 机器人运行时图2 */\n  static/images/start.png,  /* 机器人-启动 */\n  static/images/stop.png,   /* 机器人-停止 */\n  static/images/close.png,  /* 机器人-关闭 */\n  static/images/help.png,   /* 机器人-日志 */\n  static/images/option.png, /* 机器人-设置 */\n</code></pre>",
+                  "type": "module",
+                  "displayName": "悬浮机器人图标更换"
+                },
+                {
+                  "textRaw": "日志窗口样式",
+                  "name": "日志窗口样式",
+                  "desc": "<p> 参考文档，请看<a href=\"normal.html#normal_6\">日志章节</a>章节</p>\n<p>。</p>\n",
+                  "type": "module",
+                  "displayName": "日志窗口样式"
                 }
               ],
               "properties": [
                 {
                   "textRaw": "自定义manifest.json文件",
                   "name": "json文件",
-                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不要改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不要改名 */\n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */\n    &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */\n    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/\n\n}\n</code></pre>\n<ul>\n<li>appid: 在manifest操作界面上生成</li>\n<li>appkey: 去Hbuider官方网址申请： <a href=\"https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey\">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>\n<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>\n<li>SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值</li>\n</ul>\n<p>证书指纹:  </p>\n<table>\n<thead>\n<tr>\n<th>key</th>\n<th>value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MD5</td>\n<td>BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE</td>\n</tr>\n<tr>\n<td>SHA1</td>\n<td>BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88</td>\n</tr>\n<tr>\n<td>SHA256</td>\n<td>37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>logo:  APP的图片(路径是死的)</li>\n<li>splash: 程序启动的时候的等待页面图片(路径是死的)</li>\n<li>versionCode: 当前版本号</li>\n<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>\n</ul>\n<pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁\n⚠️ 提示：每次打包前，一定要记得上述[步骤1]\n</code></pre>"
+                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不可改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不可改名 */ \n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */\n    &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */\n    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/\n\n}\n</code></pre>\n<ul>\n<li>appid: 在manifest操作界面上生成</li>\n<li>appkey: 去Hbuider官方网址申请： <a href=\"https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey\">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>\n<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>\n<li>SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值</li>\n</ul>\n<p>证书指纹:  </p>\n<table>\n<thead>\n<tr>\n<th>key</th>\n<th>value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MD5</td>\n<td>BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE</td>\n</tr>\n<tr>\n<td>SHA1</td>\n<td>BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88</td>\n</tr>\n<tr>\n<td>SHA256</td>\n<td>37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>logo:  APP的图片(路径是死的)</li>\n<li>splash: 程序启动的时候的等待页面图片(路径是死的)</li>\n<li>versionCode: 当前版本号</li>\n<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>\n</ul>\n<pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁\n⚠️ 提示：每次打包前，一定要记得上述[步骤1]\n</code></pre>"
                 }
               ],
               "type": "module",
@@ -120,13 +134,27 @@
                   ],
                   "type": "module",
                   "displayName": "`提示：云打包大约需要1-2分钟下载资料到本地`"
+                },
+                {
+                  "textRaw": "悬浮机器人图标更换",
+                  "name": "悬浮机器人图标更换",
+                  "desc": "<p>可以更换下列图标文件</p>\n<pre><code>  static/images/robot.png,  /* 机器人静态 */\n  static/images/robot1.png, /* 机器人运行时图1 */\n  static/images/robot2.png, /* 机器人运行时图2 */\n  static/images/start.png,  /* 机器人-启动 */\n  static/images/stop.png,   /* 机器人-停止 */\n  static/images/close.png,  /* 机器人-关闭 */\n  static/images/help.png,   /* 机器人-日志 */\n  static/images/option.png, /* 机器人-设置 */\n</code></pre>",
+                  "type": "module",
+                  "displayName": "悬浮机器人图标更换"
+                },
+                {
+                  "textRaw": "日志窗口样式",
+                  "name": "日志窗口样式",
+                  "desc": "<p> 参考文档，请看<a href=\"normal.html#normal_6\">日志章节</a>章节</p>\n<p>。</p>\n",
+                  "type": "module",
+                  "displayName": "日志窗口样式"
                 }
               ],
               "properties": [
                 {
                   "textRaw": "自定义manifest.json文件",
                   "name": "json文件",
-                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不要改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不要改名 */\n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */\n    &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */\n    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/\n\n}\n</code></pre>\n<ul>\n<li>appid: 在manifest操作界面上生成</li>\n<li>appkey: 去Hbuider官方网址申请： <a href=\"https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey\">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>\n<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>\n<li>SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值</li>\n</ul>\n<p>证书指纹:  </p>\n<table>\n<thead>\n<tr>\n<th>key</th>\n<th>value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MD5</td>\n<td>BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE</td>\n</tr>\n<tr>\n<td>SHA1</td>\n<td>BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88</td>\n</tr>\n<tr>\n<td>SHA256</td>\n<td>37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>logo:  APP的图片(路径是死的)</li>\n<li>splash: 程序启动的时候的等待页面图片(路径是死的)</li>\n<li>versionCode: 当前版本号</li>\n<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>\n</ul>\n<pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁\n⚠️ 提示：每次打包前，一定要记得上述[步骤1]\n</code></pre>"
+                  "desc": "<pre><code class=\"lang-js\">{        \n    &quot;name&quot; : &quot;app名称&quot;,\n    &quot;appid&quot; : &quot;__UNI__xxxx&quot;, /* 一定要改!!!!! */\n    &quot;appkey&quot; : &quot;去Hbuilder官方申请!去官方申请!去官方申请&quot;,\n    /* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */\n    &quot;package&quot; : &quot;com.xxxx.yyy&quot;, \n\n    &quot;logo&quot; : &quot;static/logo.png&quot;, /* APP图标，可以换图，不可改名*/\n    &quot;splash&quot; : &quot;static/splash.png&quot;, /* 开屏等待页广告，可以换图，不可改名 */ \n\n    &quot;versionName&quot; : &quot;1.0.37&quot;, /* 版本号，用于热补丁更新 */\n    &quot;versionCode&quot; : 10037,   /* 版本号，用于热补丁更新 */\n    &quot;deploy&quot; : &quot;release&quot;,     /* 生成正式版APK：release, 调试版基座：debug */\n    &quot;encryption&quot;: &quot;yes&quot;,  /* 是否加密脚本(默认是)*/\n\n}\n</code></pre>\n<ul>\n<li>appid: 在manifest操作界面上生成</li>\n<li>appkey: 去Hbuider官方网址申请： <a href=\"https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey\">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey</a></li>\n<li>package: app的包名， 如果要一个手机上安装多个程序，需要修改这个</li>\n<li>SHA1,SHA256,MD5:  申请appkey的时候需要用到，目前是固定值</li>\n</ul>\n<p>证书指纹:  </p>\n<table>\n<thead>\n<tr>\n<th>key</th>\n<th>value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MD5</td>\n<td>BA:A8:08:A4:09:90:BF:AD:12:AD:F3:E6:77:B6:00:BE</td>\n</tr>\n<tr>\n<td>SHA1</td>\n<td>BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88</td>\n</tr>\n<tr>\n<td>SHA256</td>\n<td>37:6D:A6:C3:BC:D3:F4:A3:FE:65:ED:8C:FD:0C:82:58:EE:6E:43:72:5F:7A:AE:D1:3C:9D:CF:A8:15:76:7E:A3</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>logo:  APP的图片(路径是死的)</li>\n<li>splash: 程序启动的时候的等待页面图片(路径是死的)</li>\n<li>versionCode: 当前版本号</li>\n<li>deploy:  app的发行类型，正式版release，还是调试基座：debug</li>\n</ul>\n<pre><code>⚠️ 提示：打包的时候，会自动生成最新的热补丁\n⚠️ 提示：每次打包前，一定要记得上述[步骤1]\n</code></pre>"
                 }
               ],
               "type": "module",
@@ -137,8 +165,31 @@
           "displayName": "A. 云打包生成APP"
         },
         {
-          "textRaw": "B. 本地(离线)打包，基座源码",
-          "name": "b._本地(离线)打包，基座源码",
+          "textRaw": "B. 打包或热补丁存到自定义服务器",
+          "name": "b._打包或热补丁存到自定义服务器",
+          "desc": "<pre><code> robot-tools deploy apk=false server=http://abc.com/\n //apk=false //仅生成热补丁，不打包\n //server 自定义服务器地址(默认为空)\n</code></pre>",
+          "modules": [
+            {
+              "textRaw": "参考文档， 自定义服务器，参考[内核与打包](https://gitee.com/vnool/robot-tools)",
+              "name": "参考文档， 自定义服务器，参考[内核与打包](https://gitee.com/vnool/robot-tools)",
+              "desc": "<p>.</p>\n",
+              "type": "module",
+              "displayName": "."
+            },
+            {
+              "textRaw": ".",
+              "name": ".",
+              "desc": "<p>.</p>\n",
+              "type": "module",
+              "displayName": "."
+            }
+          ],
+          "type": "module",
+          "displayName": "B. 打包或热补丁存到自定义服务器"
+        },
+        {
+          "textRaw": "C. 本地(离线)打包，基座源码",
+          "name": "c._本地(离线)打包，基座源码",
           "modules": [
             {
               "textRaw": "离线打包，基座源码",
@@ -169,7 +220,7 @@
             }
           ],
           "type": "module",
-          "displayName": "B. 本地(离线)打包，基座源码"
+          "displayName": "C. 本地(离线)打包，基座源码"
         },
         {
           "textRaw": "声明",

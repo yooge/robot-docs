@@ -1,0 +1,34 @@
+{
+  "source": "../api/java.md",
+  "modules": [
+    {
+      "textRaw": "与Java或Android交互",
+      "name": "与java或android交互",
+      "modules": [
+        {
+          "textRaw": "1. 直接使用Android的API",
+          "name": "1._直接使用android的api",
+          "desc": "<p>举例： 接受广播包</p>\n<pre><code class=\"lang-js\">const IntentFilter = android.content.IntentFilter;\nconst BroadcastReceiver = android.content.BroadcastReceiver;\n\nvar filter = new IntentFilter();\nfilter.addAction(&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;); // 监听网络变化\n// 替换为其他的广播事件 \nvar receiver = new BroadcastReceiver({\n    onReceive: function(context, intent) {\n        console.log(&#39;监听到广播包: 网络变化&#39;);\n        console.log(intent);\n    }\n});\ncontext.registerReceiver(receiver, filter);\n\n</code></pre>\n",
+          "type": "module",
+          "displayName": "1. 直接使用Android的API"
+        },
+        {
+          "textRaw": "2. 加载Jar包",
+          "name": "2._加载jar包",
+          "desc": "<ul>\n<li><code>path</code> {string} jar文件路径</li>\n</ul>\n<p>加载目标jar文件，加载成功后将可以使用该Jar文件的类。</p>\n<pre><code>// 加载jsoup.jar到内存\nruntime.loadJar(&quot;./jsoup.jar&quot;);\n// 使用jsoup解析html类\nimportClass(org.jsoup.Jsoup);\nlog(Jsoup.parse(files.read(&quot;./test.html&quot;)));\n</code></pre><p>(jsoup是一个Java实现的解析Html DOM的库，可以在<a href=\"https://jsoup.org/download\">Jsoup</a>下载)</p>\n",
+          "type": "module",
+          "displayName": "2. 加载Jar包"
+        },
+        {
+          "textRaw": "3. 加载Dex包(path)",
+          "name": "3._加载dex包(path)",
+          "desc": "<ul>\n<li><code>path</code> {string} dex文件路径</li>\n</ul>\n<p>加载目标dex文件，加载成功后将可以使用该dex文件的类。</p>\n<p>因为加载jar实际上是把jar转换为dex再加载的，因此加载dex文件会比jar文件快得多。可以使用Android SDK的build tools的dx工具把jar转换为dex。</p>\n",
+          "type": "module",
+          "displayName": "3. 加载Dex包(path)"
+        }
+      ],
+      "type": "module",
+      "displayName": "与Java或Android交互"
+    }
+  ]
+}

@@ -26,8 +26,8 @@
 	/* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
 	"package" : "com.xxxx.yyy", 
 
-	"logo" : "static/logo.png", /* APP图标，可以换图，不要改名*/
-	"splash" : "static/splash.png", /* 开屏等待页广告，可以换图，不要改名 */
+	"logo" : "static/logo.png", /* APP图标，可以换图，不可改名*/
+	"splash" : "static/splash.png", /* 开屏等待页广告，可以换图，不可改名 */ 
 
 	"versionName" : "1.0.37", /* 版本号，用于热补丁更新 */
 	"versionCode" : 10037,   /* 版本号，用于热补丁更新 */
@@ -64,7 +64,36 @@
 ```
 
 
-## B. 本地(离线)打包，基座源码
+#### 悬浮机器人图标更换
+可以更换下列图标文件
+```
+  static/images/robot.png,  /* 机器人静态 */
+  static/images/robot1.png, /* 机器人运行时图1 */
+  static/images/robot2.png, /* 机器人运行时图2 */
+  static/images/start.png,  /* 机器人-启动 */
+  static/images/stop.png,   /* 机器人-停止 */
+  static/images/close.png,  /* 机器人-关闭 */
+  static/images/help.png,   /* 机器人-日志 */
+  static/images/option.png, /* 机器人-设置 */
+```
+
+#### 日志窗口样式
+ 
+ 参考文档，请看[日志章节](normal.html#normal_6)章节
+ 
+。
+
+## B. 打包或热补丁存到自定义服务器
+ ```
+ robot-tools deploy apk=false server=http://abc.com/
+ //apk=false //仅生成热补丁，不打包
+ //server 自定义服务器地址(默认为空)
+ ```
+### 参考文档， 自定义服务器，参考[内核与打包](https://gitee.com/vnool/robot-tools)
+### .
+.
+ 
+## C. 本地(离线)打包，基座源码
 
 ### 离线打包，基座源码
 #### 请学者自行研究

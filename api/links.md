@@ -5,7 +5,7 @@
 
 2.【包含】[VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
 
-3.【包含】[color-Ui](http://demo.color-ui.com/)：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)
+3.【包含】[color-Ui](https://miren.lovemi.ren/colorui-document/)：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)
 
 4.【包含】[HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力(原生安卓)
 

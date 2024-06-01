@@ -26,25 +26,18 @@
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy" href="deploy.html">打包</a></li>
 <li><a class="nav-remote" href="remote.html">远程部署</a></li>
+<li><a class="nav-java" href="java.html">与java交互</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
-<li><div class="line"></div>
-</li>
-<li><p><a class="nav--" href="#">【API文档】:</a></p>
-</li>
-<li><p><a class="nav-overview" href="overview.html">Overview - 综述</a></p>
-</li>
-<li><p><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></p>
-</li>
-</ul>
-<ul>
+<li><a class="nav-https-miren-lovemi-ren-colorui-document-" href="https://miren.lovemi.ren/colorui-document/" target="_blank" rel="noopener noreferrer">UI设计</a><div class="line"></div></li>
+<li><a class="nav--" href="#">【API文档】:</a></li>
+<li><a class="nav-overview" href="overview.html">Overview - 综述</a></li>
+<li><a class="nav-documentation" href="documentation.html">Tip - 阅读说明</a></li>
 <li><a class="nav-coordinatesBasedAutomation" href="coordinatesBasedAutomation.html">Click - 基于坐标的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation" href="widgetsBasedAutomation.html">开始 - 基于控件的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_simpleactionautomator" href="widgetsBasedAutomation.html#widgetsbasedautomation_simpleactionautomator">Click - 基于控件的操作</a></li>
 <li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiselector" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiselector">UiSelector - 查找控件</a></li>
-<li><p><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiobject" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiobject">UiObject - 控件</a></p>
-</li>
-<li><p><a class="nav-app" href="app.html">App - 应用</a></p>
-</li>
+<li><a class="nav-widgetsBasedAutomation-widgetsbasedautomation_uiobject" href="widgetsBasedAutomation.html#widgetsbasedautomation_uiobject">UiObject - 控件</a></li>
+<li><a class="nav-app" href="app.html">App - 应用</a></li>
 <li><a class="nav-canvas" href="canvas.html">Canvas - 画布</a></li>
 <li><a class="nav-console" href="console.html">Console - 控制台</a></li>
 <li><a class="nav-crypto" href="crypto.html">Crypto - 加解密与消息摘要</a></li>
@@ -163,6 +156,7 @@
 <li><span class="stability_undefined"><a href="#normal_2">接收广播</a></span></li>
 </ul>
 </li>
+<li><span class="stability_undefined"><a href="#normal_js_java_android_java_html">参考<a href="java.html">js与java+Android交互</a>的章节</a></span></li>
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#hello_vue">vue与控制脚本的交互</a></span><ul>
@@ -184,6 +178,12 @@
 <li><span class="stability_undefined"><a href="#qa_1_robot">1.运行基座时报错：Robot对象不存在</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_2">2.打包异常</a></span></li>
 <li><span class="stability_undefined"><a href="#qa_3_auto_js">3. Auto.js自带的模块和函数中没有的功能如何实现</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#java_java_android">与Java或Android交互</a></span><ul>
+<li><span class="stability_undefined"><a href="#java_1_android_api">1. 直接使用Android的API</a></span></li>
+<li><span class="stability_undefined"><a href="#java_2_jar">2. 加载Jar包</a></span></li>
+<li><span class="stability_undefined"><a href="#java_3_dex_path">3. 加载Dex包(path)</a></span></li>
 </ul>
 </li>
 <li><span class="stability_undefined"><a href="#remote">远程部署</a></span><ul>
@@ -1733,6 +1733,7 @@ app.broadcast.receiver(&#39;APP_EVENT&#39;, function(act, data, it, ctx) {
         console.log(data.getString(&#39;mydata&#39;)) ;
 })
 </code></pre>
+<h2>参考<a href="java.html">js与java+Android交互</a>的章节<span><a class="mark" href="#normal_js_java_android_java_html" id="normal_js_java_android_java_html">#</a></span></h2>
 <!-- [end-include:normal.md] -->
 <!-- [start-include:hello.md] -->
 <h1>vue与控制脚本的交互<span><a class="mark" href="#hello_vue" id="hello_vue">#</a></span></h1>
@@ -1848,6 +1849,43 @@ function rotate(src, degrees, px, py){
 }
 </code></pre><p>有关调用Android和Java的API的更多信息，参见<a href="https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino/Scripting_Java">Work with Java</a>。
 <!-- [end-include:qa.md] --></p>
+<!-- [start-include:java.md] -->
+<h1>与Java或Android交互<span><a class="mark" href="#java_java_android" id="java_java_android">#</a></span></h1>
+<h2>1. 直接使用Android的API<span><a class="mark" href="#java_1_android_api" id="java_1_android_api">#</a></span></h2>
+<p>举例： 接受广播包</p>
+<pre><code class="lang-js">const IntentFilter = android.content.IntentFilter;
+const BroadcastReceiver = android.content.BroadcastReceiver;
+
+var filter = new IntentFilter();
+filter.addAction(&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;); // 监听网络变化
+// 替换为其他的广播事件 
+var receiver = new BroadcastReceiver({
+    onReceive: function(context, intent) {
+        console.log(&#39;监听到广播包: 网络变化&#39;);
+        console.log(intent);
+    }
+});
+context.registerReceiver(receiver, filter);
+
+</code></pre>
+<h2>2. 加载Jar包<span><a class="mark" href="#java_2_jar" id="java_2_jar">#</a></span></h2>
+<div class="signature"><ul>
+<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> jar文件路径</li>
+</ul>
+</div><p>加载目标jar文件，加载成功后将可以使用该Jar文件的类。</p>
+<pre><code>// 加载jsoup.jar到内存
+runtime.loadJar(&quot;./jsoup.jar&quot;);
+// 使用jsoup解析html类
+importClass(org.jsoup.Jsoup);
+log(Jsoup.parse(files.read(&quot;./test.html&quot;)));
+</code></pre><p>(jsoup是一个Java实现的解析Html DOM的库，可以在<a href="https://jsoup.org/download">Jsoup</a>下载)</p>
+<h2>3. 加载Dex包(path)<span><a class="mark" href="#java_3_dex_path" id="java_3_dex_path">#</a></span></h2>
+<div class="signature"><ul>
+<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> dex文件路径</li>
+</ul>
+</div><p>加载目标dex文件，加载成功后将可以使用该dex文件的类。</p>
+<p>因为加载jar实际上是把jar转换为dex再加载的，因此加载dex文件会比jar文件快得多。可以使用Android SDK的build tools的dx工具把jar转换为dex。</p>
+<!-- [end-include:java.md] -->
 <!-- [start-include:remote.md] -->
 <h1>远程部署<span><a class="mark" href="#remote" id="remote">#</a></span></h1>
 <h2>把你的所有的 页面+脚本，放到远程服务器<span><a class="mark" href="#remote_1" id="remote_1">#</a></span></h2>

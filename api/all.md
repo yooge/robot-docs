@@ -4,6 +4,7 @@
 @include hello
 @include overview
 @include qa
+@include java
 @include remote
 @include app
 @include canvas

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>module (模块) | RobotJs | 用JS任意控制手机上的APP</title>
+  <title>与Java或Android交互 | RobotJs | 用JS任意控制手机上的APP</title>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/sh.css">
-  <link rel="canonical" href="https://nodejs.org/api/modules.html">
+  <link rel="canonical" href="https://nodejs.org/api/java.html">
 </head>
-<body class="alt apidoc" id="api-section-modules">
+<body class="alt apidoc" id="api-section-java">
   <div id="content" class="clearfix">
     <div id="column2" class="interior">
       <div id="intro" class="interior">
@@ -26,7 +26,7 @@
 <li><a class="nav-patchs" href="patchs.html">热更新</a></li>
 <li><a class="nav-deploy" href="deploy.html">打包</a></li>
 <li><a class="nav-remote" href="remote.html">远程部署</a></li>
-<li><a class="nav-java" href="java.html">与java交互</a></li>
+<li><a class="nav-java active" href="java.html">与java交互</a></li>
 <li><a class="nav-qa" href="qa.html">Q&amp;A - 常见问题</a></li>
 <li><a class="nav-https-miren-lovemi-ren-colorui-document-" href="https://miren.lovemi.ren/colorui-document/" target="_blank" rel="noopener noreferrer">UI设计</a><div class="line"></div></li>
 <li><a class="nav--" href="#">【API文档】:</a></li>
@@ -52,7 +52,7 @@
 <li><a class="nav-images" href="images.html">Images - 图片与图色处理</a></li>
 <li><a class="nav-keys" href="keys.html">Keys - 按键模拟</a></li>
 <li><a class="nav-media" href="media.html">Media - 多媒体</a></li>
-<li><a class="nav-modules active" href="modules.html">Modules - 模块</a></li>
+<li><a class="nav-modules" href="modules.html">Modules - 模块</a></li>
 <li><a class="nav-sensors" href="sensors.html">Sensors - 传感器</a></li>
 <li><a class="nav-shell" href="shell.html">Shell - Shell命令</a></li>
 <li><a class="nav-storages" href="storages.html">Storages - 本地存储</a></li>
@@ -67,7 +67,7 @@
 
     </div>
 
-    <div id="column1" data-id="modules" class="interior">
+    <div id="column1" data-id="java" class="interior">
       <header>
         <h1>用JS任意控制手机上的APP</h1>
         <div id="gtoc">
@@ -82,46 +82,53 @@
       <div id="toc">
         <h2>目录</h2>
         <ul>
-<li><span class="stability_2"><a href="#modules_module">module (模块)</a></span></li>
+<li><span class="stability_undefined"><a href="#java_java_android">与Java或Android交互</a></span><ul>
+<li><span class="stability_undefined"><a href="#java_1_android_api">1. 直接使用Android的API</a></span></li>
+<li><span class="stability_undefined"><a href="#java_2_jar">2. 加载Jar包</a></span></li>
+<li><span class="stability_undefined"><a href="#java_3_dex_path">3. 加载Dex包(path)</a></span></li>
+</ul>
+</li>
 </ul>
 
       </div>
 
       <div id="apicontent">
-        <h1>module (模块)<span><a class="mark" href="#modules_module" id="modules_module">#</a></span></h1>
-<div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">Stability: 2</a> - Stable</div><p>Auto.js 有一个简单的模块加载系统。 在 Auto.js 中，文件和模块是一一对应的（每个文件被视为一个独立的模块）。</p>
-<p>例子，假设有一个名为 foo.js 的文件：</p>
-<pre><code>var circle = require(&#39;circle.js&#39;);
-console.log(&quot;半径为 4 的圆的面积是 %d&quot;, circle.area(4));
-</code></pre><p>在第一行中，foo.js 加载了同一目录下的 circle.js 模块。</p>
-<p>circle.js 文件的内容为：</p>
-<pre><code>const PI = Math.PI;
+        <h1>与Java或Android交互<span><a class="mark" href="#java_java_android" id="java_java_android">#</a></span></h1>
+<h2>1. 直接使用Android的API<span><a class="mark" href="#java_1_android_api" id="java_1_android_api">#</a></span></h2>
+<p>举例： 接受广播包</p>
+<pre><code class="lang-js">const IntentFilter = android.content.IntentFilter;
+const BroadcastReceiver = android.content.BroadcastReceiver;
 
-var circle = {};
+var filter = new IntentFilter();
+filter.addAction(&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;); // 监听网络变化
+// 替换为其他的广播事件 
+var receiver = new BroadcastReceiver({
+    onReceive: function(context, intent) {
+        console.log(&#39;监听到广播包: 网络变化&#39;);
+        console.log(intent);
+    }
+});
+context.registerReceiver(receiver, filter);
 
-circle.area = function (r) {
-  return PI * r * r;
-};
-
-circle.circumference = (r) =&gt; 2 * PI * r;
-
-module.exports = circle;
-</code></pre><p>circle.js 模块导出了 area() 和 circumference() 两个函数。 通过在特殊的 exports 对象上指定额外的属性，函数和对象可以被添加到模块的根部。</p>
-<p>模块内的本地变量是私有的。 在这个例子中，变量 PI 是 circle.js 私有的，不会影响到加载他的脚本的变量环境。</p>
-<p>module.exports属性可以被赋予一个新的值（例如函数或对象）。</p>
-<p>如下，bar.js 会用到 square 模块，square 导出一个构造函数：</p>
-<pre><code>const square = require(&#39;square.js&#39;);
-const mySquare = square(2);
-console.log(&quot;正方形的面积是 %d&quot;, mySquare.area());
-square 模块定义在 square.js 中：
-
-// 赋值给 `exports` 不会修改模块，必须使用 `module.exports`
-module.exports = function(width) {
-  return {
-    area: () =&gt; width ** 2
-  };
-};
 </code></pre>
+<h2>2. 加载Jar包<span><a class="mark" href="#java_2_jar" id="java_2_jar">#</a></span></h2>
+<div class="signature"><ul>
+<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> jar文件路径</li>
+</ul>
+</div><p>加载目标jar文件，加载成功后将可以使用该Jar文件的类。</p>
+<pre><code>// 加载jsoup.jar到内存
+runtime.loadJar(&quot;./jsoup.jar&quot;);
+// 使用jsoup解析html类
+importClass(org.jsoup.Jsoup);
+log(Jsoup.parse(files.read(&quot;./test.html&quot;)));
+</code></pre><p>(jsoup是一个Java实现的解析Html DOM的库，可以在<a href="https://jsoup.org/download">Jsoup</a>下载)</p>
+<h2>3. 加载Dex包(path)<span><a class="mark" href="#java_3_dex_path" id="java_3_dex_path">#</a></span></h2>
+<div class="signature"><ul>
+<li><code>path</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> dex文件路径</li>
+</ul>
+</div><p>加载目标dex文件，加载成功后将可以使用该dex文件的类。</p>
+<p>因为加载jar实际上是把jar转换为dex再加载的，因此加载dex文件会比jar文件快得多。可以使用Android SDK的build tools的dx工具把jar转换为dex。</p>
+
       </div>
     </div>
   </div>

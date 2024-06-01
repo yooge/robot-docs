@@ -105,8 +105,8 @@
               "name": "1._初始化项目环境配置",
               "modules": [
                 {
-                  "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座 （可忽略）",
-                  "name": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座 （可忽略）",
+                  "textRaw": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座（可忽略）",
+                  "name": "`[步骤2]`2. HbuiderX菜单 -> 运行 -> 运行到终端 -> 2.更新/安装基座（可忽略）",
                   "desc": "<p>步骤1. 初始化是为了安装<code>robot-tools</code>组件</p>\n<p>步骤2. 安装基座，文件下载后会存放到目录unpackage/debug/android_debug.apk</p>\n<p>步骤3. 启用调试基座(手机上的app)</p>\n<ul>\n<li>基座是用于动态调试的APP程序。</li>\n<li>如果步骤2步骤3忘记操作，会意外安装错误的手机程序，会提示Robot对象不存在</li>\n</ul>\n<p><img src='images/start-app.png' width=\"400\">\n.</p>\n",
                   "type": "module",
                   "displayName": "`[步骤3]`3. HbuiderX菜单 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座"
