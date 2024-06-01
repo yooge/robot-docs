@@ -38,10 +38,9 @@ click(desc("评论"));
 
 ## 代码与工具
 ### 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
-建议下载这个版本：(不再建议了，请去下载最新的吧 4.15)：
 ```
-链接: https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
-提取码: 1234
+新版本: https://www.dcloud.io/hbuilderx.html
+老版本： https://pan.baidu.com/s/1W0IEokddywK5iqoIx7biKw?pwd=1234 
 ```
 
 ### 2. 克隆或下载源码
